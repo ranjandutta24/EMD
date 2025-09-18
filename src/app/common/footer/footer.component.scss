@@ -1,0 +1,14 @@
+.footer{
+    display: flex
+    ;
+        position: fixed;
+        bottom: 0px;
+        background-color: var(--background_transparent); 
+        color:  var(--primary);  
+        width: 100%;
+        padding: 10px 5px;
+        /* margin: auto; */
+        justify-content: center;
+        transition: background-color 1s ease, color 1s ease;
+}
+

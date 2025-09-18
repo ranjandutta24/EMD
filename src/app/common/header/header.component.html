@@ -1,0 +1,44 @@
+<div class="header" style="list-style: none">
+  <!-- <li><a routerLink="/ccas-live"> CCAS Live</a></li> -->
+  <!-- <li (click)="goToRoute('/main/dashboard')">CCAS Live</li> -->
+
+  <div style="display: flex; flex-direction: row; gap: 10px; margin-left: 10px">
+    <li
+      [class.active]="isActive('/main/overview')"
+      (click)="goToRoute('/main/overview')"
+    >
+      Overview
+    </li>
+    <li
+      [class.active]="isActive('/main/area')"
+      (click)="goToRoute('/main/area')"
+    >
+      Area
+    </li>
+    <li
+      [class.active]="isActive('/main/gas_balance')"
+      (click)="goToRoute('/main/gas_balance')"
+    >
+      Gas Balance
+    </li>
+    <li
+      [class.active]="isActive('/main/report')"
+      (click)="goToRoute('/main/report')"
+    >
+      Report
+    </li>
+    <li
+      [class.active]="isActive('/main/trends')"
+      (click)="goToRoute('/main/trends')"
+    >
+      Trends
+    </li>
+  </div>
+  <div id="night_mode" (click)="toggleTheme()">
+    <span [class.sun]="!isDark" [class.moon]="isDark">
+      {{ isDark ? "🌙" : "☀️" }}
+    </span>
+  </div>
+</div>
+<!-- [class.active]="isActive('/main/ccslive')"
+(click)="goToRoute('/main/ccslive')" -->

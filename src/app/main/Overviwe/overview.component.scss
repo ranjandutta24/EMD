@@ -1,0 +1,142 @@
+
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Background blur */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('/assets/backg.jpg') no-repeat center center / cover;
+      filter: blur(3px) brightness(0.6);
+      z-index: -1;
+    }
+
+    /* Content */
+    .content {
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #ffffff;
+      padding: 20px;
+    }
+
+    .title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #f5f5f5;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+      margin-bottom: 15px;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #d1d1d1;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    /* Animations */
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+svg path{
+  fill: transparent;
+  stroke: #b6a058;
+  stroke-width: 0.5;
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: textAnimation 2s ease-in-out 1 forwards;
+}
+
+@keyframes textAnimation {
+  0%{
+    stroke-dashoffset: 50;
+ 
+  }
+  80%{
+    fill: transparent;
+ 
+  }
+  100%{
+    fill: #fffde8;
+    stroke-dashoffset: 0;
+ 
+  }
+}
+
+.flx{
+  display: flex;
+  img{
+    width: 50px;
+    height: 40px;
+    margin: 15px 20px 50px 20px;
+    
+  }
+}
+
+.i1{
+  animation: fadeInLeft 1s ease-out;
+}
+.i2{
+  animation: fadeInRight 1s ease-out;
+}

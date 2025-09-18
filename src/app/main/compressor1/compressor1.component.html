@@ -1,0 +1,254 @@
+<div class="bar1">
+  <div class="each4th">
+    <div class="each_g1">
+      <p class="unit" style="margin: 0px">Lube Oil Temperature [Deg C]</p>
+      <apx-chart
+        #chart1
+        [series]="chartOptions1.series"
+        [chart]="chartOptions1.chart"
+        [plotOptions]="chartOptions1.plotOptions"
+        [colors]="chartOptions1.colors"
+        [legend]="chartOptions1.legend"
+      >
+      </apx-chart>
+    </div>
+  </div>
+  <div class="each4th">
+    <div class="each_g1">
+      <p class="unit" style="margin: 0px">Discharge Air Temperature [Deg C]</p>
+      <apx-chart
+        #chart2
+        [series]="chartOptions2.series"
+        [chart]="chartOptions2.chart"
+        [plotOptions]="chartOptions2.plotOptions"
+        [colors]="chartOptions2.colors"
+        [legend]="chartOptions2.legend"
+      >
+      </apx-chart>
+    </div>
+  </div>
+  <div class="each4th">
+    <div class="each_g1">
+      <p class="unit" style="margin: 0px">Inlet Air Temperature [Deg C]</p>
+      <apx-chart
+        #chart3
+        [series]="chartOptions3.series"
+        [chart]="chartOptions3.chart"
+        [plotOptions]="chartOptions3.plotOptions"
+        [colors]="chartOptions3.colors"
+        [legend]="chartOptions3.legend"
+      >
+      </apx-chart>
+    </div>
+  </div>
+  <div class="each4th">
+    <div class="each_g1">
+      <p class="unit" style="margin: 0px">Compressor 1 Current (Amp)</p>
+      <apx-chart
+        #chart1
+        [series]="chartOptions4.series"
+        [chart]="chartOptions4.chart"
+        [plotOptions]="chartOptions4.plotOptions"
+        [colors]="chartOptions4.colors"
+        [legend]="chartOptions4.legend"
+      >
+      </apx-chart>
+    </div>
+  </div>
+</div>
+<div class="radial">
+  <div class="each4thr">
+    <apx-chart
+      #chart5
+      [series]="chartROptions1.series"
+      [chart]="chartROptions1.chart"
+      [plotOptions]="chartROptions1.plotOptions"
+      [labels]="chartROptions1.labels"
+      [fill]="chartROptions1.fill"
+    ></apx-chart>
+  </div>
+  <div class="each4thr">
+    <apx-chart
+      #chart6
+      [series]="chartROptions2.series"
+      [chart]="chartROptions2.chart"
+      [plotOptions]="chartROptions2.plotOptions"
+      [labels]="chartROptions2.labels"
+      [fill]="chartROptions2.fill"
+    ></apx-chart>
+  </div>
+  <div class="each4thr">
+    <apx-chart
+      #chart7
+      [series]="chartROptions3.series"
+      [chart]="chartROptions3.chart"
+      [plotOptions]="chartROptions3.plotOptions"
+      [labels]="chartROptions3.labels"
+      [fill]="chartROptions3.fill"
+    ></apx-chart>
+  </div>
+  <div class="each4thr">
+    <apx-chart
+      #chart8
+      [series]="chartROptions4.series"
+      [chart]="chartROptions4.chart"
+      [plotOptions]="chartROptions4.plotOptions"
+      [labels]="chartROptions4.labels"
+      [fill]="chartROptions4.fill"
+    ></apx-chart>
+  </div>
+</div>
+<div class="bar2">
+  <div class="each4th">
+    <div class="each_g1">
+      <p class="unit" style="margin: 0px">Compressor I Motor Current [amp]</p>
+      <apx-chart
+        #chart5
+        [series]="chartOptions5.series"
+        [chart]="chartOptions5.chart"
+        [plotOptions]="chartOptions5.plotOptions"
+        [colors]="chartOptions5.colors"
+        [legend]="chartOptions5.legend"
+      >
+      </apx-chart>
+    </div>
+  </div>
+  <div class="each4th">
+    <div class="each_g1">
+      <p class="unit" style="margin: 0px">Vibration Stage I [mills]</p>
+      <apx-chart
+        #chart6
+        [series]="chartOptions6.series"
+        [chart]="chartOptions6.chart"
+        [plotOptions]="chartOptions6.plotOptions"
+        [colors]="chartOptions6.colors"
+        [legend]="chartOptions6.legend"
+      >
+      </apx-chart>
+    </div>
+  </div>
+  <div class="each4th">
+    <div class="each_g1">
+      <p class="unit" style="margin: 0px">Vibration Stage II [mills]</p>
+      <apx-chart
+        #chart7
+        [series]="chartOptions7.series"
+        [chart]="chartOptions7.chart"
+        [plotOptions]="chartOptions7.plotOptions"
+        [colors]="chartOptions7.colors"
+        [legend]="chartOptions7.legend"
+      >
+      </apx-chart>
+    </div>
+  </div>
+  <div class="each4th">
+    <div class="each_g1">
+      <p class="unit" style="margin: 0px">Vibration Stage III [mills]</p>
+      <apx-chart
+        #chart8
+        [series]="chartOptions8.series"
+        [chart]="chartOptions8.chart"
+        [plotOptions]="chartOptions8.plotOptions"
+        [colors]="chartOptions8.colors"
+        [legend]="chartOptions8.legend"
+      >
+      </apx-chart>
+    </div>
+  </div>
+</div>
+
+<div class="table_con">
+  <table style="width: 100%" class="styled-table">
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Running Status</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Motor Current [amp]</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>Compressor I Flow [Nm3/hr]</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>Inlet Valve Position</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>By Pass Valve Position</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>POP Running</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Common Trip</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>Common Alarm</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Compressor 1 Running Hour [in Hrs]</td>
+        <td>8</td>
+      </tr>
+    </tbody>
+  </table>
+  <table style="width: 100%" class="styled-table">
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lube Oil Temperature [Deg C]</td>
+        <td>1</td>
+      </tr>
+
+      <tr>
+        <td>Discharge Air Temperature [Deg C]</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>Inlet Air Temperature [Deg C]</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>Inlet Air Temperature Stg II [Deg C]</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Lube Oil Pressure [kg/cm2]</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>System Pressure [kg/cm2]</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Vibration Stage I [mills]</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>Vibration Stage II [mills]</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>Vibration Stage III [mills]</td>
+        <td>8</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
