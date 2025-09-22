@@ -194,3 +194,8 @@ p {
         background-size: 600px 80px;
     }
 }
+
+.footer, .footer-content {
+    transition: background-color 1s ease, color 1s ease;
+  }
+  

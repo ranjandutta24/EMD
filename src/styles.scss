@@ -21,7 +21,8 @@
 
   --footer_shadow: #acacac;
 
- 
+  // --tr_hover: #fff
+  --tr_hover:aquamarine
 
  
 }
@@ -35,15 +36,18 @@
   --box-bg: #2e2e2e;
   --border: #353535;
   --overview_header: #ffb855;
-  --overview_header_bg: #5a5a5a;
+  --overview_header_bg: #000000;
   --nthch: #3a3a3a;
-  --box-border: #000000;
+  --box-border: #333333;
   --overview_bg: #5b5b5b;
   --0: rgb(255, 0, 0);
   --33:rgb(236, 152, 73);
   --66: rgb(241, 238, 61);
   --100: rgb(255, 61, 197);
   --footer_shadow: #898988;
+
+  // --tr_hover:rgb(79, 155, 158)
+  --tr_hover: #000
 
 }
 @font-face {

@@ -111,6 +111,7 @@ width: 20%;
 }
 
 .tr{
+  // background-color: bisque;
 display: flex;
 justify-content: space-between;
 padding: 5px 10px;
@@ -121,9 +122,68 @@ border-bottom: var(--border) 2px solid;
 }
 .tr:nth-child(odd) {
 background-color: var(--nthch); /* dark */
-color: #56b34a;           /* green text */
+          /* green text */
 }
 .td{
 color:var(--text) ;
 font-weight: 400;
 }
+
+
+.box,  .tr, .td, .overview_header, .col {
+  transition: background-color 1s ease, color 1s ease;
+}
+.tr:hover{
+  background-color: var(--tr_hover)  ;
+
+}
+
+
+.tr {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tr:hover {
+  animation: borderFlow 4s linear infinite;
+}
+
+@keyframes borderFlow {
+  0%   { border-color: rgba(255, 0, 0, 0.527); }   /* Red */
+  25%  { border-color: rgba(0, 255, 0, 0.534); }   /* Green */
+  50%  { border-color: rgba(0, 119, 255, 0.596); }   /* Blue */
+  75%  { border-color: rgba(255, 255, 0, 0.658); } /* Yellow */
+  100% { border-color: rgba(255, 0, 0, 0.555); }   /* Back to Red */
+}
+
+
+
+// .tr {
+//   display: flex;
+//   justify-content: space-between;
+//   padding: 5px 10px;
+//   // border: 2px solid;
+//   border-radius: 6px;
+//   // border-color: rgb(255, 0, 0); /* initial color */
+//   transition: border-color 0.3s ease;
+// }
+
+// .tr:hover {
+//   animation: borderFlow 2s linear infinite;
+// }
+
+// @keyframes borderFlow {
+//   0%   { border-color: rgb(255, 0, 0); }   /* Red */
+//   25%  { border-color: rgb(0, 255, 0); }   /* Green */
+//   50%  { border-color: rgb(0, 0, 255); }   /* Blue */
+//   75%  { border-color: rgb(255, 255, 0); } /* Yellow */
+//   100% { border-color: rgb(255, 0, 0); }   /* Back to Red */
+// }
+
+
+

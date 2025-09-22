@@ -9,13 +9,16 @@
 
   justify-content: space-between;
   // background-image: url('/assets/bg.jpg');
+//   background: #000000;
+// background: linear-gradient(18090deg,rgba(0, 0, 0, 1) 25%, rgba(120, 117, 117, 1) 91%);
+
 }
 
 .header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('/assets/bg2.jpg') center/cover no-repeat;
+  // background: url('/assets/bg2.jpg') center/cover no-repeat;
   filter: blur(1px);      /* ✅ Blurs the image itself */
   z-index: 0;
 }
