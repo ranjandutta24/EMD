@@ -12,9 +12,9 @@ const baseURL = 'http://10.150.6.15:4060/api/';
 export class SseService {
   constructor(private zone: NgZone) {}
 
-  getServerSentEvent(): Observable<any> {
+  getBf5(): Observable<any> {
     return new Observable((observer) => {
-      const eventSource = new EventSource(baseURL + 'utility/ccas_dashboard');
+      const eventSource = new EventSource(baseURL + 'emd/bf5');
 
       eventSource.onmessage = (event) => {
         this.zone.run(() => {

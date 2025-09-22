@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { SseService } from 'src/app/service/sse.servece';
 
 @Component({
   selector: 'app-ccas-live',
@@ -21,9 +23,29 @@ export class OverviewComponent implements OnInit {
   fale_stack_cog = 'FALE STACK (COG)';
   fale_stack_bfg = 'FALE STACK (BFG)';
   micellanous = 'MICELLANEOUS';
-  constructor() {}
+
+  bf5_res = {
+    BLAST_VOLUME: 0,
+    BLAST_PRESSURE: 0,
+    FLARE_STACK_FLOW: 0,
+    FLARE_STACK_PRESSURE: 0,
+    SNORT_POSITION: 0,
+  };
+
+  private ssebf5?: Subscription;
+  constructor(private sseService: SseService) {}
   splitLetters(text: string): string[] {
     return text.split('').map((c) => (c === ' ' ? '\u00A0' : c));
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.ssebf5 = this.sseService.getBf5().subscribe((data: any) => {
+      console.log('es', data);
+
+      this.bf5_res.BLAST_VOLUME = data.BLAST_VOLUME;
+      this.bf5_res.BLAST_PRESSURE = data.BLAST_PRESSURE;
+      this.bf5_res.FLARE_STACK_FLOW = data.FLARE_STACK_FLOW;
+      this.bf5_res.FLARE_STACK_PRESSURE = data.FLARE_STACK_PRESSURE;
+      this.bf5_res.SNORT_POSITION = data.SNORT_POSITION;
+    });
+  }
 }
