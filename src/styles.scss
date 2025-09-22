@@ -4,8 +4,26 @@
   --primary: #1172f0; /* light mode */
   --accent: #d770ff;
   --background: #ffffff;
-  --background_transparent: #dbdbdb80;
-  --text: #000000;
+  --background_transparent: #ffffff80;
+  --text: #444444;
+  --box-bg: #fdfdfd;
+  --box-border: #55adf9;
+  --border: #dff7fd57 ;
+  --overview_header_bg: #4392fa;
+  --overview_header: #ffffff;
+  --overview_bg: #e2e2e2;
+  --nthch: #e8f5fc;
+
+  --0: rgb(255, 255, 255);
+  --33:rgb(255, 175, 56);
+  --66: rgb(255, 252, 56);
+  --100: rgb(149, 245, 23);
+
+  --footer_shadow: #acacac;
+
+ 
+
+ 
 }
 
 .dark-theme {
@@ -13,7 +31,20 @@
   --accent: #c23ed3;
   --background: #121212;
   --background_transparent: #1d1d1dd0;
-  --text: #ffffff;
+  --text: #6ae751;
+  --box-bg: #2e2e2e;
+  --border: #353535;
+  --overview_header: #ffb855;
+  --overview_header_bg: #5a5a5a;
+  --nthch: #3a3a3a;
+  --box-border: #000000;
+  --overview_bg: #5b5b5b;
+  --0: rgb(255, 0, 0);
+  --33:rgb(236, 152, 73);
+  --66: rgb(241, 238, 61);
+  --100: rgb(255, 61, 197);
+  --footer_shadow: #898988;
+
 }
 @font-face {
     font-family: 'Play';

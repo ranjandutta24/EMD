@@ -2,7 +2,14 @@
   <div class="flex">
     <div class="col">
       <div class="box">
-        <h2 class="overview_header">BF 5</h2>
+        <h2 class="overview_header">
+          <span
+            *ngFor="let letter of splitLetters(bf); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
+            {{ letter }}
+          </span>
+        </h2>
         <div class="tr">
           <div class="td">BLAST VOLUME</div>
           <div class="td">123</div>
@@ -33,7 +40,218 @@
         </div>
       </div>
       <div class="box">
-        <h2 class="overview_header">PBS#2 BOILER ( 1,2,3)</h2>
+        <h2 class="overview_header">
+          <span
+            *ngFor="let letter of splitLetters(pbs2); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
+            {{ letter }}
+          </span>
+        </h2>
+        <div class="tr">
+          <div class="td">COG (1,2,3)</div>
+          <div class="td">Value 1</div>
+        </div>
+        <div class="tr">
+          <div class="td">BFG (1,2,3)</div>
+          <div class="td">Value 2</div>
+        </div>
+        <div class="tr">
+          <div class="td">CBM GAS(1,2,3)</div>
+          <div class="td">Value 3</div>
+        </div>
+        <div class="tr">
+          <div class="td">BOF GAS TOTAL</div>
+          <div class="td">Value 4</div>
+        </div>
+      </div>
+      <div class="box">
+        <h2 class="overview_header">
+          <span
+            *ngFor="let letter of splitLetters(stove); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
+            {{ letter }}
+          </span>
+        </h2>
+        <div class="tr">
+          <div class="td">stove 1 BF Gas</div>
+          <div class="td">Value 1</div>
+        </div>
+        <div class="tr">
+          <div class="td">stove 2 BF Gas</div>
+          <div class="td">Value 2</div>
+        </div>
+        <div class="tr">
+          <div class="td">stove 3 BF Gas</div>
+          <div class="td">Value 3</div>
+        </div>
+        <div class="tr">
+          <div class="td">stove 4 BF Gas</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">co gas consumption</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">CDI COG CONSUMPTION</div>
+          <div class="td">Value 4</div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="box">
+        <h2 class="overview_header">
+          <span
+            *ngFor="let letter of splitLetters(cob11); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
+            {{ letter }}
+          </span>
+        </h2>
+        <div class="tr">
+          <div class="td">MAKE</div>
+          <div class="td">Value 1</div>
+        </div>
+        <div class="tr">
+          <div class="td">PRESSURE</div>
+          <div class="td">Value 2</div>
+        </div>
+        <div class="tr">
+          <div class="td">FLARE FLOW</div>
+          <div class="td">Value 3</div>
+        </div>
+        <div class="tr">
+          <div class="td">FLARE PRESSURE</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">U/F N 1 BLOCK (COG+BFG)</div>
+          <div class="td">Value 5</div>
+        </div>
+        <div class="tr">
+          <div class="td">U/F N 2 BLOCK (COG+BFG)</div>
+          <div class="td">Value 5</div>
+        </div>
+        <div class="tr">
+          <div class="td">flare stack set point</div>
+          <div class="td">Value 5</div>
+        </div>
+      </div>
+      <div class="box">
+        <h2 class="overview_header">
+          <span
+            *ngFor="let letter of splitLetters(sinter); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
+            {{ letter }}
+          </span>
+        </h2>
+        <div class="tr">
+          <div class="td">SP 1 (CO GAS) FLOW</div>
+          <div class="td">Value 1</div>
+        </div>
+        <div class="tr">
+          <div class="td">PRESSURE</div>
+          <div class="td">Value 2</div>
+        </div>
+        <div class="tr">
+          <div class="td">SP 2 FLOW (CO GAS)</div>
+          <div class="td">Value 3</div>
+        </div>
+        <div class="tr">
+          <div class="td">PRESSURE</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">TOTAL FLOW</div>
+          <div class="td">Value 4</div>
+        </div>
+      </div>
+      <div class="box">
+        <h2 class="overview_header">
+          <span
+            *ngFor="let letter of splitLetters(mills); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
+            {{ letter }}
+          </span>
+        </h2>
+        <div class="tr">
+          <div class="td">WRM (MIX GAS)</div>
+          <div class="td">Value 1</div>
+        </div>
+        <div class="tr">
+          <div class="td">BRM (MIX GAS)</div>
+          <div class="td">Value 2</div>
+        </div>
+        <div class="tr">
+          <div class="td">USM (MIX GAS)</div>
+          <div class="td">Value 3</div>
+        </div>
+        <div class="tr">
+          <div class="td">CBM FLOW</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">BOF GAS</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">TOTAL CONSUMPTION</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">MIX GAS PRESSURE</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">PESSURE INDIVISUAL MILL</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">CV</div>
+          <div class="td">Value 4</div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="box">
+        <h2 class="overview_header">
+          <span
+            *ngFor="let letter of splitLetters(cob10); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
+            {{ letter }}
+          </span>
+        </h2>
+        <div class="tr">
+          <div class="td">GEN</div>
+          <div class="td">Value 1</div>
+        </div>
+        <div class="tr">
+          <div class="td">PRESSURE</div>
+          <div class="td">Value 2</div>
+        </div>
+        <div class="tr">
+          <div class="td">Label 3</div>
+          <div class="td">Value 3</div>
+        </div>
+        <div class="tr">
+          <div class="td">Label 4</div>
+          <div class="td">Value 4</div>
+        </div>
+      </div>
+      <div class="box">
+        <h2 class="overview_header">
+          <span
+            *ngFor="let letter of splitLetters(ldcp); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
+            {{ letter }}
+          </span>
+        </h2>
         <div class="tr">
           <div class="td">Label 1</div>
           <div class="td">Value 1</div>
@@ -52,7 +270,14 @@
         </div>
       </div>
       <div class="box">
-        <h2 class="overview_header">STOVE</h2>
+        <h2 class="overview_header">
+          <span
+            *ngFor="let letter of splitLetters(fale_stack_cog); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
+            {{ letter }}
+          </span>
+        </h2>
         <div class="tr">
           <div class="td">Label 1</div>
           <div class="td">Value 1</div>
@@ -73,7 +298,14 @@
     </div>
     <div class="col">
       <div class="box">
-        <h2 class="overview_header">COB#11</h2>
+        <h2 class="overview_header">
+          <span
+            *ngFor="let letter of splitLetters(bof_holder); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
+            {{ letter }}
+          </span>
+        </h2>
         <div class="tr">
           <div class="td">Label 1</div>
           <div class="td">Value 1</div>
@@ -92,7 +324,14 @@
         </div>
       </div>
       <div class="box">
-        <h2 class="overview_header">SINTER</h2>
+        <h2 class="overview_header">
+          <span
+            *ngFor="let letter of splitLetters(bof_ccp); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
+            {{ letter }}
+          </span>
+        </h2>
         <div class="tr">
           <div class="td">Label 1</div>
           <div class="td">Value 1</div>
@@ -111,66 +350,14 @@
         </div>
       </div>
       <div class="box">
-        <h2 class="overview_header">MILL'S</h2>
-        <div class="tr">
-          <div class="td">Label 1</div>
-          <div class="td">Value 1</div>
-        </div>
-        <div class="tr">
-          <div class="td">Label 2</div>
-          <div class="td">Value 2</div>
-        </div>
-        <div class="tr">
-          <div class="td">Label 3</div>
-          <div class="td">Value 3</div>
-        </div>
-        <div class="tr">
-          <div class="td">Label 4</div>
-          <div class="td">Value 4</div>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="box">
-        <h2 class="overview_header">COB10</h2>
-        <div class="tr">
-          <div class="td">Label 1</div>
-          <div class="td">Value 1</div>
-        </div>
-        <div class="tr">
-          <div class="td">Label 2</div>
-          <div class="td">Value 2</div>
-        </div>
-        <div class="tr">
-          <div class="td">Label 3</div>
-          <div class="td">Value 3</div>
-        </div>
-        <div class="tr">
-          <div class="td">Label 4</div>
-          <div class="td">Value 4</div>
-        </div>
-      </div>
-      <div class="box">
-        <h2 class="overview_header">LDCP</h2>
-        <div class="tr">
-          <div class="td">Label 1</div>
-          <div class="td">Value 1</div>
-        </div>
-        <div class="tr">
-          <div class="td">Label 2</div>
-          <div class="td">Value 2</div>
-        </div>
-        <div class="tr">
-          <div class="td">Label 3</div>
-          <div class="td">Value 3</div>
-        </div>
-        <div class="tr">
-          <div class="td">Label 4</div>
-          <div class="td">Value 4</div>
-        </div>
-      </div>
-      <div class="box">
-        <h2 class="overview_header">FALE STACK(COG)</h2>
+        <h2 class="overview_header">
+          <span
+            *ngFor="let letter of splitLetters(fale_stack_bfg); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
+            {{ letter }}
+          </span>
+        </h2>
         <div class="tr">
           <div class="td">Label 1</div>
           <div class="td">Value 1</div>
@@ -191,7 +378,14 @@
     </div>
     <div class="col">
       <div class="box">
-        <h2 class="overview_header">BOF HOLDER</h2>
+        <h2 class="overview_header">
+          <span
+            *ngFor="let letter of splitLetters(cbm); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
+            {{ letter }}
+          </span>
+        </h2>
         <div class="tr">
           <div class="td">Label 1</div>
           <div class="td">Value 1</div>
@@ -210,7 +404,14 @@
         </div>
       </div>
       <div class="box">
-        <h2 class="overview_header">BOF/CCP</h2>
+        <h2 class="overview_header">
+          <span
+            *ngFor="let letter of splitLetters(agbs_cgbs); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
+            {{ letter }}
+          </span>
+        </h2>
         <div class="tr">
           <div class="td">Label 1</div>
           <div class="td">Value 1</div>
@@ -229,66 +430,14 @@
         </div>
       </div>
       <div class="box">
-        <h2 class="overview_header">FALE STACK (BFG)</h2>
-        <div class="tr">
-          <div class="td">Label 1</div>
-          <div class="td">Value 1</div>
-        </div>
-        <div class="tr">
-          <div class="td">Label 2</div>
-          <div class="td">Value 2</div>
-        </div>
-        <div class="tr">
-          <div class="td">Label 3</div>
-          <div class="td">Value 3</div>
-        </div>
-        <div class="tr">
-          <div class="td">Label 4</div>
-          <div class="td">Value 4</div>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="box">
-        <h2 class="overview_header">CBM</h2>
-        <div class="tr">
-          <div class="td">Label 1</div>
-          <div class="td">Value 1</div>
-        </div>
-        <div class="tr">
-          <div class="td">Label 2</div>
-          <div class="td">Value 2</div>
-        </div>
-        <div class="tr">
-          <div class="td">Label 3</div>
-          <div class="td">Value 3</div>
-        </div>
-        <div class="tr">
-          <div class="td">Label 4</div>
-          <div class="td">Value 4</div>
-        </div>
-      </div>
-      <div class="box">
-        <h2 class="overview_header">AGBS/CGBS</h2>
-        <div class="tr">
-          <div class="td">Label 1</div>
-          <div class="td">Value 1</div>
-        </div>
-        <div class="tr">
-          <div class="td">Label 2</div>
-          <div class="td">Value 2</div>
-        </div>
-        <div class="tr">
-          <div class="td">Label 3</div>
-          <div class="td">Value 3</div>
-        </div>
-        <div class="tr">
-          <div class="td">Label 4</div>
-          <div class="td">Value 4</div>
-        </div>
-      </div>
-      <div class="box">
-        <h2 class="overview_header">MICELLANOUS</h2>
+        <h2 class="overview_header">
+          <span
+            *ngFor="let letter of splitLetters(micellanous); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
+            {{ letter }}
+          </span>
+        </h2>
         <div class="tr">
           <div class="td">Label 1</div>
           <div class="td">Value 1</div>
