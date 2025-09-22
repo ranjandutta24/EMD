@@ -199,3 +199,81 @@ p {
     transition: background-color 1s ease, color 1s ease;
   }
   
+
+#time {
+  position: absolute;
+  right: 20px;
+  bottom: 8px;              /* raised a bit for better balance */
+  margin: 0;
+  font-size: 14px;          /* slightly smaller but crisp */
+  font-weight: 500;
+  font-family: monospace;
+  letter-spacing: 0.5px;    /* adds readability */
+  
+  color: #f1f1f1;           /* soft white text */
+  background: rgba(0, 0, 0, 0.4); /* subtle translucent bg */
+  padding: 4px 10px;
+  border-radius: 6px;       /* rounded pill effect */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+
+  transition: all 0.3s ease-in-out;
+}
+
+#time:hover {
+  background: rgba(0, 0, 0, 0.6); /* slightly darker on hover */
+  transform: scale(1.05);         /* subtle zoom */
+}
+
+
+
+
+.analog-clock {
+    scale: .5;
+  position: absolute;
+  right: 20px;
+  bottom: -13px;
+  width: 60px;
+  height: 60px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: #111;
+  box-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  background: #fff;
+  transform: rotate(0deg);
+}
+
+.hand.hour {
+  width: 4px;
+  height: 18px;
+  background: #f1c40f; /* yellow hour hand */
+}
+
+.hand.minute {
+  width: 3px;
+  height: 24px;
+  background: #3498db; /* blue minute hand */
+}
+
+.hand.second {
+  width: 2px;
+  height: 26px;
+  background: #e74c3c; /* red second hand */
+}
+
+.center-dot {
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

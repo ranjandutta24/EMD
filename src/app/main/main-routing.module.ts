@@ -9,6 +9,7 @@ import { GasBalanceComponent } from './Gas_balance/gas_balance.component';
 // import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'overview' },
   { path: 'overview', component: OverviewComponent },
   { path: 'area', component: AreaComponent },
   { path: 'gas_balance', component: GasBalanceComponent },
