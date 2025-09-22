@@ -1,0 +1,13 @@
+ .container{
+    width: min( 100%);
+    height: calc(100vh - 64px); ;
+    background-color:var(--overview_bg);
+    
+  }
+  h1{
+    margin:0;
+    padding:20px;
+    font-size:24px;
+    font-weight:500;
+    color:var(--text_primary);
+  }
