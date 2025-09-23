@@ -10,7 +10,7 @@ const baseURL = 'http://10.150.6.15:4060/api/';
   providedIn: 'root',
 })
 export class SseService {
-  constructor(private zone: NgZone) {}
+  constructor(private zone: NgZone) { }
 
   getBf5(): Observable<any> {
     return new Observable((observer) => {
@@ -33,6 +33,32 @@ export class SseService {
       };
     });
   }
+
+  getmills(): Observable<any> {
+    return new Observable((observer) => {
+      const eventSource = new EventSource(baseURL + 'emd/mills');
+
+      eventSource.onmessage = (event) => {
+        this.zone.run(() => {
+          observer.next(JSON.parse(event.data));
+        });
+      };
+
+      eventSource.onerror = (error) => {
+        this.zone.run(() => {
+          observer.error(error);
+        });
+      };
+
+      return () => {
+        eventSource.close();
+      };
+    });
+  }
+
+
+
+
 
   // getSSETrend(): Observable<any> {
   //   return new Observable((observer) => {

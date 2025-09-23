@@ -31,11 +31,27 @@ export class OverviewComponent implements OnInit {
     FLARE_STACK_PRESSURE: 0,
     SNORT_POSITION: 0,
   };
-  previousValues: any = { ...this.bf5_res }; // store old values
+  mills_res = {
+    WRM_MIX_GAS_FLOW: 0,
+    BRM_MIX_GAS_FLOW: 0,
+    USM_MIX_GAS_FLOW: 0,
+    TOTAL_CONSUMPTION: 0,
+    WRM_MIX_GAS_PESSURE: 0,
+    BRM_MIX_GAS_PESSURE: 0,
+    URM_MIX_GAS_PESSURE: 0,
+    MIX_GAS_PRESSURE: 0,
+    CV: 0,
+    CBM_FLOW: 0,
+    BOF_GAS: 0,
+  };
+
+  previousValues_bf5: any = { ...this.bf5_res }; // store old values
+  previousValues_mills: any = { ...this.mills_res };
 
   private ssebf5?: Subscription;
+  private ssemills?: Subscription;
 
-  constructor(private sseService: SseService) {}
+  constructor(private sseService: SseService) { }
 
   splitLetters(text: string): string[] {
     return text.split('').map((c) => (c === ' ' ? '\u00A0' : c));
@@ -72,14 +88,14 @@ export class OverviewComponent implements OnInit {
 
       // Animate each property
       this.animateValue(
-        this.previousValues.BLAST_VOLUME,
+        this.previousValues_bf5.BLAST_VOLUME,
         data.BLAST_VOLUME,
         800, // ms
         (val) => (this.bf5_res.BLAST_VOLUME = val)
       );
 
       this.animateValue(
-        this.previousValues.BLAST_PRESSURE,
+        this.previousValues_bf5.BLAST_PRESSURE,
         data.BLAST_PRESSURE,
         800,
         (val) => (this.bf5_res.BLAST_PRESSURE = val),
@@ -88,7 +104,7 @@ export class OverviewComponent implements OnInit {
 
       // repeat for other props
       this.animateValue(
-        this.previousValues.FLARE_STACK_FLOW,
+        this.previousValues_bf5.FLARE_STACK_FLOW,
         data.FLARE_STACK_FLOW,
         800,
         (val) => (this.bf5_res.FLARE_STACK_FLOW = val),
@@ -96,7 +112,7 @@ export class OverviewComponent implements OnInit {
       );
 
       this.animateValue(
-        this.previousValues.FLARE_STACK_PRESSURE,
+        this.previousValues_bf5.FLARE_STACK_PRESSURE,
         data.FLARE_STACK_PRESSURE,
         800,
         (val) => (this.bf5_res.FLARE_STACK_PRESSURE = val),
@@ -104,7 +120,7 @@ export class OverviewComponent implements OnInit {
       );
 
       this.animateValue(
-        this.previousValues.SNORT_POSITION,
+        this.previousValues_bf5.SNORT_POSITION,
         data.SNORT_POSITION,
         800,
         (val) => (this.bf5_res.SNORT_POSITION = val),
@@ -112,7 +128,105 @@ export class OverviewComponent implements OnInit {
       );
 
       // Update previous values for next round
-      this.previousValues = { ...data };
+      this.previousValues_bf5 = { ...data };
+    });
+
+
+    // mills
+    this.ssemills = this.sseService.getmills().subscribe((data: any) => {
+      console.log('es', data);
+
+      // Animate each property
+      this.animateValue(
+        this.previousValues_mills.WRM_MIX_GAS_FLOW,
+        data.WRM_MIX_GAS_FLOW,
+        800, // ms
+        (val) => (this.mills_res.WRM_MIX_GAS_FLOW = val)
+      );
+
+      this.animateValue(
+        this.previousValues_mills.BRM_MIX_GAS_FLOW,
+        data.BRM_MIX_GAS_FLOW,
+        800,
+        (val) => (this.mills_res.BRM_MIX_GAS_FLOW = val),
+        2
+      );
+
+      // repeat for other props
+      this.animateValue(
+        this.previousValues_mills.USM_MIX_GAS_FLOW,
+        data.USM_MIX_GAS_FLOW,
+        800,
+        (val) => (this.mills_res.USM_MIX_GAS_FLOW = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues_mills.TOTAL_CONSUMPTION,
+        data.TOTAL_CONSUMPTION,
+        800,
+        (val) => (this.mills_res.TOTAL_CONSUMPTION = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues_mills.WRM_MIX_GAS_PESSURE,
+        data.WRM_MIX_GAS_PESSURE,
+        800,
+        (val) => (this.mills_res.WRM_MIX_GAS_PESSURE = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues_mills.BRM_MIX_GAS_PESSURE,
+        data.BRM_MIX_GAS_PESSURE,
+        800,
+        (val) => (this.mills_res.BRM_MIX_GAS_PESSURE = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues_mills.URM_MIX_GAS_PESSURE,
+        data.URM_MIX_GAS_PESSURE,
+        800,
+        (val) => (this.mills_res.URM_MIX_GAS_PESSURE = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues_mills.MIX_GAS_PRESSURE,
+        data.MIX_GAS_PRESSURE,
+        800,
+        (val) => (this.mills_res.MIX_GAS_PRESSURE = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues_mills.CV,
+        data.CV,
+        800,
+        (val) => (this.mills_res.CV = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues_mills.CBM_FLOW,
+        data.CBM_FLOW,
+        800,
+        (val) => (this.mills_res.CBM_FLOW = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues_mills.BOF_GAS,
+        data.BOF_GAS,
+        800,
+        (val) => (this.mills_res.BOF_GAS = val),
+        2
+      );
+
+      // Update previous values for next round
+      this.previousValues_mills = { ...data };
     });
   }
 }
