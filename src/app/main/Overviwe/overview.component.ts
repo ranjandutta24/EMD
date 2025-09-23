@@ -44,12 +44,22 @@ export class OverviewComponent implements OnInit, OnDestroy {
     CBM_FLOW: 0,
     BOF_FLOW: 0,
   };
+  stove_res = {
+    STOVE_1_BF_GAS: 0,
+    STOVE_2_BF_GAS: 0,
+    STOVE_3_BF_GAS: 0,
+    STOVE_4_BF_GAS: 0,
+    CO_GAS_CONSUMPTION: 0,
+    CDI_COG_CONSUMPTION: 0,
+  };
 
   previousValues_bf5: any = { ...this.bf5_res }; // store old values
   previousValues_mills: any = { ...this.mills_res };
+  previousValues_stove: any = { ...this.stove_res };
 
   private ssebf5?: Subscription;
   private ssemills?: Subscription;
+  private ssestove?: Subscription;
 
   constructor(private sseService: SseService) {}
 
@@ -229,6 +239,63 @@ export class OverviewComponent implements OnInit, OnDestroy {
 
       // Update previous values for next round
       this.previousValues_mills = { ...data };
+    });
+
+    this.ssestove = this.sseService.getstove().subscribe((data: any) => {
+      // console.log('es', data);
+      console.log(this.stove_res);
+
+      // Animate each property
+      this.animateValue(
+        this.previousValues_stove.STOVE_1_BF_GAS,
+        data.STOVE_1_BF_GAS,
+        800, // ms
+        (val) => (this.stove_res.STOVE_1_BF_GAS = val)
+      );
+
+      this.animateValue(
+        this.previousValues_stove.STOVE_2_BF_GAS,
+        data.STOVE_2_BF_GAS,
+        800,
+        (val) => (this.stove_res.STOVE_2_BF_GAS = val),
+        2
+      );
+
+      // repeat for other props
+      this.animateValue(
+        this.previousValues_stove.STOVE_3_BF_GAS,
+        data.STOVE_3_BF_GAS,
+        800,
+        (val) => (this.stove_res.STOVE_3_BF_GAS = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues_stove.STOVE_4_BF_GAS,
+        data.STOVE_4_BF_GAS,
+        800,
+        (val) => (this.stove_res.STOVE_4_BF_GAS = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues_stove.CO_GAS_CONSUMPTION,
+        data.CO_GAS_CONSUMPTION,
+        800,
+        (val) => (this.stove_res.CO_GAS_CONSUMPTION = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues_stove.CDI_COG_CONSUMPTION,
+        data.CDI_COG_CONSUMPTION,
+        800,
+        (val) => (this.stove_res.CDI_COG_CONSUMPTION = val),
+        2
+      );
+
+      // Update previous values for next round
+      this.previousValues_stove = { ...data };
     });
   }
 
