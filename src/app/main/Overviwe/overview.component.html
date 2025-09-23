@@ -182,31 +182,31 @@
         </h2>
         <div class="tr">
           <div class="td">WRM (MIX GAS FLOW)</div>
-          <div class="td">9483</div>
+          <div class="td">{{ mills_res.MG_WRM_FLOW }}</div>
         </div>
         <div class="tr">
           <div class="td">BRM (MIX GAS FLOW)</div>
-          <div class="td">Value 2</div>
+          <div class="td">{{ mills_res.MG_BRM_FLOW }}</div>
         </div>
         <div class="tr">
           <div class="td">USM (MIX GAS FLOW)</div>
-          <div class="td">Value 3</div>
+          <div class="td">{{ mills_res.MG_USM_FLOW }}</div>
         </div>
         <div class="tr">
           <div class="td">TOTAL CONSUMPTION</div>
-          <div class="td">Value 4</div>
+          <div class="td">{{ mills_res.TOTAL_FLOW }}</div>
         </div>
         <div class="tr">
           <div class="td">WRM (MIX GAS PESSURE)</div>
-          <div class="td">Value 4</div>
+          <div class="td">{{ mills_res.MG_WRM_PRESSURE }}</div>
         </div>
         <div class="tr">
           <div class="td">BRM (MIX GAS PESSURE)</div>
-          <div class="td">Value 4</div>
+          <div class="td">{{ mills_res.MG_BRM_PRESSURE }}</div>
         </div>
         <div class="tr">
           <div class="td">URM (MIX GAS PESSURE)</div>
-          <div class="td">Value 4</div>
+          <div class="td">{{ mills_res.MG_USM_PRESSURE }}</div>
         </div>
         <div class="tr">
           <div class="td">MIX GAS PRESSURE</div>
@@ -214,7 +214,7 @@
         </div>
         <div class="tr">
           <div class="td">CV</div>
-          <div class="td">Value 4</div>
+          <div class="td">{{ mills_res.CV }}</div>
         </div>
         <div class="tr">
           <div class="td">CBM FLOW</div>
@@ -222,7 +222,7 @@
         </div>
         <div class="tr">
           <div class="td">BOF GAS</div>
-          <div class="td">Value 4</div>
+          <div class="td">{{ mills_res.BOF_FLOW }}</div>
         </div>
       </div>
     </div>
@@ -245,11 +245,23 @@
           <div class="td">Value 2</div>
         </div>
         <div class="tr">
-          <div class="td">Label 3</div>
+          <div class="td">FLARE FLOW</div>
           <div class="td">Value 3</div>
         </div>
         <div class="tr">
-          <div class="td">Label 4</div>
+          <div class="td">FLARE PRESSURE</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">U/F N1 BLOCK</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">U/F N2 BLOCK</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">FLARE STACK SET POINT</div>
           <div class="td">Value 4</div>
         </div>
       </div>
@@ -263,19 +275,27 @@
           </span>
         </h2>
         <div class="tr">
-          <div class="td">Label 1</div>
+          <div class="td">K 1 FLOW</div>
           <div class="td">Value 1</div>
         </div>
         <div class="tr">
-          <div class="td">Label 2</div>
+          <div class="td">K 2 FLOW</div>
           <div class="td">Value 2</div>
         </div>
         <div class="tr">
-          <div class="td">Label 3</div>
+          <div class="td">K 3 FLOW</div>
           <div class="td">Value 3</div>
         </div>
         <div class="tr">
-          <div class="td">Label 4</div>
+          <div class="td">K 4 FLOW</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">INLET PRESSURE</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">TOTAL CONSUMPTION</div>
           <div class="td">Value 4</div>
         </div>
       </div>
@@ -317,19 +337,27 @@
           </span>
         </h2>
         <div class="tr">
-          <div class="td">Label 1</div>
+          <div class="td">HOLDER HEIGHT</div>
           <div class="td">Value 1</div>
         </div>
         <div class="tr">
-          <div class="td">Label 2</div>
+          <div class="td">GAS HLD PRESSURE</div>
           <div class="td">Value 2</div>
         </div>
         <div class="tr">
-          <div class="td">Label 3</div>
+          <div class="td">EXPORTED PBS#2</div>
           <div class="td">Value 3</div>
         </div>
         <div class="tr">
-          <div class="td">Label 4</div>
+          <div class="td">EXPORTED MILL'S</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">TOTAL EXPORTED</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">LAST HEAT RECOVERY VOL</div>
           <div class="td">Value 4</div>
         </div>
       </div>
@@ -343,19 +371,23 @@
           </span>
         </h2>
         <div class="tr">
-          <div class="td">Label 1</div>
+          <div class="td">CO GAS CONSUMPTION INDIVISUAL</div>
           <div class="td">Value 1</div>
         </div>
         <div class="tr">
-          <div class="td">Label 2</div>
+          <div class="td">CBM GAS CONSUMPTION</div>
           <div class="td">Value 2</div>
         </div>
         <div class="tr">
-          <div class="td">Label 3</div>
+          <div class="td">RUNNING STATUS</div>
           <div class="td">Value 3</div>
         </div>
         <div class="tr">
-          <div class="td">Label 4</div>
+          <div class="td">BOF(1,2,3)</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">CCP(1,2,3)</div>
           <div class="td">Value 4</div>
         </div>
       </div>
@@ -386,6 +418,7 @@
         </div>
       </div>
     </div>
+
     <div class="col">
       <div class="box">
         <h2 class="overview_header">
