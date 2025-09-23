@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SseService } from 'src/app/service/sse.servece';
 
@@ -7,7 +7,7 @@ import { SseService } from 'src/app/service/sse.servece';
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss'],
 })
-export class OverviewComponent implements OnInit {
+export class OverviewComponent implements OnInit, OnDestroy {
   bf = 'BF#5';
   cob11 = 'COB#11';
   cob10 = 'COB#10';
@@ -32,17 +32,17 @@ export class OverviewComponent implements OnInit {
     SNORT_POSITION: 0,
   };
   mills_res = {
-    WRM_MIX_GAS_FLOW: 0,
-    BRM_MIX_GAS_FLOW: 0,
-    USM_MIX_GAS_FLOW: 0,
-    TOTAL_CONSUMPTION: 0,
-    WRM_MIX_GAS_PESSURE: 0,
-    BRM_MIX_GAS_PESSURE: 0,
-    URM_MIX_GAS_PESSURE: 0,
+    MG_WRM_FLOW: 0,
+    MG_BRM_FLOW: 0,
+    MG_USM_FLOW: 0,
+    TOTAL_FLOW: 0,
+    MG_WRM_PRESSURE: 0,
+    MG_BRM_PRESSURE: 0,
+    MG_USM_PRESSURE: 0,
     MIX_GAS_PRESSURE: 0,
     CV: 0,
     CBM_FLOW: 0,
-    BOF_GAS: 0,
+    BOF_FLOW: 0,
   };
 
   previousValues_bf5: any = { ...this.bf5_res }; // store old values
@@ -51,7 +51,7 @@ export class OverviewComponent implements OnInit {
   private ssebf5?: Subscription;
   private ssemills?: Subscription;
 
-  constructor(private sseService: SseService) { }
+  constructor(private sseService: SseService) {}
 
   splitLetters(text: string): string[] {
     return text.split('').map((c) => (c === ' ' ? '\u00A0' : c));
@@ -84,7 +84,8 @@ export class OverviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.ssebf5 = this.sseService.getBf5().subscribe((data: any) => {
-      console.log('es', data);
+      // console.log('es', data);
+      console.log(this.bf5_res);
 
       // Animate each property
       this.animateValue(
@@ -131,65 +132,66 @@ export class OverviewComponent implements OnInit {
       this.previousValues_bf5 = { ...data };
     });
 
-
     // mills
     this.ssemills = this.sseService.getmills().subscribe((data: any) => {
-      console.log('es', data);
+      console.log(this.mills_res);
+      // console.log('es', data);
 
       // Animate each property
       this.animateValue(
-        this.previousValues_mills.WRM_MIX_GAS_FLOW,
-        data.WRM_MIX_GAS_FLOW,
+        this.previousValues_mills.MG_WRM_FLOW,
+        data.MG_WRM_FLOW,
         800, // ms
-        (val) => (this.mills_res.WRM_MIX_GAS_FLOW = val)
+        (val) => (this.mills_res.MG_WRM_FLOW = val),
+        2
       );
 
       this.animateValue(
-        this.previousValues_mills.BRM_MIX_GAS_FLOW,
-        data.BRM_MIX_GAS_FLOW,
+        this.previousValues_mills.MG_BRM_FLOW,
+        data.MG_BRM_FLOW,
         800,
-        (val) => (this.mills_res.BRM_MIX_GAS_FLOW = val),
+        (val) => (this.mills_res.MG_BRM_FLOW = val),
         2
       );
 
       // repeat for other props
       this.animateValue(
-        this.previousValues_mills.USM_MIX_GAS_FLOW,
-        data.USM_MIX_GAS_FLOW,
+        this.previousValues_mills.MG_USM_FLOW,
+        data.MG_USM_FLOW,
         800,
-        (val) => (this.mills_res.USM_MIX_GAS_FLOW = val),
+        (val) => (this.mills_res.MG_USM_FLOW = val),
         2
       );
 
       this.animateValue(
-        this.previousValues_mills.TOTAL_CONSUMPTION,
-        data.TOTAL_CONSUMPTION,
+        this.previousValues_mills.TOTAL_FLOW,
+        data.TOTAL_FLOW,
         800,
-        (val) => (this.mills_res.TOTAL_CONSUMPTION = val),
+        (val) => (this.mills_res.TOTAL_FLOW = val),
         2
       );
 
       this.animateValue(
-        this.previousValues_mills.WRM_MIX_GAS_PESSURE,
-        data.WRM_MIX_GAS_PESSURE,
+        this.previousValues_mills.MG_WRM_PRESSURE,
+        data.MG_WRM_PRESSURE,
         800,
-        (val) => (this.mills_res.WRM_MIX_GAS_PESSURE = val),
+        (val) => (this.mills_res.MG_WRM_PRESSURE = val),
         2
       );
 
       this.animateValue(
-        this.previousValues_mills.BRM_MIX_GAS_PESSURE,
-        data.BRM_MIX_GAS_PESSURE,
+        this.previousValues_mills.MG_BRM_PRESSURE,
+        data.MG_BRM_PRESSURE,
         800,
-        (val) => (this.mills_res.BRM_MIX_GAS_PESSURE = val),
+        (val) => (this.mills_res.MG_BRM_PRESSURE = val),
         2
       );
 
       this.animateValue(
-        this.previousValues_mills.URM_MIX_GAS_PESSURE,
-        data.URM_MIX_GAS_PESSURE,
+        this.previousValues_mills.MG_USM_PRESSURE,
+        data.MG_USM_PRESSURE,
         800,
-        (val) => (this.mills_res.URM_MIX_GAS_PESSURE = val),
+        (val) => (this.mills_res.MG_USM_PRESSURE = val),
         2
       );
 
@@ -218,15 +220,25 @@ export class OverviewComponent implements OnInit {
       );
 
       this.animateValue(
-        this.previousValues_mills.BOF_GAS,
-        data.BOF_GAS,
+        this.previousValues_mills.BOF_FLOW,
+        data.BOF_FLOW,
         800,
-        (val) => (this.mills_res.BOF_GAS = val),
+        (val) => (this.mills_res.BOF_FLOW = val),
         2
       );
 
       // Update previous values for next round
       this.previousValues_mills = { ...data };
     });
+  }
+
+  ngOnDestroy(): void {
+    // Clean up subscription to prevent memory leaks
+    if (this.ssebf5) {
+      this.ssebf5.unsubscribe();
+    }
+    if (this.ssemills) {
+      this.ssemills.unsubscribe();
+    }
   }
 }
