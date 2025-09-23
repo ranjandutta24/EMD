@@ -16,27 +16,29 @@
         </div>
         <div class="tr">
           <div class="td">BLAST PRESSURE</div>
-          <div class="td">{{ bf5_res.BLAST_PRESSURE }}</div>
+          <div class="td">{{ bf5_res.BLAST_PRESSURE.toFixed(2) }}</div>
         </div>
         <div class="tr">
           <div class="td">GAS MAKE</div>
-          <div class="td">0</div>
+          <div class="td">
+            {{ (bf5_res.BLAST_VOLUME * 1.52 * (60 / 1000)).toFixed(2) }}
+          </div>
         </div>
         <div class="tr">
-          <div class="td">Flare stack flow</div>
-          <div class="td">{{ bf5_res.FLARE_STACK_FLOW }}</div>
+          <div class="td">FLARE STACK FLOW</div>
+          <div class="td">{{ bf5_res.FLARE_STACK_FLOW.toFixed(2) }}</div>
         </div>
         <div class="tr">
-          <div class="td">Flare stack pressure</div>
-          <div class="td">{{ bf5_res.FLARE_STACK_PRESSURE }}</div>
+          <div class="td">FLARE STACK PRESSURE</div>
+          <div class="td">{{ bf5_res.FLARE_STACK_PRESSURE.toFixed(2) }}</div>
         </div>
         <div class="tr">
-          <div class="td">Flare stack set point</div>
-          <div class="td">0</div>
+          <div class="td">FLARE STACK SET POINT</div>
+          <div class="td">ADD TAG</div>
         </div>
         <div class="tr">
-          <div class="td">snort position</div>
-          <div class="td">{{ bf5_res.SNORT_POSITION }}</div>
+          <div class="td">SNORT POSITION</div>
+          <div class="td">{{ bf5_res.SNORT_POSITION.toFixed(2) }}</div>
         </div>
       </div>
       <div class="box">
@@ -179,39 +181,47 @@
           </span>
         </h2>
         <div class="tr">
-          <div class="td">WRM (MIX GAS)</div>
-          <div class="td">Value 1</div>
+          <div class="td">WRM (MIX GAS FLOW)</div>
+          <div class="td">9483</div>
         </div>
         <div class="tr">
-          <div class="td">BRM (MIX GAS)</div>
+          <div class="td">BRM (MIX GAS FLOW)</div>
           <div class="td">Value 2</div>
         </div>
         <div class="tr">
-          <div class="td">USM (MIX GAS)</div>
+          <div class="td">USM (MIX GAS FLOW)</div>
           <div class="td">Value 3</div>
-        </div>
-        <div class="tr">
-          <div class="td">CBM FLOW</div>
-          <div class="td">Value 4</div>
-        </div>
-        <div class="tr">
-          <div class="td">BOF GAS</div>
-          <div class="td">Value 4</div>
         </div>
         <div class="tr">
           <div class="td">TOTAL CONSUMPTION</div>
           <div class="td">Value 4</div>
         </div>
         <div class="tr">
-          <div class="td">MIX GAS PRESSURE</div>
+          <div class="td">WRM (MIX GAS PESSURE)</div>
           <div class="td">Value 4</div>
         </div>
         <div class="tr">
-          <div class="td">PESSURE INDIVISUAL MILL</div>
+          <div class="td">BRM (MIX GAS PESSURE)</div>
           <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">URM (MIX GAS PESSURE)</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">MIX GAS PRESSURE</div>
+          <div class="td">ADD TAG</div>
         </div>
         <div class="tr">
           <div class="td">CV</div>
+          <div class="td">Value 4</div>
+        </div>
+        <div class="tr">
+          <div class="td">CBM FLOW</div>
+          <div class="td">ADD TAG</div>
+        </div>
+        <div class="tr">
+          <div class="td">BOF GAS</div>
           <div class="td">Value 4</div>
         </div>
       </div>

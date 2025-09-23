@@ -31,21 +31,88 @@ export class OverviewComponent implements OnInit {
     FLARE_STACK_PRESSURE: 0,
     SNORT_POSITION: 0,
   };
+  previousValues: any = { ...this.bf5_res }; // store old values
 
   private ssebf5?: Subscription;
+
   constructor(private sseService: SseService) {}
+
   splitLetters(text: string): string[] {
     return text.split('').map((c) => (c === ' ' ? '\u00A0' : c));
   }
+
+  animateValue(
+    start: number,
+    end: number,
+    duration: number,
+    callback: (val: number) => void,
+    decimals: number = 0
+  ) {
+    const startTime = performance.now();
+
+    const step = (currentTime: number) => {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const value = start + (end - start) * progress;
+
+      // keep decimals
+      const formattedValue = parseFloat(value.toFixed(decimals));
+      callback(formattedValue);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
+  }
+
   ngOnInit(): void {
     this.ssebf5 = this.sseService.getBf5().subscribe((data: any) => {
       console.log('es', data);
 
-      this.bf5_res.BLAST_VOLUME = data.BLAST_VOLUME;
-      this.bf5_res.BLAST_PRESSURE = data.BLAST_PRESSURE;
-      this.bf5_res.FLARE_STACK_FLOW = data.FLARE_STACK_FLOW;
-      this.bf5_res.FLARE_STACK_PRESSURE = data.FLARE_STACK_PRESSURE;
-      this.bf5_res.SNORT_POSITION = data.SNORT_POSITION;
+      // Animate each property
+      this.animateValue(
+        this.previousValues.BLAST_VOLUME,
+        data.BLAST_VOLUME,
+        800, // ms
+        (val) => (this.bf5_res.BLAST_VOLUME = val)
+      );
+
+      this.animateValue(
+        this.previousValues.BLAST_PRESSURE,
+        data.BLAST_PRESSURE,
+        800,
+        (val) => (this.bf5_res.BLAST_PRESSURE = val),
+        2
+      );
+
+      // repeat for other props
+      this.animateValue(
+        this.previousValues.FLARE_STACK_FLOW,
+        data.FLARE_STACK_FLOW,
+        800,
+        (val) => (this.bf5_res.FLARE_STACK_FLOW = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues.FLARE_STACK_PRESSURE,
+        data.FLARE_STACK_PRESSURE,
+        800,
+        (val) => (this.bf5_res.FLARE_STACK_PRESSURE = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues.SNORT_POSITION,
+        data.SNORT_POSITION,
+        800,
+        (val) => (this.bf5_res.SNORT_POSITION = val),
+        2
+      );
+
+      // Update previous values for next round
+      this.previousValues = { ...data };
     });
   }
 }
