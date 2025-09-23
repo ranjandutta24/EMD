@@ -134,7 +134,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
 
     // mills
     this.ssemills = this.sseService.getmills().subscribe((data: any) => {
-      console.log(this.mills_res);
+      // console.log(this.mills_res);
       // console.log('es', data);
 
       // Animate each property
