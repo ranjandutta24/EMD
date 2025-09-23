@@ -14,6 +14,7 @@ import { Compressor3Component } from './compressor3/compressor3.component';
 import { Compressor4Component } from './compressor4/compressor4.component';
 import { Compressor5Component } from './compressor5/compressor5.component';
 import { Compressor6Component } from './compressor6/compressor6.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { Compressor6Component } from './compressor6/compressor6.component';
     Compressor4Component,
     Compressor5Component,
     Compressor6Component,
+    SettingsComponent,
   ],
   imports: [CommonModule, MainRoutingModule, NgApexchartsModule],
 })

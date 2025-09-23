@@ -6,6 +6,7 @@ import { AreaComponent } from './Area/area.component';
 import { ReportComponent } from './Report/compressors.component';
 import { TrendsComponent } from './Trends/trends.component';
 import { GasBalanceComponent } from './Gas_balance/gas_balance.component';
+import { SettingsComponent } from './settings/settings.component';
 // import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'gas_balance', component: GasBalanceComponent },
   { path: 'report', component: ReportComponent },
   { path: 'trends', component: TrendsComponent },
+  { path: 'settings', component: SettingsComponent },
 
   // { path: '**', component: NotFoundComponent },     // wildcard route for 404
 ];
@@ -23,4 +25,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class MainRoutingModule {}
+export class MainRoutingModule { }
