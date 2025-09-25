@@ -52,19 +52,19 @@
         </h2>
         <div class="tr">
           <div class="td">COG (1,2,3)</div>
-          <div class="td">Value 1</div>
+          <div class="td">{{ pbs2_res.COG123 }}</div>
         </div>
         <div class="tr">
           <div class="td">BFG (1,2,3)</div>
-          <div class="td">Value 2</div>
+          <div class="td">{{ pbs2_res.BFG123 }}</div>
         </div>
         <div class="tr">
           <div class="td">CBM GAS(1,2,3)</div>
-          <div class="td">Value 3</div>
+          <div class="td">{{ pbs2_res.CBM_GAS123 }}</div>
         </div>
         <div class="tr">
           <div class="td">BOF GAS TOTAL</div>
-          <div class="td">Value 4</div>
+          <div class="td">{{ pbs2_res.BOF_GAS_TOTAL }}</div>
         </div>
       </div>
       <div class="box">
@@ -78,27 +78,27 @@
         </h2>
         <div class="tr">
           <div class="td">STOVE 1 BF GAS</div>
-          <div class="td">Value 1</div>
+          <div class="td">{{ stove_res.STOVE_1_BF_GAS }}</div>
         </div>
         <div class="tr">
           <div class="td">STOVE 2 BF GAS</div>
-          <div class="td">Value 2</div>
+          <div class="td">{{ stove_res.STOVE_2_BF_GAS }}</div>
         </div>
         <div class="tr">
           <div class="td">STOVE 3 BF GAS</div>
-          <div class="td">Value 3</div>
+          <div class="td">{{ stove_res.STOVE_3_BF_GAS }}</div>
         </div>
         <div class="tr">
           <div class="td">STOVE 4 BF GAS</div>
-          <div class="td">Value 4</div>
+          <div class="td">{{ stove_res.STOVE_4_BF_GAS }}</div>
         </div>
         <div class="tr">
           <div class="td">CO GAS CONSUMPTION</div>
-          <div class="td">Value 4</div>
+          <div class="td">{{ stove_res.CO_GAS_CONSUMPTION }}</div>
         </div>
         <div class="tr">
           <div class="td">CDI COG CONSUMPTION</div>
-          <div class="td">Value 4</div>
+          <div class="td">ADD TAG</div>
         </div>
       </div>
     </div>
@@ -106,39 +106,35 @@
       <div class="box">
         <h2 class="overview_header">
           <span
-            *ngFor="let letter of splitLetters(cob11); let i = index"
+            *ngFor="let letter of splitLetters(bof_holder); let i = index"
             [style.animation-delay]="i * 0.2 + 's'"
           >
             {{ letter }}
           </span>
         </h2>
         <div class="tr">
-          <div class="td">MAKE</div>
+          <div class="td">HOLDER HEIGHT</div>
           <div class="td">Value 1</div>
         </div>
         <div class="tr">
-          <div class="td">PRESSURE</div>
+          <div class="td">GAS HLD PRESSURE</div>
           <div class="td">Value 2</div>
         </div>
         <div class="tr">
-          <div class="td">FLARE FLOW</div>
+          <div class="td">EXPORTED PBS#2</div>
           <div class="td">Value 3</div>
         </div>
         <div class="tr">
-          <div class="td">FLARE PRESSURE</div>
+          <div class="td">EXPORTED MILL'S</div>
           <div class="td">Value 4</div>
         </div>
         <div class="tr">
-          <div class="td">U/F N 1 BLOCK (COG+BFG)</div>
-          <div class="td">Value 5</div>
+          <div class="td">TOTAL EXPORTED</div>
+          <div class="td">Value 4</div>
         </div>
         <div class="tr">
-          <div class="td">U/F N 2 BLOCK (COG+BFG)</div>
-          <div class="td">Value 5</div>
-        </div>
-        <div class="tr">
-          <div class="td">flare stack set point</div>
-          <div class="td">Value 5</div>
+          <div class="td">LAST HEAT RECOVERY VOL</div>
+          <div class="td">Value 4</div>
         </div>
       </div>
       <div class="box">
@@ -230,6 +226,111 @@
       <div class="box">
         <h2 class="overview_header">
           <span
+            *ngFor="let letter of splitLetters(cob11); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
+            {{ letter }}
+          </span>
+        </h2>
+        <div class="tr">
+          <div class="td">MAKE</div>
+          <div class="td">{{ cob11_res.MAKE }}</div>
+        </div>
+        <div class="tr">
+          <div class="td">PRESSURE</div>
+          <div class="td">{{ cob11_res.PRESSURE }}</div>
+        </div>
+        <div class="tr">
+          <div class="td">FLARE FLOW</div>
+          <div class="td">{{ cob11_res.FLARE_FLOW }}</div>
+        </div>
+        <div class="tr">
+          <div class="td">FLARE PRESSURE</div>
+          <div class="td">{{ cob11_res.FLARE_PRESSURE }}</div>
+        </div>
+        <div class="tr">
+          <div class="td">U/F N 1 BLOCK COG</div>
+          <div class="td">{{ cob11_res.U_F_N_1_BLOCK_COG }}</div>
+        </div>
+        <div class="tr">
+          <div class="td">U/F N 1 BLOCK BFG</div>
+          <div class="td">{{ cob11_res.U_F_N_1_BLOCK_BFG }}</div>
+        </div>
+        <div class="tr">
+          <div class="td">U/F N 2 BLOCK COG</div>
+          <div class="td">{{ cob11_res.U_F_N_2_BLOCK_COG }}</div>
+        </div>
+        <div class="tr">
+          <div class="td">U/F N 2 BLOCK BFG</div>
+          <div class="td">{{ cob11_res.U_F_N_2_BLOCK_BFG }}</div>
+        </div>
+        <div class="tr">
+          <div class="td">FLARE STACK SET POINT</div>
+          <div class="td">{{ cob11_res.FLARE_STACK_SET_POINT }}</div>
+        </div>
+      </div>
+
+      <div class="box">
+        <h2 class="overview_header">
+          <span
+            *ngFor="let letter of splitLetters(ldcp); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
+            {{ letter }}
+          </span>
+        </h2>
+        <div class="tr">
+          <div class="td">K 1 FLOW</div>
+          <div class="td">{{ ldcp_res.K_1_FLOW }}</div>
+        </div>
+        <div class="tr">
+          <div class="td">K 2 FLOW</div>
+          <div class="td">{{ ldcp_res.K_2_FLOW }}</div>
+        </div>
+        <div class="tr">
+          <div class="td">K 3 FLOW</div>
+          <div class="td">{{ ldcp_res.K_3_FLOW }}</div>
+        </div>
+        <div class="tr">
+          <div class="td">K 4 FLOW</div>
+          <div class="td">{{ ldcp_res.K_4_FLOW }}</div>
+        </div>
+        <div class="tr">
+          <div class="td">INLET PRESSURE</div>
+          <div class="td">{{ ldcp_res.INLET_PRESSURE }}</div>
+        </div>
+        <div class="tr">
+          <div class="td">TOTAL CONSUMPTION</div>
+          <div class="td">{{ ldcp_res.TOTAL_CONSUMPTION }}</div>
+        </div>
+      </div>
+      <div class="box">
+        <h2 class="overview_header">
+          <span
+            *ngFor="let letter of splitLetters(fale_stack_cog); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
+            {{ letter }}
+          </span>
+        </h2>
+        <div class="tr">
+          <div class="td">FALE STACK (COG) FLOW</div>
+          <div class="td">Value 1</div>
+        </div>
+        <div class="tr">
+          <div class="td">PRESSURE</div>
+          <div class="td">Value 2</div>
+        </div>
+        <div class="tr">
+          <div class="td">SET POINT (COG)</div>
+          <div class="td">Value 3</div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="box">
+        <h2 class="overview_header">
+          <span
             *ngFor="let letter of splitLetters(cob10); let i = index"
             [style.animation-delay]="i * 0.2 + 's'"
           >
@@ -262,98 +363,6 @@
         </div>
         <div class="tr">
           <div class="td">FLARE STACK SET POINT</div>
-          <div class="td">Value 4</div>
-        </div>
-      </div>
-      <div class="box">
-        <h2 class="overview_header">
-          <span
-            *ngFor="let letter of splitLetters(ldcp); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'"
-          >
-            {{ letter }}
-          </span>
-        </h2>
-        <div class="tr">
-          <div class="td">K 1 FLOW</div>
-          <div class="td">Value 1</div>
-        </div>
-        <div class="tr">
-          <div class="td">K 2 FLOW</div>
-          <div class="td">Value 2</div>
-        </div>
-        <div class="tr">
-          <div class="td">K 3 FLOW</div>
-          <div class="td">Value 3</div>
-        </div>
-        <div class="tr">
-          <div class="td">K 4 FLOW</div>
-          <div class="td">Value 4</div>
-        </div>
-        <div class="tr">
-          <div class="td">INLET PRESSURE</div>
-          <div class="td">Value 4</div>
-        </div>
-        <div class="tr">
-          <div class="td">TOTAL CONSUMPTION</div>
-          <div class="td">Value 4</div>
-        </div>
-      </div>
-      <div class="box">
-        <h2 class="overview_header">
-          <span
-            *ngFor="let letter of splitLetters(fale_stack_cog); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'"
-          >
-            {{ letter }}
-          </span>
-        </h2>
-        <div class="tr">
-          <div class="td">FALE STACK (COG) FLOW</div>
-          <div class="td">Value 1</div>
-        </div>
-        <div class="tr">
-          <div class="td">PRESSURE</div>
-          <div class="td">Value 2</div>
-        </div>
-        <div class="tr">
-          <div class="td">SET POINT (COG)</div>
-          <div class="td">Value 3</div>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="box">
-        <h2 class="overview_header">
-          <span
-            *ngFor="let letter of splitLetters(bof_holder); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'"
-          >
-            {{ letter }}
-          </span>
-        </h2>
-        <div class="tr">
-          <div class="td">HOLDER HEIGHT</div>
-          <div class="td">Value 1</div>
-        </div>
-        <div class="tr">
-          <div class="td">GAS HLD PRESSURE</div>
-          <div class="td">Value 2</div>
-        </div>
-        <div class="tr">
-          <div class="td">EXPORTED PBS#2</div>
-          <div class="td">Value 3</div>
-        </div>
-        <div class="tr">
-          <div class="td">EXPORTED MILL'S</div>
-          <div class="td">Value 4</div>
-        </div>
-        <div class="tr">
-          <div class="td">TOTAL EXPORTED</div>
-          <div class="td">Value 4</div>
-        </div>
-        <div class="tr">
-          <div class="td">LAST HEAT RECOVERY VOL</div>
           <div class="td">Value 4</div>
         </div>
       </div>

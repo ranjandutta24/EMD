@@ -1,30 +1,31 @@
 /* Page layout */
 .container {
     background: linear-gradient(180deg, #041124 0%, #071428 60%);
+    height: calc(100vh - 64px); ;
 
 }
 
-body {
-    height: 100%;
-    margin: 0;
-    background: linear-gradient(180deg, #041124 0%, #071428 60%);
-    color: var(--text);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 36px;
-}
+// body {
+//     height: 100%;
+//     margin: 0;
+//     background: linear-gradient(180deg, #041124 0%, #071428 60%);
+//     color: var(--text);
+//     -webkit-font-smoothing: antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     padding: 36px;
+// }
 
 .card {
     width: 100%;
-    max-width: 920px;
+    // max-width: 920px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
     border-radius: var(--radius);
-    padding: 20px;
+    // padding: 20px;
     box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    // border: 1px solid rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(6px);
 }
 

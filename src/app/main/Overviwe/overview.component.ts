@@ -53,13 +53,46 @@ export class OverviewComponent implements OnInit, OnDestroy {
     CDI_COG_CONSUMPTION: 0,
   };
 
+  pbs2_res = {
+    COG123: 0,
+    BFG123: 0,
+    CBM_GAS123: 0,
+    BOF_GAS_TOTAL: 0,
+  };
+
+  ldcp_res = {
+    K_1_FLOW: 0,
+    K_2_FLOW: 0,
+    K_3_FLOW: 0,
+    K_4_FLOW: 0,
+    INLET_PRESSURE: 0,
+    TOTAL_CONSUMPTION: 0,
+  };
+  cob11_res = {
+    MAKE: 0,
+    PRESSURE: 0,
+    FLARE_FLOW: 0,
+    FLARE_PRESSURE: 0,
+    U_F_N_1_BLOCK_COG: 0,
+    U_F_N_1_BLOCK_BFG: 0,
+    U_F_N_2_BLOCK_COG: 0,
+    U_F_N_2_BLOCK_BFG: 0,
+    FLARE_STACK_SET_POINT: 0,
+  };
+
   previousValues_bf5: any = { ...this.bf5_res }; // store old values
   previousValues_mills: any = { ...this.mills_res };
   previousValues_stove: any = { ...this.stove_res };
+  previousValues_pbs2: any = { ...this.pbs2_res };
+  previousValues_ldcp: any = { ...this.ldcp_res };
+  previousValues_cob11: any = { ...this.cob11_res };
 
   private ssebf5?: Subscription;
   private ssemills?: Subscription;
   private ssestove?: Subscription;
+  private ssespbs2?: Subscription;
+  private ssesldcp?: Subscription;
+  private ssescob11?: Subscription;
 
   constructor(private sseService: SseService) {}
 
@@ -243,14 +276,14 @@ export class OverviewComponent implements OnInit, OnDestroy {
 
     this.ssestove = this.sseService.getstove().subscribe((data: any) => {
       // console.log('es', data);
-      console.log(this.stove_res);
 
       // Animate each property
       this.animateValue(
         this.previousValues_stove.STOVE_1_BF_GAS,
         data.STOVE_1_BF_GAS,
         800, // ms
-        (val) => (this.stove_res.STOVE_1_BF_GAS = val)
+        (val) => (this.stove_res.STOVE_1_BF_GAS = val),
+        2
       );
 
       this.animateValue(
@@ -297,6 +330,167 @@ export class OverviewComponent implements OnInit, OnDestroy {
       // Update previous values for next round
       this.previousValues_stove = { ...data };
     });
+    this.ssespbs2 = this.sseService.getpbs2().subscribe((data: any) => {
+      // Animate each property
+      this.animateValue(
+        this.previousValues_pbs2.COG123,
+        data.COG123,
+        800, // ms
+        (val) => (this.pbs2_res.COG123 = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues_pbs2.BFG123,
+        data.BFG123,
+        800,
+        (val) => (this.pbs2_res.BFG123 = val),
+        2
+      );
+
+      // repeat for other props
+      this.animateValue(
+        this.previousValues_pbs2.CBM_GAS123,
+        data.CBM_GAS123,
+        800,
+        (val) => (this.pbs2_res.CBM_GAS123 = val),
+        2
+      );
+      this.animateValue(
+        this.previousValues_pbs2.BOF_GAS_TOTAL,
+        data.BOF_GAS_TOTAL,
+        800,
+        (val) => (this.pbs2_res.BOF_GAS_TOTAL = val),
+        2
+      );
+
+      // Update previous values for next round
+      this.previousValues_pbs2 = { ...data };
+    });
+
+    this.ssescob11 = this.sseService.getcob11().subscribe((data: any) => {
+      // Animate each property
+      this.animateValue(
+        this.previousValues_cob11.MAKE,
+        data.MAKE,
+        800, // ms
+        (val) => (this.cob11_res.MAKE = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues_cob11.PRESSURE,
+        data.PRESSURE,
+        800,
+        (val) => (this.cob11_res.PRESSURE = val),
+        2
+      );
+
+      // repeat for other props
+      this.animateValue(
+        this.previousValues_cob11.FLARE_FLOW,
+        data.FLARE_FLOW,
+        800,
+        (val) => (this.cob11_res.FLARE_FLOW = val),
+        2
+      );
+      this.animateValue(
+        this.previousValues_cob11.FLARE_PRESSURE,
+        data.FLARE_PRESSURE,
+        800,
+        (val) => (this.cob11_res.FLARE_PRESSURE = val),
+        2
+      );
+      this.animateValue(
+        this.previousValues_cob11.U_F_N_1_BLOCK_COG,
+        data.U_F_N_1_BLOCK_COG,
+        800,
+        (val) => (this.cob11_res.U_F_N_1_BLOCK_COG = val),
+        2
+      );
+      this.animateValue(
+        this.previousValues_cob11.U_F_N_1_BLOCK_BFG,
+        data.U_F_N_1_BLOCK_BFG,
+        800,
+        (val) => (this.cob11_res.U_F_N_1_BLOCK_BFG = val),
+        2
+      );
+      this.animateValue(
+        this.previousValues_cob11.U_F_N_2_BLOCK_COG,
+        data.U_F_N_2_BLOCK_COG,
+        800,
+        (val) => (this.cob11_res.U_F_N_2_BLOCK_COG = val),
+        2
+      );
+      this.animateValue(
+        this.previousValues_cob11.U_F_N_2_BLOCK_BFG,
+        data.U_F_N_2_BLOCK_BFG,
+        800,
+        (val) => (this.cob11_res.U_F_N_2_BLOCK_BFG = val),
+        2
+      );
+      this.animateValue(
+        this.previousValues_cob11.FLARE_STACK_SET_POINT,
+        data.FLARE_STACK_SET_POINT,
+        800,
+        (val) => (this.cob11_res.FLARE_STACK_SET_POINT = val),
+        2
+      );
+
+      // Update previous values for next round
+      this.previousValues_cob11 = { ...data };
+    });
+    this.ssesldcp = this.sseService.getsldcp().subscribe((data: any) => {
+      // Animate each property
+      this.animateValue(
+        this.previousValues_ldcp.K_1_FLOW,
+        data.K_1_FLOW,
+        800, // ms
+        (val) => (this.ldcp_res.K_1_FLOW = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues_ldcp.K_2_FLOW,
+        data.K_2_FLOW,
+        800,
+        (val) => (this.ldcp_res.K_2_FLOW = val),
+        2
+      );
+
+      // repeat for other props
+      this.animateValue(
+        this.previousValues_ldcp.K_3_FLOW,
+        data.K_3_FLOW,
+        800,
+        (val) => (this.ldcp_res.K_3_FLOW = val),
+        2
+      );
+      this.animateValue(
+        this.previousValues_ldcp.K_4_FLOW,
+        data.K_4_FLOW,
+        800,
+        (val) => (this.ldcp_res.K_4_FLOW = val),
+        2
+      );
+      this.animateValue(
+        this.previousValues_ldcp.INLET_PRESSURE,
+        data.INLET_PRESSURE,
+        800,
+        (val) => (this.ldcp_res.INLET_PRESSURE = val),
+        2
+      );
+      this.animateValue(
+        this.previousValues_ldcp.TOTAL_CONSUMPTION,
+        data.TOTAL_CONSUMPTION,
+        800,
+        (val) => (this.ldcp_res.TOTAL_CONSUMPTION = val),
+        2
+      );
+
+      // Update previous values for next round
+      this.previousValues_ldcp = { ...data };
+    });
   }
 
   ngOnDestroy(): void {
@@ -306,6 +500,18 @@ export class OverviewComponent implements OnInit, OnDestroy {
     }
     if (this.ssemills) {
       this.ssemills.unsubscribe();
+    }
+    if (this.ssestove) {
+      this.ssestove.unsubscribe();
+    }
+    if (this.ssespbs2) {
+      this.ssespbs2.unsubscribe();
+    }
+    if (this.ssesldcp) {
+      this.ssesldcp.unsubscribe();
+    }
+    if (this.ssescob11) {
+      this.ssescob11.unsubscribe();
     }
   }
 }
