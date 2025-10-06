@@ -10,182 +10,155 @@ import { SseService } from 'src/app/service/sse.servece';
 export class GasBalanceComponent implements OnInit {
   nodes: any = [
     {
-      name: 'Sundar Pichai',
-      cssClass: 'ngx-org-ceo',
+      name: 'COB#11',
+      cssClass: 'ngx-org-head',
       image: '',
-      title: 'Chief Executive Officer',
+      title: 'title',
       childs: [
         {
-          name: 'Thomas Kurian',
-          cssClass: 'ngx-org-ceo',
-          image: 'assets/node.svg',
-          title: 'CEO, Google Cloud',
-        },
-        {
-          name: 'Susan Wojcicki',
-          cssClass: 'ngx-org-ceo',
-          image: 'assets/node.svg',
-          title: 'CEO, YouTube',
+          name: 'MAKE',
+          cssClass: 'ngx-org-body',
+          // image: 'assets/node.svg',
+          title: '(NM3/HR)',
           childs: [
             {
-              name: 'Beau Avril',
-              cssClass: 'ngx-org-head',
-              image: 'assets/node.svg',
-              title: 'Global Head of Business Operations',
-              childs: []
-            },
-            {
-              name: 'Tara Walpert Levy',
-              cssClass: 'ngx-org-vp',
-              image: 'assets/node.svg',
-              title: 'VP, Agency and Brand Solutions',
-              childs: []
-            },
-            {
-              name: 'Ariel Bardin',
-              cssClass: 'ngx-org-vp',
-              image: 'assets/node.svg',
-              title: 'VP, Product Management',
-              childs: []
-            }
-          ]
-        },
-        {
-          name: 'Jeff Dean',
-          cssClass: 'ngx-org-head',
-          image: 'assets/node.svg',
-          title: 'Head of Artificial Intelligence',
-          childs: [
-            {
-              name: 'David Feinberg',
-              cssClass: 'ngx-org-ceo',
-              image: 'assets/node.svg',
-              title: 'CEO, Google Health',
-              childs: []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      name: 'Sundar Pichai',
-      cssClass: 'ngx-org-ceo',
-      image: 'assets/node.svg',
-      title: 'Chief Executive Officer',
-      childs: [
-        {
-          name: 'Thomas Kurian',
-          cssClass: 'ngx-org-ceo',
-          image: 'assets/node.svg',
-          title: 'CEO, Google Cloud',
-        },
-        {
-          name: 'Susan Wojcicki',
-          cssClass: 'ngx-org-ceo',
-          image: 'assets/node.svg',
-          title: 'CEO, YouTube',
-          childs: [
-            {
-              name: 'Beau Avril',
-              cssClass: 'ngx-org-head',
-              image: 'assets/node.svg',
-              title: 'Global Head of Business Operations',
-              childs: []
-            },
-            {
-              name: 'Tara Walpert Levy',
-              cssClass: 'ngx-org-vp',
-              image: 'assets/node.svg',
-              title: 'VP, Agency and Brand Solutions',
-              childs: []
-            },
-            {
-              name: 'Ariel Bardin',
-              cssClass: 'ngx-org-vp',
-              image: 'assets/node.svg',
-              title: 'VP, Product Management',
-              childs: []
-            }
-          ]
-        },
-        {
-          name: 'Jeff Dean',
-          cssClass: 'ngx-org-head',
-          image: 'assets/node.svg',
-          title: 'Head of Artificial Intelligence',
-          childs: [
-            {
-              name: 'David Feinberg',
-              cssClass: 'ngx-org-ceo',
-              image: 'assets/node.svg',
-              title: 'CEO, Google Health',
-              childs: []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      name: 'Sundar Pichai',
-      cssClass: 'ngx-org-ceo',
-      image: 'assets/node.svg',
-      title: 'Chief Executive Officer',
-      childs: [
-        {
-          name: 'Thomas Kurian',
-          cssClass: 'ngx-org-ceo',
-          image: 'assets/node.svg',
-          title: 'CEO, Google Cloud',
-        },
-        {
-          name: 'Susan Wojcicki',
-          cssClass: 'ngx-org-ceo',
-          image: 'assets/node.svg',
-          title: 'CEO, YouTube',
-          childs: [
-            {
-              name: 'Beau Avril',
-              cssClass: 'ngx-org-head',
-              image: 'assets/node.svg',
-              title: 'Global Head of Business Operations',
-              childs: []
-            },
-            {
-              name: 'Tara Walpert Levy',
-              cssClass: 'ngx-org-vp',
-              image: 'assets/node.svg',
-              title: 'VP, Agency and Brand Solutions',
-              childs: []
-            },
-            {
-              name: 'Ariel Bardin',
-              cssClass: 'ngx-org-vp',
-              image: 'assets/node.svg',
-              title: 'VP, Product Management',
-              childs: []
-            }
-          ]
-        },
-        {
-          name: 'Jeff Dean',
-          cssClass: 'ngx-org-head',
-          image: 'assets/node.svg',
-          title: 'Head of Artificial Intelligence',
-          childs: [
-            {
-              name: 'David Feinberg',
-              cssClass: 'ngx-org-ceo',
-              image: 'assets/node.svg',
-              title: 'CEO, Google Health',
-              childs: []
-            }
-          ]
-        }
-      ]
-    }
-  ];
-  constructor(private sseService: SseService) { }
-  ngOnInit(): void {
+              name: 'U/F (TOTAL)',
+              cssClass: 'ngx-org-body',
 
-  }
+              title: 'title',
+              childs: [
+                {
+                  name: 'N1',
+                  cssClass: 'ngx-org-body',
+
+                  title: 'title',
+                },
+                {
+                  name: 'N2',
+                  cssClass: 'ngx-org-body',
+
+                  title: 'title',
+                },
+              ],
+            },
+            {
+              name: 'Sinter',
+              cssClass: 'ngx-org-body',
+
+              title: 'title',
+              childs: [
+                {
+                  name: 'SP1',
+                  cssClass: 'ngx-org-body',
+
+                  title: 'title',
+                },
+                {
+                  name: 'SP2',
+                  cssClass: 'ngx-org-body',
+
+                  title: 'title',
+                },
+              ],
+            },
+            {
+              name: 'MILLS',
+              cssClass: 'ngx-org-body',
+
+              title: 'title',
+              childs: [],
+            },
+            {
+              name: 'MISC',
+              cssClass: 'ngx-org-body',
+
+              title: 'title',
+              childs: [],
+            },
+            {
+              name: 'BF#5',
+              cssClass: 'ngx-org-body',
+
+              title: 'title',
+              childs: [],
+            },
+            {
+              name: 'BOF & CCP',
+              cssClass: 'ngx-org-body',
+
+              title: 'title',
+              childs: [],
+            },
+            {
+              name: 'LDCP',
+              cssClass: 'ngx-org-body',
+
+              title: 'title',
+              childs: [
+                {
+                  name: 'KILN 1',
+                  cssClass: 'ngx-org-body',
+
+                  title: 'title',
+                },
+                {
+                  name: 'KILN 2',
+                  cssClass: 'ngx-org-body',
+
+                  title: 'title',
+                },
+                {
+                  name: 'KILN 3',
+                  cssClass: 'ngx-org-body',
+
+                  title: 'title',
+                },
+                {
+                  name: 'KILN 4',
+                  cssClass: 'ngx-org-body',
+
+                  title: 'title',
+                },
+              ],
+            },
+            {
+              name: 'PBS#2',
+              cssClass: 'ngx-org-body',
+
+              title: 'title',
+              childs: [
+                {
+                  name: 'BOILER1',
+                  cssClass: 'ngx-org-body',
+
+                  title: 'title',
+                },
+                {
+                  name: 'BOILER2',
+                  cssClass: 'ngx-org-body',
+
+                  title: 'title',
+                },
+                {
+                  name: 'BOILER3',
+                  cssClass: 'ngx-org-body',
+
+                  title: 'title',
+                },
+              ],
+            },
+          ],
+        },
+
+        {
+          name: 'PRESSURE',
+          cssClass: 'ngx-org-body',
+          // image: 'assets/node.svg',
+          title: '(mmwc)',
+        },
+      ],
+    },
+  ];
+  constructor(private sseService: SseService) {}
+  ngOnInit(): void {}
 }

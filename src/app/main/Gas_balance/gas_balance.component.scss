@@ -3,3 +3,62 @@
   color: #003049;
   font-weight: 600;
 }
+.ngx-org-body{
+  background-color: #e73e3e;
+}
+
+.container{
+  // width: min( 98%);
+  height: calc(100vh - 84px); ;
+  background-color:var(--overview_bg);
+  padding: 10px;
+  
+}
+
+/* Adjust vertical spacing for this specific node */
+.line-long {
+  margin-top: 60px !important; /* pushes the node down */
+}
+
+/* Optional: adjust the connecting line */
+.line-long::before {
+  height: 80px !important; /* increases connector line length */
+}
+
+::ng-deep .line-long .ngx-org-node::before {
+  height: 80px !important;
+}
+/* In your component's CSS file */
+:host ::ng-deep .ngx-org-head {
+  background: rgba(46, 204, 113, 0.3);
+  border: 2px solid rgba(46, 204, 113, 0.6);
+  color: rgb(255, 255, 255) !important;
+  
+  padding: 20px;
+  width: 150px;
+  /* Add your custom styles here */
+}
+
+:host ::ng-deep .ngx-org-body {
+  padding: 10px;
+  color: rgb(0, 0, 0) !important;
+  background: rgba(52, 152, 219, 0.3);
+  border: 2px solid rgba(52, 152, 219, 0.6);
+  
+  padding: 10px !important;
+  border-radius: 4px !important;
+ 
+}
+
+
+
+/* Remove the debug border */
+// :host ::ng-deep * {
+//   border: none !important;
+// }
+
+// :host ::ng-deep .ngx-org-border {
+//   border: 1px solid #14851eda !important; /* Adjust border color and width */
+//   /* Add your custom styles here */
+// }
+
