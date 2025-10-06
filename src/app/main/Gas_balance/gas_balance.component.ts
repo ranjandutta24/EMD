@@ -23,44 +23,84 @@ export class GasBalanceComponent implements OnInit {
           childs: [
             {
               name: 'U/F (TOTAL)',
-              cssClass: 'ngx-org-body',
+              cssClass: 'ngx-org-body_uf',
 
               title: 'title',
               childs: [
                 {
                   name: 'N1',
-                  cssClass: 'ngx-org-body',
+                  cssClass: 'ngx-org-body_uf',
 
                   title: 'title',
                 },
                 {
                   name: 'N2',
-                  cssClass: 'ngx-org-body',
+                  cssClass: 'ngx-org-body_uf',
 
                   title: 'title',
                 },
               ],
             },
             {
-              name: 'Sinter',
-              cssClass: 'ngx-org-body',
+              name: 'PBS#2',
+              cssClass: 'ngx-org-body_pbs',
 
               title: 'title',
               childs: [
                 {
-                  name: 'SP1',
-                  cssClass: 'ngx-org-body',
+                  name: 'BOILER1',
+                  cssClass: 'ngx-org-body_pbs',
 
                   title: 'title',
                 },
                 {
-                  name: 'SP2',
-                  cssClass: 'ngx-org-body',
+                  name: 'BOILER2',
+                  cssClass: 'ngx-org-body_pbs',
+
+                  title: 'title',
+                },
+                {
+                  name: 'BOILER3',
+                  cssClass: 'ngx-org-body_pbs',
 
                   title: 'title',
                 },
               ],
             },
+
+            {
+              name: 'LDCP',
+              cssClass: 'ngx-org-body_ldcp',
+
+              title: 'title',
+              childs: [
+                {
+                  name: 'KILN 1',
+                  cssClass: 'ngx-org-body_ldcp',
+
+                  title: 'title',
+                },
+                {
+                  name: 'KILN 2',
+                  cssClass: 'ngx-org-body_ldcp',
+
+                  title: 'title',
+                },
+                {
+                  name: 'KILN 3',
+                  cssClass: 'ngx-org-body_ldcp',
+
+                  title: 'title',
+                },
+                {
+                  name: 'KILN 4',
+                  cssClass: 'ngx-org-body_ldcp',
+
+                  title: 'title',
+                },
+              ],
+            },
+
             {
               name: 'MILLS',
               cssClass: 'ngx-org-body',
@@ -90,58 +130,20 @@ export class GasBalanceComponent implements OnInit {
               childs: [],
             },
             {
-              name: 'LDCP',
-              cssClass: 'ngx-org-body',
+              name: 'Sinter',
+              cssClass: 'ngx-org-body_sp',
 
               title: 'title',
               childs: [
                 {
-                  name: 'KILN 1',
-                  cssClass: 'ngx-org-body',
+                  name: 'SP1',
+                  cssClass: 'ngx-org-body_sp',
 
                   title: 'title',
                 },
                 {
-                  name: 'KILN 2',
-                  cssClass: 'ngx-org-body',
-
-                  title: 'title',
-                },
-                {
-                  name: 'KILN 3',
-                  cssClass: 'ngx-org-body',
-
-                  title: 'title',
-                },
-                {
-                  name: 'KILN 4',
-                  cssClass: 'ngx-org-body',
-
-                  title: 'title',
-                },
-              ],
-            },
-            {
-              name: 'PBS#2',
-              cssClass: 'ngx-org-body',
-
-              title: 'title',
-              childs: [
-                {
-                  name: 'BOILER1',
-                  cssClass: 'ngx-org-body',
-
-                  title: 'title',
-                },
-                {
-                  name: 'BOILER2',
-                  cssClass: 'ngx-org-body',
-
-                  title: 'title',
-                },
-                {
-                  name: 'BOILER3',
-                  cssClass: 'ngx-org-body',
+                  name: 'SP2',
+                  cssClass: 'ngx-org-body_sp',
 
                   title: 'title',
                 },

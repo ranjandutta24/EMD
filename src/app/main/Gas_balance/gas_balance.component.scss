@@ -14,6 +14,9 @@
   padding: 10px;
   
 }
+.tree{
+  padding-top: 20px;
+}
 
 /* Adjust vertical spacing for this specific node */
 .line-long {
@@ -32,23 +35,110 @@
 :host ::ng-deep .ngx-org-head {
   background: rgba(46, 204, 113, 0.3);
   border: 2px solid rgba(46, 204, 113, 0.6);
-  color: rgb(255, 255, 255) !important;
+  display: flex;
+  justify-content: center;
+
+  color: var(--tree_text);
+    // margin-bottom: 50px; !important;
   
-  padding: 20px;
-  width: 150px;
+  padding: 15px;
+  width: 100px;
   /* Add your custom styles here */
 }
 
+
 :host ::ng-deep .ngx-org-body {
   padding: 10px;
-  color: rgb(0, 0, 0) !important;
+  color: var(--tree_text);
   background: rgba(52, 152, 219, 0.3);
   border: 2px solid rgba(52, 152, 219, 0.6);
-  
-  padding: 10px !important;
-  border-radius: 4px !important;
- 
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
+
+:host ::ng-deep .ngx-org-body:hover {
+  background: rgba(52, 152, 219, 0.6);
+  border: 2px solid rgba(52, 152, 219, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+
+
+:host ::ng-deep .ngx-org-body_sp {
+  padding: 10px;
+  color: var(--tree_text);
+  background: rgba(219, 77, 52, 0.3);
+  border: 2px solid rgba(219, 63, 52, 0.6);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+:host ::ng-deep .ngx-org-body_sp:hover {
+  background: rgba(219, 77, 52, 0.6);
+  border: 2px solid rgba(219, 63, 52, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(219, 77, 52, 0.3);
+}
+
+
+
+
+:host ::ng-deep .ngx-org-body_ldcp {
+  padding: 10px;
+  color: var(--tree_text);
+  background: rgba(169, 219, 52, 0.3);
+  border: 2px solid rgba(119, 219, 52, 0.6);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+:host ::ng-deep .ngx-org-body_ldcp:hover {
+  background: rgba(169, 219, 52, 0.6);
+  border: 2px solid rgba(119, 219, 52, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px  rgba(169, 219, 52, 0.3);
+}
+
+
+
+
+:host ::ng-deep .ngx-org-body_pbs {
+  padding: 10px;
+  color: var(--tree_text);
+  background: rgba(219, 133, 52, 0.3);
+  border: 2px solid rgba(219, 141, 52, 0.6);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+:host ::ng-deep .ngx-org-body_pbs:hover {
+  background: rgba(219, 133, 52, 0.6);
+  border: 2px solid rgba(219, 141, 52, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px  rgba(219, 133, 52, 0.3);
+}
+
+
+
+
+:host ::ng-deep .ngx-org-body_uf {
+  padding: 10px;
+  color: var(--tree_text);
+  background: rgba(219, 216, 52, 0.3);
+  border: 2px solid rgba(216, 219, 52, 0.6);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+:host ::ng-deep .ngx-org-body_uf:hover {
+  background: rgba(219, 216, 52, 0.6);
+  border: 2px solid rgba(216, 219, 52, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(219, 216, 52, 0.3);
+}
+
+
 
 
 
