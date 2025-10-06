@@ -20,8 +20,8 @@ export class OverviewComponent implements OnInit, OnDestroy {
   agbs_cgbs = 'AGBS/CGBS';
   stove = 'STOVE';
   mills = "MILL'S";
-  fale_stack_cog = 'FALE STACK (COG)';
-  fale_stack_bfg = 'FALE STACK (BFG)';
+  fale_stack_cog = 'FLARE STACK (COG)';
+  fale_stack_bfg = 'FLARE STACK (BFG)';
   micellanous = 'MICELLANEOUS';
 
   bf5_res = {
@@ -94,7 +94,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
   private ssesldcp?: Subscription;
   private ssescob11?: Subscription;
 
-  constructor(private sseService: SseService) {}
+  constructor(private sseService: SseService) { }
 
   splitLetters(text: string): string[] {
     return text.split('').map((c) => (c === ' ' ? '\u00A0' : c));

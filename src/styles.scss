@@ -1,52 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~ngx-org-chart/_theming.scss';
 :root {
+  /* Primary structure */
+  --primary: #0078d7; /* modern blue for buttons, highlights */
+  --accent: #00b8a9; /* teal accent */
+  --header_active: #c23ed3; /* teal accent */
+  --header_inactive: #ffffff; 
+  --footer_text: #b0bec5;
+  --accent-2: #4b6cb7; /* secondary gradient blue */
+  --background: #1e3a5f; /* soft light background */
+  --background_transparent: #ffffffcc;
+  --text: #1a1a1a; /* dark readable text */
+  --muted: #5f6c7b; /* for secondary text or labels */
 
-  --bg: #0f172a;
-  --card: #0b1220;
-  --muted: #94a3b8;
-  --accent: #60a5fa;
-  --accent-2: #7c3aed;
-  --row-even: rgba(255, 255, 255, 0.02);
-  --glass: rgba(255, 255, 255, 0.03);
-  --text: #e6eef8;
-  --success: #10b981;
-  --danger: #ef4444;
-  --radius: 6px;
+  /* Cards and containers */
+  --box-bg: #ffffff; /* clean white cards */
+  --box-border: #d1e3f0; /* subtle light blue-gray borders */
+  --border: #e5edf5; /* very soft divider lines */
+  --row-even: #f3f8fd; /* alternate row tone */
+  --glass: rgba(255, 255, 255, 0.6);
 
-
-
-  --primary: #1172f0;
-  /* light mode */
-  --accent: #d770ff;
-  --background: #ffffff;
-  --background_transparent: #ffffff80;
-  --text: #444444;
-  --box-bg: #fdfdfd;
-  --box-border: #55adf9;
-  --border: #dff7fd57;
-  --overview_header_bg: #4392fa;
+  /* Overview headers */
+  --overview_header_bg: linear-gradient(90deg, #0078d7, #00b8a9);
   --overview_header: #ffffff;
-  --overview_bg: #e2e2e2;
-  --nthch: #e8f5fc;
+  --overview_bg: #eef4fb; /* background of overview panels */
+  --nthch: #e2ecf1;
 
-  --0: rgb(255, 255, 255);
-  --33: rgb(255, 175, 56);
-  --66: rgb(255, 252, 56);
-  --100: rgb(149, 245, 23);
+  /* Functional colors */
+  --success: #0fa958;
+  --danger: #e53e3e;
+  --warning: #facc15;
+  --info: #3b82f6;
 
-  --footer_shadow: #acacac;
+  /* Progress intensity mapping */
+  --0: #ffffff;
+  --33: #ffcf66;
+  --66: #7cd992;
+  --100: #36b37e;
 
-  // --tr_hover: #fff
-  --tr_hover: aquamarine
+  /* Footer + shadow */
+  --footer_shadow: #b0c4de;
+
+  /* Hover state */
+  --tr_hover: #e9f4ff;
+
+  --radius: 6px;
 }
 
+
 .dark-theme {
-  --primary: #f0f0f0;
+  --primary: #1d1d1dd0;
   /* night mode primary */
-  --accent: #c23ed3;
+  --accent: #121212;
+  --header_active: #c23ed3;
+  --header_inactive: #c6c6c6; 
   --background: #121212;
   --background_transparent: #1d1d1dd0;
+  --footer_text: #acacad;
   --text: #6ae751;
   --box-bg: #2e2e2e;
   --border: #353535;
@@ -54,7 +64,7 @@
   --overview_header_bg: #000000;
   --nthch: #3a3a3a;
   --box-border: #333333;
-  --overview_bg: #5b5b5b;
+  --overview_bg: #3d3b3b;
   --0: rgb(255, 0, 0);
   --33: rgb(236, 152, 73);
   --66: rgb(241, 238, 61);

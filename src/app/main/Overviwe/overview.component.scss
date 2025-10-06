@@ -73,6 +73,11 @@ width: 20%;
 
 
 .overview_header {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+  // letter-spacing: 0.5px;
   display: flex;
   justify-content: center;
   width: calc(100% - 10px) ;

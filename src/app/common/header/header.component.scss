@@ -28,7 +28,7 @@
 }
 li{
   margin: 5px 10px;
-  color:  var(--primary);   
+  color:  var(--header_inactive);   
   cursor: pointer;
   font-family: 'Play';
   font-size: 20px;
@@ -37,7 +37,7 @@ li{
 
 .header li.active {
   // background: #4cafef;
-  color:  var(--accent);
+  color:  var(--header_active);
   font-weight: 500;
   font-family: 'Play';
 }
