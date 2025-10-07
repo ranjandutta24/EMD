@@ -30,7 +30,7 @@ width: 20%;
   // padding: 24px;
   // min-height: 220px;
   box-shadow: 0 6px 18px rgba(8,15,30,0.06);
-  border: 2px solid  var(--box-border);
+  border: 1px solid  var(--box-border);
   
   // display: flex;
   // align-items: center;
@@ -42,6 +42,18 @@ width: 20%;
   transition: transform 180ms ease, box-shadow 180ms ease;
   color: var(--box-accent);
 }
+// .box {
+//   background: var(--box-bg);
+//   border-radius: var(--radius);
+//   backdrop-filter: blur(10px);
+//   box-shadow: none;
+//   border: 1px solid #234e70; /* deep bluish border for contrast */
+//   text-align: center;
+//   font-weight: 600;
+//   letter-spacing: 0.2px;
+//   transition: transform 180ms ease, box-shadow 180ms ease;
+//   color: var(--box-accent);
+// }
 
 
 // .box:hover{
