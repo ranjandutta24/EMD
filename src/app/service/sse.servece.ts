@@ -1,14 +1,14 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Observable } from 'rxjs';
 
-// const baseURL = 'http://10.150.6.15:4060/api/';
-const baseURL = 'http://59.97.132.209:4060/api/';
+const baseURL = 'http://10.150.6.15:4060/api/';
+// const baseURL = 'http://59.97.132.209:4060/api/';
 
 // http://localhost:4020/api/ccas/comp1
 
 @Injectable({
   providedIn: 'root',
-})  
+})
 export class SseService {
   constructor(private zone: NgZone) {}
 

@@ -5,8 +5,8 @@ import { SseService } from 'src/app/service/sse.servece';
 @Component({
   selector: 'app-ccas-live',
   templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.scss'],
-  // styleUrls: ['./test2.scss'],
+  // styleUrls: ['./overview.component.scss'],
+  styleUrls: ['./test2.scss'],
 })
 export class OverviewComponent implements OnInit, OnDestroy {
   bf = 'BF#5';

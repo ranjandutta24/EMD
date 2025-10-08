@@ -60,6 +60,82 @@
   --row-hover: rgba(0, 120, 215, 0.1);
   --value-bg: rgba(0, 184, 169, 0.1);
   --value-border: rgba(0, 184, 169, 0.2);
+
+
+
+
+
+
+
+  /* Primary Colors - Blue Spectrum */
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+  
+  /* Blue Spectrum */
+  --color-blue-300: #7dd3fc;
+  --color-blue-400: #38bdf8;
+  --color-blue-500: #0ea5e9;
+  --color-blue-600: #0284c7;
+  --color-blue-700: #0369a1;
+  --color-blue-800: #075985;
+  
+  /* Background Colors */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8fafc;
+  --color-bg-tertiary: rgba(248, 250, 252, 0.8);
+  --color-bg-hover: rgba(241, 245, 249, 0.9);
+  --color-bg-glass: rgba(255, 255, 255, 0.7);
+  
+  /* Text Colors */
+  --color-text-primary: #1e293b;
+  --color-text-secondary: #334155;
+  --color-text-tertiary: #475569;
+  --color-text-accent: #0ea5e9;
+  --color-text-muted: #64748b;
+  
+  /* Border & Shadow Colors */
+  --color-border-primary: rgba(14, 165, 233, 0.2);
+  --color-border-hover: rgba(14, 165, 233, 0.4);
+  --color-border-accent: rgba(56, 189, 248, 0.3);
+  --color-border-light: rgba(14, 165, 233, 0.1);
+  --color-border-medium: rgba(14, 165, 233, 0.3);
+  
+  /* Gradient Colors */
+  --gradient-primary: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 50%, var(--color-bg-primary) 100%);
+
+  --gradient-header: linear-gradient(135deg, #0078d7,#00b8a9 100%);
+
+
+
+  --gradient-accent: linear-gradient(to bottom, var(--color-blue-400), var(--color-blue-500));
+  --gradient-glow: linear-gradient(90deg, transparent, var(--color-blue-400), var(--color-blue-500), transparent);
+  
+  /* Shadow Colors */
+  --shadow-primary: 0 4px 24px rgba(0, 0, 0, 0.1);
+  --shadow-secondary: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.15);
+  --shadow-inset-light: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  --shadow-inset-dark: inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+  
+  /* Animation & Effect Colors */
+  --color-glow-light: rgba(14, 165, 233, 0.4);
+  --color-glow-medium: rgba(14, 165, 233, 0.5);
+  --color-glow-strong: rgba(56, 189, 248, 0.6);
+  --color-overlay-light: rgba(255, 255, 255, 0.6);
+  --color-overlay-blue: rgba(14, 165, 233, 0.1);
+  --color-overlay-odd: rgba(14, 165, 233, 0.05);
+
+
+
+  
 }
 
 
@@ -100,6 +176,74 @@
   --row-hover: rgba(194, 62, 211, 0.15);
   --value-bg: rgba(106, 231, 81, 0.1);
   --value-border: rgba(106, 231, 81, 0.3);
+
+
+
+
+
+  
+    /* Primary Colors */
+    --color-primary-50: #f0fdf4;
+    --color-primary-100: #dcfce7;
+    --color-primary-200: #bbf7d0;
+    --color-primary-300: #86efac;
+    --color-primary-400: #4ade80;
+    --color-primary-500: #22c55e;
+    --color-primary-600: #16a34a;
+    --color-primary-700: #15803d;
+    --color-primary-800: #166534;
+    --color-primary-900: #14532d;
+    
+    /* Green Spectrum (Your existing colors mapped to variables) */
+    --color-green-300: #68d391;
+    --color-green-400: #48bb78;
+    --color-green-500: #38a169;
+    --color-green-600: #2f855a;
+    --color-green-700: #276749;
+    --color-green-800: #22543d;
+    
+    /* Background Colors */
+    --color-bg-primary: #0a1f1f;
+    --color-bg-secondary: #0d2b2b;
+    --color-bg-tertiary: rgba(16, 42, 42, 0.4);
+    --color-bg-hover: rgba(16, 42, 42, 0.5);
+    --color-bg-glass: rgba(16, 42, 42, 0.4);
+    
+    /* Text Colors */
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #e8f5e8;
+    --color-text-tertiary: #c8e6c9;
+    --color-text-accent: #68d391;
+    --color-text-muted: #4a7868;
+    
+    /* Border & Shadow Colors */
+    --color-border-primary: rgba(72, 187, 120, 0.2);
+    --color-border-hover: rgba(72, 187, 120, 0.4);
+    --color-border-accent: rgba(104, 211, 145, 0.2);
+    --color-border-light: rgba(72, 187, 120, 0.1);
+    --color-border-medium: rgba(72, 187, 120, 0.3);
+    
+    /* Gradient Colors */
+    --gradient-primary: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 50%, var(--color-bg-primary) 100%);
+    --gradient-header: linear-gradient(135deg, rgba(26, 127, 100, 0.8) 0%, rgba(39, 103, 73, 0.9) 100%);
+    --gradient-accent: linear-gradient(to bottom, var(--color-green-400), var(--color-green-500));
+    --gradient-glow: linear-gradient(90deg, transparent, var(--color-green-400), var(--color-green-500), transparent);
+    
+    /* Shadow Colors */
+    --shadow-primary: 0 4px 24px rgba(0, 0, 0, 0.4);
+    --shadow-secondary: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.5);
+    --shadow-inset-light: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    --shadow-inset-dark: inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    
+    /* Animation & Effect Colors */
+    --color-glow-light: rgba(72, 187, 120, 0.5);
+    --color-glow-medium: rgba(72, 187, 120, 0.6);
+    --color-glow-strong: rgba(104, 211, 145, 0.8);
+    --color-overlay-light: rgba(255, 255, 255, 0.2);
+    --color-overlay-green: rgba(72, 187, 120, 0.15);
+    --color-overlay-odd: rgba(26, 127, 100, 0.08);
+ 
 }
 
 
