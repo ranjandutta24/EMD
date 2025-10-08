@@ -9,7 +9,7 @@ import { ReportComponent } from './Report/compressors.component';
 import { TrendsComponent } from './Trends/trends.component';
 import { SettingsComponent } from './settings/settings.component';
 import { GasBalanceComponent } from './Gas_balance/gas_balance.component'; // ✅ add your org-chart component here
-import { NgxOrgChartModule } from 'ngx-org-chart';
+// import { NgxOrgChartModule } from 'ngx-org-chart';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 @NgModule({
   declarations: [
@@ -21,11 +21,11 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     GasBalanceComponent, // ✅ include this
   ],
   imports: [
-    CommonModule,          // ✅ Correct for feature modules
+    CommonModule, // ✅ Correct for feature modules
     MainRoutingModule,
     NgApexchartsModule,
-    NgxOrgChartModule      // ✅ Correctly imported
+    // NgxOrgChartModule      // ✅ Correctly imported
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class MainModule { }
+export class MainModule {}

@@ -6,6 +6,7 @@ import { SseService } from 'src/app/service/sse.servece';
   selector: 'app-ccas-live',
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss'],
+  // styleUrls: ['./test2.scss'],
 })
 export class OverviewComponent implements OnInit, OnDestroy {
   bf = 'BF#5';
@@ -94,7 +95,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
   private ssesldcp?: Subscription;
   private ssescob11?: Subscription;
 
-  constructor(private sseService: SseService) { }
+  constructor(private sseService: SseService) {}
 
   splitLetters(text: string): string[] {
     return text.split('').map((c) => (c === ' ' ? '\u00A0' : c));

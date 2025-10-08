@@ -46,6 +46,20 @@
 
   --radius: 6px;
   --tree_text: #020202;
+
+
+
+    /* Enhanced color variables for glass morphism */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: rgba(0, 0, 0, 0.1);
+  --glass-highlight: rgba(255, 255, 255, 0.05);
+  
+  /* Additional theme variables */
+  --header-gradient: linear-gradient(135deg, var(--primary), var(--accent));
+  --row-hover: rgba(0, 120, 215, 0.1);
+  --value-bg: rgba(0, 184, 169, 0.1);
+  --value-border: rgba(0, 184, 169, 0.2);
 }
 
 
@@ -75,7 +89,37 @@
 
   // --tr_hover:rgb(79, 155, 158)
   --tr_hover: #000
+
+
+
+    --glass-bg: rgba(30, 30, 30, 0.3);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: rgba(0, 0, 0, 0.3);
+  --glass-highlight: rgba(255, 255, 255, 0.02);
+  --header-gradient: linear-gradient(135deg, var(--header_active), #c23ed3);
+  --row-hover: rgba(194, 62, 211, 0.15);
+  --value-bg: rgba(106, 231, 81, 0.1);
+  --value-border: rgba(106, 231, 81, 0.3);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @font-face {
   font-family: 'Play';
