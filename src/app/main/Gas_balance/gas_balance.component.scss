@@ -1,154 +1,54 @@
-::ng-deep ngx-org-chart .org-chart-node {
-  font-family: 'Open Sans', sans-serif;
-  color: #003049;
-  font-weight: 600;
-}
-.ngx-org-body{
-  background-color: #e73e3e;
-}
-
-.container{
-  // width: min( 98%);
-  height: calc(100vh - 84px); ;
-  background-color:var(--overview_bg);
-  padding: 10px;
-  
-}
-.tree{
-  padding-top: 20px;
+// .container {
+//   display: flex;
+//   flex-direction: row;
+//   height: calc(100vh - 84px);
+//   background: var(--gradient-primary);
+//   padding: 10px;
+//   box-sizing: border-box;
+//   overflow: hidden; /* prevents scroll */
+// }
+.container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 84px);
+  background: var(--gradient-primary);
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* Adjust vertical spacing for this specific node */
-.line-long {
-  margin-top: 60px !important; /* pushes the node down */
-}
-
-/* Optional: adjust the connecting line */
-.line-long::before {
-  height: 80px !important; /* increases connector line length */
-}
-
-::ng-deep .line-long .ngx-org-node::before {
-  height: 80px !important;
-}
-/* In your component's CSS file */
-:host ::ng-deep .ngx-org-head {
-  background: rgba(46, 204, 113, 0.3);
-  border: 2px solid rgba(46, 204, 113, 0.6);
+/* 🔘 Switch Button Row */
+.switch-buttons {
   display: flex;
   justify-content: center;
-
-  color: var(--tree_text);
-    // margin-bottom: 50px; !important;
-  
-  padding: 15px;
-  width: 100px;
-  /* Add your custom styles here */
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
-
-:host ::ng-deep .ngx-org-body {
-  padding: 10px;
-  color: var(--tree_text);
-  background: rgba(52, 152, 219, 0.3);
-  border: 2px solid rgba(52, 152, 219, 0.6);
-  border-radius: 4px;
+/* 🌈 Buttons Style */
+.switch-buttons button {
+  padding: 10px 22px;
+  font-size: 15px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(135deg, #e0e0e0, #fafafa);
+  color: #004c6d;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
 }
 
-:host ::ng-deep .ngx-org-body:hover {
-  background: rgba(52, 152, 219, 0.6);
-  border: 2px solid rgba(52, 152, 219, 0.9);
+.switch-buttons button:hover {
+  background: linear-gradient(135deg, #aee1f9, #6ec6ff);
+  color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
 }
 
-
-
-:host ::ng-deep .ngx-org-body_sp {
-  padding: 10px;
-  color: var(--tree_text);
-  background: rgba(219, 77, 52, 0.3);
-  border: 2px solid rgba(219, 63, 52, 0.6);
-  border-radius: 4px;
-  transition: all 0.3s ease;
+/* 🟢 Active Button */
+.switch-buttons button.active {
+  background: var(--button-active);
+  color: white;
+  box-shadow: 0 4px 15px rgba(30, 136, 229, 0.3);
 }
 
-:host ::ng-deep .ngx-org-body_sp:hover {
-  background: rgba(219, 77, 52, 0.6);
-  border: 2px solid rgba(219, 63, 52, 0.9);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(219, 77, 52, 0.3);
-}
-
-
-
-
-:host ::ng-deep .ngx-org-body_ldcp {
-  padding: 10px;
-  color: var(--tree_text);
-  background: rgba(169, 219, 52, 0.3);
-  border: 2px solid rgba(119, 219, 52, 0.6);
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-:host ::ng-deep .ngx-org-body_ldcp:hover {
-  background: rgba(169, 219, 52, 0.6);
-  border: 2px solid rgba(119, 219, 52, 0.9);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px  rgba(169, 219, 52, 0.3);
-}
-
-
-
-
-:host ::ng-deep .ngx-org-body_pbs {
-  padding: 10px;
-  color: var(--tree_text);
-  background: rgba(219, 133, 52, 0.3);
-  border: 2px solid rgba(219, 141, 52, 0.6);
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-:host ::ng-deep .ngx-org-body_pbs:hover {
-  background: rgba(219, 133, 52, 0.6);
-  border: 2px solid rgba(219, 141, 52, 0.9);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px  rgba(219, 133, 52, 0.3);
-}
-
-
-
-
-:host ::ng-deep .ngx-org-body_uf {
-  padding: 10px;
-  color: var(--tree_text);
-  background: rgba(219, 216, 52, 0.3);
-  border: 2px solid rgba(216, 219, 52, 0.6);
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-:host ::ng-deep .ngx-org-body_uf:hover {
-  background: rgba(219, 216, 52, 0.6);
-  border: 2px solid rgba(216, 219, 52, 0.9);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(219, 216, 52, 0.3);
-}
-
-
-
-
-
-/* Remove the debug border */
-// :host ::ng-deep * {
-//   border: none !important;
-// }
-
-// :host ::ng-deep .ngx-org-border {
-//   border: 1px solid #14851eda !important; /* Adjust border color and width */
-//   /* Add your custom styles here */
-// }
 

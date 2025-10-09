@@ -1,5 +1,35 @@
 <div class="container">
-  <div class="tree">
-    <!-- <ngx-org-chart [nodes]="nodes" direction="vertical"></ngx-org-chart> -->
+  <div class="switch-buttons">
+    <button
+      [class.active]="selectedComponent === 'cob10'"
+      (click)="switchComponent('cob10')"
+    >
+      COB#10
+    </button>
+    <button
+      [class.active]="selectedComponent === 'cob11'"
+      (click)="switchComponent('cob11')"
+    >
+      COB#11
+    </button>
+    <button
+      [class.active]="selectedComponent === 'ldcp'"
+      (click)="switchComponent('ldcp')"
+    >
+      LDCP
+    </button>
+    <button
+      [class.active]="selectedComponent === 'bf'"
+      (click)="switchComponent('bf')"
+    >
+      BF
+    </button>
+  </div>
+
+  <div class="component-view">
+    <app-cob10 *ngIf="selectedComponent === 'cob10'"></app-cob10>
+    <app-cob11 *ngIf="selectedComponent === 'cob11'"></app-cob11>
+    <app-ldcp *ngIf="selectedComponent === 'ldcp'"></app-ldcp>
+    <app-bf *ngIf="selectedComponent === 'bf'"></app-bf>
   </div>
 </div>

@@ -1,7 +1,7 @@
 .header{
   display: flex;
   flex-direction: row;
-  background-color: var(--background); ; /* semi-transparent */
+  background: var(--gradient-header-background); ; /* semi-transparent */
   padding: 10px 0;
   backdrop-filter: blur(20px);  /* ✅ blurs background behind element */
   -webkit-backdrop-filter: blur(5px); /* Safari support */
