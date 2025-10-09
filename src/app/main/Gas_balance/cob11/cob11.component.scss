@@ -1,11 +1,11 @@
-// .container {
-//   display: flex;
-//   flex-direction: row;
-//   height: calc(100vh - 84px);
-//   padding: 10px;
-//   box-sizing: border-box;
-//   overflow: hidden; /* prevents scroll */
-// }
+.container {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 84px);
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden; /* prevents scroll */
+}
 
 /* Left detail panel */
 .detail-view {
@@ -18,7 +18,7 @@
   padding: 25px 20px;
   margin-right: 20px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  color: #003049;
+  color: var(--text);
   font-family: 'Open Sans', sans-serif;
   transition: all 0.3s ease;
 }
@@ -29,7 +29,7 @@
 }
 
 .detail-view h3 {
-  color: #005b6e;
+  color: var(--text);
   font-weight: 700;
   text-align: center;
   margin-bottom: 18px;
