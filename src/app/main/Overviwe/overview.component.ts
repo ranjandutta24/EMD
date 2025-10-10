@@ -88,6 +88,12 @@ export class OverviewComponent implements OnInit, OnDestroy {
     INLETPRESSURE: 0,
     OUTLETPRESSURE: 0,
   }
+  bof_res = {
+    GASHOLDERPRES: 0,
+    GASHOLDERTEMP: 0,
+    EXPORTEDGAS: 0,
+    GAS_FLOW_mills: 0,
+  };
 
   previousValues_bf5: any = { ...this.bf5_res };
   previousValues_mills: any = { ...this.mills_res };
@@ -96,6 +102,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
   previousValues_ldcp: any = { ...this.ldcp_res };
   previousValues_cob11: any = { ...this.cob11_res };
   previousValues_cbm: any = { ...this.cbm_res };
+  previousValues_bof: any = { ...this.bof_res };
 
   private ssebf5?: Subscription;
   private ssemills?: Subscription;
@@ -104,6 +111,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
   private ssesldcp?: Subscription;
   private ssescob11?: Subscription;
   private ssescbm?: Subscription;
+  private ssesbof?: Subscription;
 
   constructor(private sseService: SseService) { }
 
@@ -555,6 +563,42 @@ export class OverviewComponent implements OnInit, OnDestroy {
       // // Update previous values for next round
       this.previousValues_cbm = { ...data };
     });
+    this.ssesbof = this.sseService.getbof().subscribe((data: any) => {
+      console.log('es', data);
+      console.log(this.bof_res);
+
+      // Animate each property
+      this.animateValue(
+        this.previousValues_bof.GASHOLDERPRES,
+        data.GASHOLDERPRES,
+        800, // ms
+        (val) => (this.bof_res.GASHOLDERPRES = val)
+      );
+      this.animateValue(
+        this.previousValues_bof.GASHOLDERTEMP,
+        data.GASHOLDERTEMP,
+        800, // ms
+        (val) => (this.bof_res.GASHOLDERTEMP = val)
+      );
+      this.animateValue(
+        this.previousValues_bof.EXPORTEDGAS,
+        data.EXPORTEDGAS,
+        800, // ms
+        (val) => (this.bof_res.EXPORTEDGAS = val)
+      );
+
+      this.animateValue(
+        this.previousValues_bof.GAS_FLOW_mills,
+        data.GAS_FLOW_mills,
+        800,
+        (val) => (this.bof_res.GAS_FLOW_mills = val),
+        2
+      );
+
+
+      // // Update previous values for next round
+      this.previousValues_bof = { ...data };
+    });
   }
 
   ngOnDestroy(): void {
@@ -579,6 +623,9 @@ export class OverviewComponent implements OnInit, OnDestroy {
     }
     if (this.ssescbm) {
       this.ssescbm.unsubscribe();
+    }
+    if (this.ssesbof) {
+      this.ssesbof.unsubscribe();
     }
   }
 }
