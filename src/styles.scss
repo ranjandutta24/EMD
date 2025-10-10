@@ -136,7 +136,42 @@
   --color-overlay-blue: rgba(14, 165, 233, 0.1);
   --color-overlay-odd: rgba(14, 165, 233, 0.05);
 
+ /* Modern Light Theme Variables */
+   --bg-head: #73abef; /* deep steel blue */
+  --border-head: #3792e8;
 
+  /* Body (Neutral Boxes) */
+  --bg-body: #f4f6f8;
+  --border-body: #ccd2d8;
+  --bg-body-hover: #e3e8ee;
+  --border-body-hover: #b0b8c1;
+
+  /* Sinter / SP (Red Group) */
+  --bg-sp: #ff6b6b; /* coral red */
+  --border-sp: #d64545;
+  --bg-sp-hover: #ff9b9b;
+  --border-sp-hover: #ff6b6b;
+
+  /* LDCP / KILN (Green Group) */
+  --bg-ldcp: #4cd964; /* bright mint green */
+  --border-ldcp: #34b556;
+  --bg-ldcp-hover: #7ef09a;
+  --border-ldcp-hover: #4cd964;
+
+  /* PBS / BOILER (Orange Group) */
+  --bg-pbs: #ffa94d; /* soft amber orange */
+  --border-pbs: #e08524;
+  --bg-pbs-hover: #ffd6a0;
+  --border-pbs-hover: #ffa94d;
+
+  /* U/F (Blue Group) */
+  --bg-uf: #5dade2; /* smooth sky blue */
+  --border-uf: #2e86c1;
+  --bg-uf-hover: #a9d6f5;
+  --border-uf-hover: #5dade2;
+
+  /* Text */
+  --tree-text: #1b263b;
 
   
 }
@@ -263,6 +298,37 @@
     --color-overlay-light: rgba(255, 255, 255, 0.2);
     --color-overlay-green: rgba(72, 187, 120, 0.15);
     --color-overlay-odd: rgba(26, 127, 100, 0.08);
+
+    --bg-head: rgba(46, 204, 113, 0.3);
+  --border-head: rgba(46, 204, 113, 0.6);
+  
+  --bg-body: rgba(52, 152, 219, 0.3);
+  --border-body: rgba(52, 152, 219, 0.6);
+  --bg-body-hover: rgba(52, 152, 219, 0.6);
+  --border-body-hover: rgba(52, 152, 219, 0.9);
+  
+  --bg-sp: rgba(219, 77, 52, 0.3);
+  --border-sp: rgba(219, 63, 52, 0.6);
+  --bg-sp-hover: rgba(219, 77, 52, 0.6);
+  --border-sp-hover: rgba(219, 63, 52, 0.9);
+  
+  --bg-ldcp: rgba(169, 219, 52, 0.3);
+  --border-ldcp: rgba(119, 219, 52, 0.6);
+  --bg-ldcp-hover: rgba(169, 219, 52, 0.6);
+  --border-ldcp-hover: rgba(119, 219, 52, 0.9);
+  
+  --bg-pbs: rgba(219, 133, 52, 0.3);
+  --border-pbs: rgba(219, 141, 52, 0.6);
+  --bg-pbs-hover: rgba(219, 133, 52, 0.6);
+  --border-pbs-hover: rgba(219, 141, 52, 0.9);
+  
+  --bg-uf: rgba(219, 216, 52, 0.3);
+  --border-uf: rgba(216, 219, 52, 0.6);
+  --bg-uf-hover: rgba(219, 216, 52, 0.6);
+  --border-uf-hover: rgba(216, 219, 52, 0.9);
+
+    --tree-text: #ffffff;
+
  
 }
 
