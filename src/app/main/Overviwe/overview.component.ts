@@ -80,13 +80,29 @@ export class OverviewComponent implements OnInit, OnDestroy {
     U_F_N_2_BLOCK_BFG: 0,
     FLARE_STACK_SET_POINT: 0,
   };
+  cbm_res = {
+    M1VOLUME: 0,
+    M1FLOW: 0,
+    M2VOLUME: 0,
+    M2FLOW: 0,
+    INLETPRESSURE: 0,
+    OUTLETPRESSURE: 0,
+  }
+  bof_res = {
+    GASHOLDERPRES: 0,
+    GASHOLDERTEMP: 0,
+    EXPORTEDGAS: 0,
+    GAS_FLOW_mills: 0,
+  };
 
-  previousValues_bf5: any = { ...this.bf5_res }; // store old values
+  previousValues_bf5: any = { ...this.bf5_res };
   previousValues_mills: any = { ...this.mills_res };
   previousValues_stove: any = { ...this.stove_res };
   previousValues_pbs2: any = { ...this.pbs2_res };
   previousValues_ldcp: any = { ...this.ldcp_res };
   previousValues_cob11: any = { ...this.cob11_res };
+  previousValues_cbm: any = { ...this.cbm_res };
+  previousValues_bof: any = { ...this.bof_res };
 
   private ssebf5?: Subscription;
   private ssemills?: Subscription;
@@ -94,8 +110,10 @@ export class OverviewComponent implements OnInit, OnDestroy {
   private ssespbs2?: Subscription;
   private ssesldcp?: Subscription;
   private ssescob11?: Subscription;
+  private ssescbm?: Subscription;
+  private ssesbof?: Subscription;
 
-  constructor(private sseService: SseService) {}
+  constructor(private sseService: SseService) { }
 
   splitLetters(text: string): string[] {
     return text.split('').map((c) => (c === ' ' ? '\u00A0' : c));
@@ -492,6 +510,95 @@ export class OverviewComponent implements OnInit, OnDestroy {
       // Update previous values for next round
       this.previousValues_ldcp = { ...data };
     });
+
+    this.ssescbm = this.sseService.getcbm().subscribe((data: any) => {
+      console.log('es', data);
+      console.log(this.cbm_res);
+
+      // Animate each property
+      this.animateValue(
+        this.previousValues_cbm.M1FLOW,
+        data.M1FLOW,
+        800, // ms
+        (val) => (this.cbm_res.M1FLOW = val)
+      );
+      this.animateValue(
+        this.previousValues_cbm.M1VOLUME,
+        data.M1VOLUME,
+        800, // ms
+        (val) => (this.cbm_res.M1VOLUME = val)
+      );
+      this.animateValue(
+        this.previousValues_cbm.M2VOLUME,
+        data.M2VOLUME,
+        800, // ms
+        (val) => (this.cbm_res.M2VOLUME = val)
+      );
+
+      this.animateValue(
+        this.previousValues_cbm.M2FLOW,
+        data.M2FLOW,
+        800,
+        (val) => (this.cbm_res.M2FLOW = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues_cbm.INLETPRESSURE,
+        data.INLETPRESSURE,
+        800,
+        (val) => (this.cbm_res.INLETPRESSURE = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues_cbm.OUTLETPRESSURE,
+        data.OUTLETPRESSURE,
+        800,
+        (val) => (this.cbm_res.OUTLETPRESSURE = val),
+        2
+      );
+
+
+      // // Update previous values for next round
+      this.previousValues_cbm = { ...data };
+    });
+    this.ssesbof = this.sseService.getbof().subscribe((data: any) => {
+      console.log('es', data);
+      console.log(this.bof_res);
+
+      // Animate each property
+      this.animateValue(
+        this.previousValues_bof.GASHOLDERPRES,
+        data.GASHOLDERPRES,
+        800, // ms
+        (val) => (this.bof_res.GASHOLDERPRES = val)
+      );
+      this.animateValue(
+        this.previousValues_bof.GASHOLDERTEMP,
+        data.GASHOLDERTEMP,
+        800, // ms
+        (val) => (this.bof_res.GASHOLDERTEMP = val)
+      );
+      this.animateValue(
+        this.previousValues_bof.EXPORTEDGAS,
+        data.EXPORTEDGAS,
+        800, // ms
+        (val) => (this.bof_res.EXPORTEDGAS = val)
+      );
+
+      this.animateValue(
+        this.previousValues_bof.GAS_FLOW_mills,
+        data.GAS_FLOW_mills,
+        800,
+        (val) => (this.bof_res.GAS_FLOW_mills = val),
+        2
+      );
+
+
+      // // Update previous values for next round
+      this.previousValues_bof = { ...data };
+    });
   }
 
   ngOnDestroy(): void {
@@ -513,6 +620,12 @@ export class OverviewComponent implements OnInit, OnDestroy {
     }
     if (this.ssescob11) {
       this.ssescob11.unsubscribe();
+    }
+    if (this.ssescbm) {
+      this.ssescbm.unsubscribe();
+    }
+    if (this.ssesbof) {
+      this.ssesbof.unsubscribe();
     }
   }
 }

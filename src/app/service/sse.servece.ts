@@ -139,6 +139,48 @@ export class SseService {
       };
     });
   }
+  getcbm(): Observable<any> {
+    return new Observable((observer) => {
+      const eventSource = new EventSource(baseURL + 'emd/cbm');
+
+      eventSource.onmessage = (event) => {
+        this.zone.run(() => {
+          observer.next(JSON.parse(event.data));
+        });
+      };
+
+      eventSource.onerror = (error) => {
+        this.zone.run(() => {
+          observer.error(error);
+        });
+      };
+
+      return () => {
+        eventSource.close();
+      };
+    });
+  }
+  getbof(): Observable<any> {
+    return new Observable((observer) => {
+      const eventSource = new EventSource(baseURL + 'emd/bofholder');
+
+      eventSource.onmessage = (event) => {
+        this.zone.run(() => {
+          observer.next(JSON.parse(event.data));
+        });
+      };
+
+      eventSource.onerror = (error) => {
+        this.zone.run(() => {
+          observer.error(error);
+        });
+      };
+
+      return () => {
+        eventSource.close();
+      };
+    });
+  }
 
   // getSSETrend(): Observable<any> {
   //   return new Observable((observer) => {
