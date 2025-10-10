@@ -1,3 +1,41 @@
-<div class="container">
+<!-- <div class="container">
   <h1>Dashboard</h1>
+</div> -->
+
+<div class="dashboard-wrapper">
+  <div class="animated-bg">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+  </div>
+
+  <div class="container">
+    <!-- <h1 class="dashboard-title animated-underline">Dashboard</h1> -->
+
+    <div class="charts-grid">
+      <!-- Radial Chart 1 -->
+      <div class="chart-card fade-in">
+        <h3>Compressor 1 Pressure</h3>
+        <apx-chart [series]="radialChart1.series" [chart]="radialChart1.chart" [labels]="radialChart1.labels"
+          [colors]="radialChart1.colors" [responsive]="radialChart1.responsive">
+        </apx-chart>
+      </div>
+
+      <!-- Radial Chart 2 -->
+      <div class="chart-card fade-in delay-1">
+        <h3>Compressor 2 Flow</h3>
+        <apx-chart [series]="radialChart2.series" [chart]="radialChart2.chart" [labels]="radialChart2.labels"
+          [colors]="radialChart2.colors" [responsive]="radialChart2.responsive">
+        </apx-chart>
+      </div>
+    </div>
+
+    <!-- Line Chart -->
+    <div class="line-chart fade-in delay-2">
+      <h3>Compressor Performance Trend</h3>
+      <apx-chart [series]="lineChart.series" [chart]="lineChart.chart" [dataLabels]="lineChart.dataLabels"
+        [stroke]="lineChart.stroke" [title]="lineChart.title" [grid]="lineChart.grid" [xaxis]="lineChart.xaxis"
+        [yaxis]="lineChart.yaxis" [colors]="lineChart.colors">
+      </apx-chart>
+    </div>
+  </div>
 </div>

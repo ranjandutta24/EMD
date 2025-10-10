@@ -1,13 +1,292 @@
- .container{
-    width: min( 100%);
-    height: calc(100vh - 64px); ;
-    background-color:var(--overview_bg);
-    
+//  .container{
+//     width: min( 100%);
+//     height: calc(100vh - 64px); ;
+//     background-color:var(--overview_bg);
+
+//   }
+//   h1{
+//     margin:0;
+//     padding:20px;
+//     font-size:24px;
+//     font-weight:500;
+//     color:var(--text_primary);
+//   }
+
+
+/* ========== BACKGROUND ANIMATION ========== */
+.animated-underline {
+  position: relative;
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+
+  background: linear-gradient(90deg, #0072ff, #00c6ff, #0072ff);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textFlow 3s linear infinite;
+}
+
+.animated-underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #00c6ff, #0072ff, #00c6ff);
+  background-size: 200%;
+  animation: underlineFlow 2s linear infinite;
+  border-radius: 2px;
+}
+
+@keyframes textFlow {
+  0% {
+    background-position: 200% 0;
   }
-  h1{
-    margin:0;
-    padding:20px;
-    font-size:24px;
-    font-weight:500;
-    color:var(--text_primary);
+
+  100% {
+    background-position: -200% 0;
   }
+}
+
+@keyframes underlineFlow {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+
+.dashboard-wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff, #e3f2fd);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 0;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating glowing orbs */
+.animated-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.5;
+  animation: float 15s infinite ease-in-out alternate;
+}
+
+.orb1 {
+  width: 300px;
+  height: 300px;
+  background: #64b5f6;
+  top: 10%;
+  left: 15%;
+}
+
+.orb2 {
+  width: 400px;
+  height: 400px;
+  background: #81c784;
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(-40px);
+  }
+}
+
+/* ========== DASHBOARD CONTENT ========== */
+.container {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 1300px;
+}
+
+.dashboard-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #0d47a1;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+/* ========== CHART GRID ========== */
+.charts-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* ========== CHART CARDS ========== */
+.chart-card,
+.line-chart {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  flex: 1 1 360px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.chart-card:hover,
+.line-chart:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Headings inside chart cards */
+.chart-card h3,
+.line-chart h3 {
+  color: #1565c0;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* Line chart styling */
+.line-chart {
+  width: 100%;
+}
+
+/* ========== ANIMATIONS ========== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeUp 1s forwards ease-in-out;
+}
+
+.delay-1 {
+  animation-delay: 0.3s;
+}
+
+.delay-2 {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .charts-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chart-card,
+  .line-chart {
+    width: 90%;
+  }
+}
+
+/* ====== CHART INTERACTION ANIMATIONS (fixed) ====== */
+
+/* Smooth scale-up and glow on hover */
+// .chart-card:hover,
+.line-chart:hover {
+  transform: translateY(-8px) scale(1.05) rotateX(2deg) rotateY(-2deg);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  box-shadow: 0 20px 40px rgba(0, 123, 255, 0.3);
+  border: 2px solid rgba(0, 123, 255, 0.15);
+  z-index: 2;
+  /* ensures hover chart appears above others */
+}
+
+/* Add glowing ring animation */
+.chart-card::before,
+.line-chart::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: radial-gradient(circle at center, rgba(0, 136, 255, 0.15), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 0;
+}
+
+.chart-card:hover::before,
+.line-chart:hover::before {
+  opacity: 1;
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+/* Keep chart content stable and only slightly zoom */
+.chart-card apx-chart,
+.line-chart apx-chart {
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.chart-card:hover apx-chart,
+.line-chart:hover apx-chart {
+  transform: scale(1.03);
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
