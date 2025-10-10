@@ -8,7 +8,7 @@
 //   overflow: hidden; /* prevents scroll */
 // }
 .container {
-  display: flex;
+  // display: flex;
   flex-direction: column;
   height: calc(100vh - 84px);
   background: var(--gradient-primary);
