@@ -49,6 +49,7 @@ export type RadialChartOptions = {
   labels: string[];
   colors: string[];
   responsive: ApexResponsive[];
+  title: {}
 };
 
 
@@ -109,7 +110,8 @@ export class AreaComponent implements OnInit {
     chart: { type: 'radialBar' },
     labels: [],
     colors: [],
-    responsive: []
+    responsive: [],
+    title: {}
   };
 
   public radialChart2: RadialChartOptions = {
@@ -117,7 +119,8 @@ export class AreaComponent implements OnInit {
     chart: { type: 'radialBar' },
     labels: [],
     colors: [],
-    responsive: []
+    responsive: [],
+    title: {}
   };
 
   public lineChart: LineChartOptions = {
@@ -136,32 +139,56 @@ export class AreaComponent implements OnInit {
 
   constructor(private sseService: SseService) { }
 
+  splitLetters(text: string): string[] {
+    return text.split('').map((c) => (c === ' ' ? '\u00A0' : c));
+  }
+
   ngOnInit(): void {
     //sourav code
 
-    // Radial chart 1
+    // Radial chart 1 (Compressor 1 Pressure)
     this.radialChart1 = {
       series: [76],
-      chart: { height: 250, type: 'radialBar' },
-      labels: ['Compressor 1 Pressure'],
+      chart: {
+        height: 250,
+        type: 'radialBar',
+        toolbar: { show: false }
+      },
+      labels: ['Pressure (psi)'], // displayed inside the chart
       colors: ['#008080'],
       responsive: [{
         breakpoint: 480,
         options: { chart: { height: 200 } }
-      }]
+      }],
+      title: {
+        text: 'Compressor 1 Pressure',
+        align: 'center',
+        style: { fontSize: '16px', color: '#333' }
+      }
     };
 
-    // Radial chart 2
+    // Radial chart 2 (Compressor 2 Flow)
     this.radialChart2 = {
       series: [45],
-      chart: { height: 250, type: 'radialBar' },
-      labels: ['Compressor 2 Flow'],
-      colors: ['#FF6347'],
+      chart: {
+        height: 250,
+        type: 'radialBar',
+        toolbar: { show: false }
+      },
+      labels: ['Flow (m³/min)'], // displayed inside the chart
+      colors: ['#008080'],
       responsive: [{
         breakpoint: 480,
         options: { chart: { height: 200 } }
-      }]
+      }],
+      title: {
+        text: 'Compressor 2 Flow',
+        align: 'center',
+        style: { fontSize: '16px', color: '#333' }
+      }
     };
+
+
 
     // Line chart
     this.lineChart = {
