@@ -64,6 +64,7 @@ export type LineChartOptions = {
   xaxis: ApexXAxis;
   yaxis: ApexYAxis;
   colors: string[];
+  legend: ApexLegend;
 };
 
 //sourav code
@@ -123,6 +124,24 @@ export class AreaComponent implements OnInit {
     title: {}
   };
 
+  public radialChart3: RadialChartOptions = {
+    series: [],
+    chart: { type: 'radialBar' },
+    labels: [],
+    colors: [],
+    responsive: [],
+    title: {}
+  };
+
+  public radialChart4: RadialChartOptions = {
+    series: [],
+    chart: { type: 'radialBar' },
+    labels: [],
+    colors: [],
+    responsive: [],
+    title: {}
+  };
+
   public lineChart: LineChartOptions = {
     series: [],
     chart: { type: 'line' },
@@ -132,7 +151,13 @@ export class AreaComponent implements OnInit {
     grid: {},
     xaxis: {},
     yaxis: {},
-    colors: []
+    colors: [],
+    legend: {
+      show: true,
+      position: 'top',
+      horizontalAlign: 'center',
+      labels: { colors: 'DarkGoldenRod', useSeriesColors: false }
+    }
   };
 
   //sourav code
@@ -189,6 +214,65 @@ export class AreaComponent implements OnInit {
     };
 
 
+    // Radial chart 3 (Compressor 3 Pressure)
+    this.radialChart3 = {
+      series: [60],
+      chart: {
+        height: 250,
+        type: 'radialBar',
+        toolbar: { show: false }
+      },
+      labels: ['Pressure (psi)'],
+      colors: ['#20B2AA'],
+      responsive: [{
+        breakpoint: 480,
+        options: { chart: { height: 200 } }
+      }],
+      title: {
+        text: 'Compressor 3 Pressure',
+        align: 'center',
+        style: { fontSize: '16px', color: '#333' }
+      }
+    };
+
+    // Radial chart 4 (Compressor 4 Flow)
+    this.radialChart4 = {
+      series: [50],
+      chart: {
+        height: 250,
+        type: 'radialBar',
+        toolbar: { show: false }
+      },
+      labels: ['Flow (m³/min)'],
+      colors: ['#48D1CC'],
+      responsive: [{
+        breakpoint: 480,
+        options: { chart: { height: 200 } }
+      }],
+      title: {
+        text: 'Compressor 4 Flow',
+        align: 'center',
+        style: { fontSize: '16px', color: '#333' }
+      }
+    };
+
+
+    // Line chart
+    // this.lineChart = {
+    //   series: [
+    //     { name: 'Pressure Trend', data: [10, 15, 25, 18, 30, 40, 35] },
+    //     { name: 'Flow Trend', data: [20, 25, 15, 30, 35, 25, 40] }
+    //   ],
+    //   chart: { height: 300, type: 'line', zoom: { enabled: false } },
+    //   dataLabels: { enabled: false },
+    //   stroke: { curve: 'smooth' },
+    //   title: { text: 'Compressor Performance Trend', align: 'left' },
+    //   grid: { row: { colors: ['#f3f3f3', 'transparent'], opacity: 0.5 } },
+    //   xaxis: { categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] },
+    //   yaxis: { title: { text: 'Values' } },
+    //   colors: ['#1E90FF', '#FF6347']
+    // };
+
 
     // Line chart
     this.lineChart = {
@@ -199,12 +283,29 @@ export class AreaComponent implements OnInit {
       chart: { height: 300, type: 'line', zoom: { enabled: false } },
       dataLabels: { enabled: false },
       stroke: { curve: 'smooth' },
-      title: { text: 'Compressor Performance Trend', align: 'left' },
+      title: {
+        text: 'Compressor Performance Trend',
+        align: 'left',
+        style: { color: 'DarkGoldenRod', fontSize: '16px', fontWeight: 'bold' } // Title text yellow
+      },
       grid: { row: { colors: ['#f3f3f3', 'transparent'], opacity: 0.5 } },
-      xaxis: { categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] },
-      yaxis: { title: { text: 'Values' } },
-      colors: ['#1E90FF', '#FF6347']
+      xaxis: {
+        categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        labels: { style: { colors: 'DarkGoldenRod', fontSize: '12px' } } // X-axis labels yellow
+      },
+      yaxis: {
+        title: {
+          text: 'Values',
+          style: { color: 'DarkGoldenRod', fontSize: '12px', fontWeight: 'bold' } // Y-axis title yellow
+        },
+        labels: { style: { colors: 'DarkGoldenRod', fontSize: '12px' } } // Y-axis labels yellow
+      },
+      colors: ['#1E90FF', '#FF6347'], // Line colors
+      legend: {
+        labels: { colors: 'DarkGoldenRod', useSeriesColors: false } // Legend text yellow
+      }
     };
+
 
     //sourav code
 

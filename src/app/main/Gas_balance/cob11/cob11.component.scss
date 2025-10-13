@@ -4,7 +4,8 @@
   height: calc(100vh - 84px);
   padding: 10px;
   box-sizing: border-box;
-  overflow: hidden; /* prevents scroll */
+  overflow: hidden;
+  /* prevents scroll */
 }
 
 /* Left detail panel */
@@ -44,12 +45,14 @@
   justify-content: center;
   align-items: flex-start;
   padding-top: 20px;
-  overflow: hidden; /* ensures no scrollbar */
+  overflow: hidden;
+  /* ensures no scrollbar */
 }
 
 /* Make the org chart responsive */
 ::ng-deep ngx-org-chart {
-  transform: scale(0.9); /* scale slightly to fit in viewport */
+  transform: scale(0.9);
+  /* scale slightly to fit in viewport */
   transform-origin: top center;
   width: 100%;
 }
@@ -70,6 +73,7 @@
 ::ng-deep .line-long .ngx-org-node::before {
   height: 80px !important;
 }
+
 /* In your component's CSS file */
 :host ::ng-deep .ngx-org-head {
   background: var(--bg-head);
@@ -174,4 +178,3 @@
 //   border: 1px solid #14851eda !important; /* Adjust border color and width */
 //   /* Add your custom styles here */
 // }
-

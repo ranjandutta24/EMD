@@ -31,6 +31,26 @@
           [colors]="radialChart2.colors" [responsive]="radialChart2.responsive">
         </apx-chart>
       </div>
+
+      <!-- ✅ Radial Chart 3 -->
+      <div class="box chart-card fade-in delay-2">
+        <h3 class="overview_header">
+          <span [style.animation-delay]="'Compressor 3 Pressure'">Compressor 3 Pressure</span>
+        </h3>
+        <apx-chart [series]="radialChart3.series" [chart]="radialChart3.chart" [labels]="radialChart3.labels"
+          [colors]="radialChart3.colors" [responsive]="radialChart3.responsive">
+        </apx-chart>
+      </div>
+
+      <!-- ✅ Radial Chart 4 -->
+      <div class="box chart-card fade-in delay-3">
+        <h3 class="overview_header">
+          <span [style.animation-delay]="'Compressor 4 Flow'">Compressor 4 Flow</span>
+        </h3>
+        <apx-chart [series]="radialChart4.series" [chart]="radialChart4.chart" [labels]="radialChart4.labels"
+          [colors]="radialChart4.colors" [responsive]="radialChart4.responsive">
+        </apx-chart>
+      </div>
     </div>
 
     <!-- Line Chart -->
@@ -38,8 +58,8 @@
       <h3 class="overview_header"> <span [style.animation-delay]="'Compressor Performance Trend'">Compressor Performance
           Trend</span></h3>
       <apx-chart [series]="lineChart.series" [chart]="lineChart.chart" [dataLabels]="lineChart.dataLabels"
-        [stroke]="lineChart.stroke" [title]="lineChart.title" [grid]="lineChart.grid" [xaxis]="lineChart.xaxis"
-        [yaxis]="lineChart.yaxis" [colors]="lineChart.colors">
+        [stroke]="lineChart.stroke" [title]="lineChart.title" [xaxis]="lineChart.xaxis" [yaxis]="lineChart.yaxis"
+        [colors]="lineChart.colors" [legend]="lineChart.legend">
       </apx-chart>
     </div>
   </div>
