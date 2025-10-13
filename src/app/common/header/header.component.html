@@ -2,41 +2,23 @@
   <!-- <li><a routerLink="/ccas-live"> CCAS Live</a></li> -->
   <!-- <li (click)="goToRoute('/main/dashboard')">CCAS Live</li> -->
 
-  <div style="display: flex; flex-direction: row; gap: 10px; margin-left: 10px">
-    <li
-      [class.active]="isActive('/main/overview')"
-      (click)="goToRoute('/main/overview')"
-    >
+  <div style="display: flex; flex-direction: row; gap: 10px; margin-left: 10px;">
+    <li [class.active]="isActive('/main/overview')" (click)="goToRoute('/main/overview')">
       Overview
     </li>
-    <li
-      [class.active]="isActive('/main/area')"
-      (click)="goToRoute('/main/area')"
-    >
+    <li [class.active]="isActive('/main/area')" (click)="goToRoute('/main/area')">
       Dashboard
     </li>
-    <li
-      [class.active]="isActive('/main/gas_balance')"
-      (click)="goToRoute('/main/gas_balance')"
-    >
+    <li [class.active]="isActive('/main/gas_balance')" (click)="goToRoute('/main/gas_balance')">
       Gas Balance
     </li>
-    <li
-      [class.active]="isActive('/main/report')"
-      (click)="goToRoute('/main/report')"
-    >
+    <li [class.active]="isActive('/main/report')" (click)="goToRoute('/main/report')">
       Report
     </li>
-    <li
-      [class.active]="isActive('/main/trends')"
-      (click)="goToRoute('/main/trends')"
-    >
+    <li [class.active]="isActive('/main/trends')" (click)="goToRoute('/main/trends')">
       Trends
     </li>
-    <li
-      [class.active]="isActive('/main/settings')"
-      (click)="goToRoute('/main/settings')"
-    >
+    <li [class.active]="isActive('/main/settings')" (click)="goToRoute('/main/settings')">
       Settings
     </li>
   </div>

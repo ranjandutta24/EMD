@@ -11,6 +11,7 @@
   // display: flex;
   flex-direction: column;
   height: calc(100vh - 84px);
+  overflow-y: auto;
   background: var(--gradient-primary);
   padding: 20px;
   box-sizing: border-box;
@@ -50,5 +51,3 @@
   color: white;
   box-shadow: 0 4px 15px rgba(30, 136, 229, 0.3);
 }
-
-
