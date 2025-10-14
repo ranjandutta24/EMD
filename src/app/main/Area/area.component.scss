@@ -113,7 +113,8 @@
   width: 100%;
   height: calc(100vh - 78px);
   // max-width: 1300px;
-  background-color: var(--overview_bg);
+  // background-color: var(--overview_bg) !important;
+  background: var(--gradient-primary);
 }
 
 .dashboard-title {
