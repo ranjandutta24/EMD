@@ -14,7 +14,8 @@ import {
   ApexStroke,
   ApexXAxis,
   ApexNonAxisChartSeries, //sourav code
-  ApexResponsive //sourav code
+  ApexResponsive ,//sourav code
+  ApexTooltip //sourav code
 } from 'ng-apexcharts';
 import { SseService } from 'src/app/service/sse.servece';
 
@@ -65,6 +66,7 @@ export type LineChartOptions = {
   yaxis: ApexYAxis;
   colors: string[];
   legend: ApexLegend;
+  tooltip: ApexTooltip;
 };
 
 //sourav code
@@ -156,8 +158,16 @@ export class AreaComponent implements OnInit {
       show: true,
       position: 'top',
       horizontalAlign: 'center',
-      labels: { colors: 'DarkGoldenRod', useSeriesColors: false }
+      labels: { colors: 'DarkGoldenRod', useSeriesColors: false },
+    
+    } , tooltip: {
+      theme: 'dark',                  // dark background theme
+      style: {
+        fontSize: '12px'              // ✅ only fontSize allowed
+      },
+      marker: { show: true }
     }
+    
   };
 
   //sourav code
@@ -303,7 +313,15 @@ export class AreaComponent implements OnInit {
       colors: ['#1E90FF', '#FF6347'], // Line colors
       legend: {
         labels: { colors: 'DarkGoldenRod', useSeriesColors: false } // Legend text yellow
+      },
+      tooltip: {
+        theme: 'dark',                  // dark background theme
+        style: {
+          fontSize: '12px'              // ✅ only fontSize allowed
+        },
+        marker: { show: true }
       }
+      
     };
 
 
