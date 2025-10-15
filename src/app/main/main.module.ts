@@ -13,6 +13,10 @@ import { NgxOrgChartModule } from 'ngx-org-chart';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Cob11Component } from './Gas_balance/cob11/cob11.component';
 import { BfComponent } from './Gas_balance/bf/bf.component';
+import { CbmComponent } from './Gas_balance/cbm/cbm.component';
+import { BofgComponent } from './Gas_balance/bofg/bofg.component';
+import { AgbsComponent } from './Gas_balance/agbs/agbs.component';
+import { MillsComponent } from './Gas_balance/mills/mills.component';
 @NgModule({
   declarations: [
     OverviewComponent,
@@ -22,7 +26,11 @@ import { BfComponent } from './Gas_balance/bf/bf.component';
     SettingsComponent,
     GasBalanceComponent,
     Cob11Component,
-    BfComponent, // ✅ include this
+    BfComponent,
+    CbmComponent,
+    BofgComponent,
+    AgbsComponent,
+    MillsComponent, // ✅ include this
   ],
   imports: [
     CommonModule, // ✅ Correct for feature modules
