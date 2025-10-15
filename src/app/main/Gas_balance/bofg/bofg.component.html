@@ -1,1 +1,15 @@
-<p>bofg works!</p>
+<div class="container">
+    <div class="detail-view">
+        <div class="detail-card">
+            <h3>Detail View</h3>
+            <p>
+                Select a node to view its details. You can expand/collapse nodes to explore
+                the BOFG hierarchy.
+            </p>
+        </div>
+    </div>
+
+    <div class="tree">
+        <ngx-org-chart [nodes]="nodes" direction="vertical"></ngx-org-chart>
+    </div>
+</div>

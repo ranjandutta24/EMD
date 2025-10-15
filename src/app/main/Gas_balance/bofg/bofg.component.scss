@@ -1,0 +1,94 @@
+/* --- reuse existing container + detail-view + tree styles --- */
+/* Add your own custom node styles below */
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh + 100px);
+    /* add 100px extra */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+:host ::ng-deep .ngx-org-head {
+    background: #ff8c00;
+    border: 2px solid #cc7000;
+    color: #fff;
+    padding: 15px;
+    width: 120px;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+:host ::ng-deep .ngx-org-body_green {
+    background: #4caf50;
+    border: 2px solid #388e3c;
+    color: #fff;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+:host ::ng-deep .ngx-org-body_orange {
+    background: #d2691e;
+    border: 2px solid #b55310;
+    color: #fff;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+:host ::ng-deep .ngx-org-body_green:hover,
+:host ::ng-deep .ngx-org-body_orange:hover,
+:host ::ng-deep .ngx-org-head:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.detail-view {
+    width: 25%;
+    min-width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+/* Card inside the detail-view */
+.detail-card {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    padding: 20px 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    color: #002b4d;
+    font-family: 'Open Sans', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.detail-card:hover {
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+.detail-card h3 {
+    text-align: center;
+    font-weight: 700;
+    color: #002b4d;
+    margin-bottom: 12px;
+}
+
+.detail-card p {
+    text-align: justify;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #003366;
+}
