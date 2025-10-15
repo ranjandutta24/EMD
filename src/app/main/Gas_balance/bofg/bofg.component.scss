@@ -1,14 +1,34 @@
 /* --- reuse existing container + detail-view + tree styles --- */
 /* Add your own custom node styles below */
-
-.container {
+.tree {
+    flex: 1;
     display: flex;
-    flex-direction: row;
-    height: calc(100vh + 100px);
-    /* add 100px extra */
-    padding: 10px;
-    box-sizing: border-box;
+    justify-content: center;
+    align-items: flex-start;
+    transform: scale(1.8);
+    /* increase overall size */
+    transform-origin: top center;
+    /* ensures scaling grows downward */
+    margin-top: 20px;
 }
+
+:host ::ng-deep .ngx-org-head,
+:host ::ng-deep .ngx-org-body_green,
+:host ::ng-deep .ngx-org-body_orange {
+    font-size: 10px;
+    /* make text smaller */
+    line-height: 1.2;
+    text-align: center;
+}
+
+// .container {
+//     display: flex;
+//     flex-direction: row;
+//     height: calc(100vh + 100px);
+//     /* add 100px extra */
+//     padding: 10px;
+//     box-sizing: border-box;
+// }
 
 :host ::ng-deep .ngx-org-head {
     background: #ff8c00;
