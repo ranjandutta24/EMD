@@ -48,7 +48,7 @@ export class CbmComponent implements OnInit {
           cssClass: 'ngx-org-body_orange'
         },
         {
-          name: 'Pbs#2',
+          name: 'PBS#2',
           cssClass: 'ngx-org-body_orange'
         },
         {
