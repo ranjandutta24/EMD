@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div>
     <div class="detail-view">
         <div class="detail-card">
             <h3>Detail View</h3>
@@ -11,5 +11,34 @@
 
     <div>
         <ngx-org-chart class="tree" [nodes]="nodes" direction="vertical"></ngx-org-chart>
+    </div>
+</div> -->
+
+
+<!-- <p>cbm works!</p> -->
+<div class="container">
+    <div class="detail-view">
+        <div class="detail-card">
+            <h3>Detail View</h3>
+            <div *ngIf="selectedNode; else noSelection">
+                <h4>{{selectedNode.name}}</h4>
+                <p><strong>Title:</strong> {{selectedNode.title}}</p>
+                <p><strong>Type:</strong> {{selectedNode.cssClass}}</p>
+                <p *ngIf="selectedNode.childs">
+                    <strong>Children:</strong> {{selectedNode.childs.length}}
+                </p>
+            </div>
+            <ng-template #noSelection>
+                <p>
+                    Select a node to view its details. You can expand/collapse nodes to explore
+                    the BOFG hierarchy.
+                </p>
+            </ng-template>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <ngx-org-chart class="tree" [nodes]="nodes" direction="vertical" (clicked)="onNodeClick($event)">
+        </ngx-org-chart>
     </div>
 </div>
