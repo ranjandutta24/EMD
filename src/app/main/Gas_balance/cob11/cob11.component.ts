@@ -18,7 +18,7 @@ export class Cob11Component implements OnInit {
           name: 'MAKE',
           cssClass: 'ngx-org-body',
           // image: 'assets/node.svg',
-          title: '(NM3/HR)',
+          title: '(NM₃/HR)',
           childs: [
             {
               name: 'U/F (TOTAL)',

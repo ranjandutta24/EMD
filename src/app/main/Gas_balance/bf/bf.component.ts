@@ -19,56 +19,59 @@ export class BfComponent implements OnInit {
       cssClass: 'ngx-org-head',
       childs: [
         {
-          name: 'BLAST VOL (NM3/MIN)',
-          cssClass: 'ngx-org-body_orange'
-        },
-        // {
-        //   name: 'B. PRESSURE (KG/CM²)',
-        //   cssClass: 'ngx-org-body_orange'
-        // },
-        {
-          name: 'MAKE (T/Nm³/hr)',
-          cssClass: 'ngx-org-body_green',
+          name: 'BLAST VOL',
+          cssClass: 'ngx-org-body_orange',
+          title: '(NM₃/MIN)',
           childs: [
             {
-              name: 'PRESSURE (MMWC)',
+
+              name: 'MAKE',
               cssClass: 'ngx-org-body_green',
+              title: '(TNm₃/hr)',
               childs: [
                 {
-                  name: 'STOVE (TOTAL)',
-                  cssClass: 'ngx-org-body_blue',
+                  name: 'STOVE',
+                  cssClass: 'ngx-org-body_redorange',
+                  title: '(TOTAL)',
                   childs: [
-                    { name: 'STOVE 1', cssClass: 'ngx-org-body_blue' },
-                    { name: 'STOVE 2', cssClass: 'ngx-org-body_blue' },
-                    { name: 'STOVE 3', cssClass: 'ngx-org-body_blue' }
+                    { name: 'STOVE1', cssClass: 'ngx-org-body' },
+                    { name: 'STOVE2', cssClass: 'ngx-org-body' },
+                    { name: 'STOVE3', cssClass: 'ngx-org-body' }
                   ]
                 },
                 {
-                  name: 'PBS#2 (TOTAL)',
-                  cssClass: 'ngx-org-body_blue',
+                  name: 'PBS#2',
+                  cssClass: 'ngx-org-body_redorange',
+                  title: '(TOTAL)',
                   childs: [
-                    { name: 'BOILER 1', cssClass: 'ngx-org-body_blue' },
-                    { name: 'BOILER 2', cssClass: 'ngx-org-body_blue' },
-                    { name: 'BOILER 3', cssClass: 'ngx-org-body_blue' }
+                    { name: 'BOILER1', cssClass: 'ngx-org-body' },
+                    { name: 'BOILER2', cssClass: 'ngx-org-body' },
+                    { name: 'BOILER3', cssClass: 'ngx-org-body' }
                   ]
                 },
                 {
-                  name: 'COBP#1 (TOTAL)',
-                  cssClass: 'ngx-org-body_blue',
+                  name: 'COB#11',
+                  cssClass: 'ngx-org-body_redorange',
+                  title: '(TOTAL)',
                   childs: [
-                    { name: 'N1 BLOCK', cssClass: 'ngx-org-body_blue' },
-                    { name: 'N2 BLOCK', cssClass: 'ngx-org-body_blue' }
+                    { name: 'N1 BLOCK', cssClass: 'ngx-org-body' },
+                    { name: 'N2 BLOCK', cssClass: 'ngx-org-body' }
                   ]
                 },
                 {
                   name: 'FLARE',
-                  cssClass: 'ngx-org-body_blue'
+                  cssClass: 'ngx-org-body_redorange'
                 },
                 {
                   name: "MILL'S",
-                  cssClass: 'ngx-org-body_blue'
+                  cssClass: 'ngx-org-body_redorange'
                 }
-              ]
+              ],
+            },
+            {
+              name: 'PRESSURE',
+              cssClass: 'ngx-org-body_green',
+              title: '(MMWC)'
             }
           ]
         }
