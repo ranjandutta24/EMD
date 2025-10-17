@@ -2,6 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { Observable } from 'rxjs';
 
 const baseURL = 'http://10.150.6.15:4060/api/';
+// const baseURL = 'http://localhost:4020/api/';
 // const baseURL = 'http://59.97.132.209:4060/api/';
 
 // http://localhost:4020/api/ccas/comp1
@@ -34,135 +35,10 @@ export class SseService {
     });
   }
 
-  getmills(): Observable<any> {
+
+  getOverview(): Observable<any> {
     return new Observable((observer) => {
-      const eventSource = new EventSource(baseURL + 'emd/mills');
-
-      eventSource.onmessage = (event) => {
-        this.zone.run(() => {
-          observer.next(JSON.parse(event.data));
-        });
-      };
-
-      eventSource.onerror = (error) => {
-        this.zone.run(() => {
-          observer.error(error);
-        });
-      };
-
-      return () => {
-        eventSource.close();
-      };
-    });
-  }
-  getstove(): Observable<any> {
-    return new Observable((observer) => {
-      const eventSource = new EventSource(baseURL + 'emd/stove');
-
-      eventSource.onmessage = (event) => {
-        this.zone.run(() => {
-          observer.next(JSON.parse(event.data));
-        });
-      };
-
-      eventSource.onerror = (error) => {
-        this.zone.run(() => {
-          observer.error(error);
-        });
-      };
-
-      return () => {
-        eventSource.close();
-      };
-    });
-  }
-  getpbs2(): Observable<any> {
-    return new Observable((observer) => {
-      const eventSource = new EventSource(baseURL + 'emd/pbs2');
-
-      eventSource.onmessage = (event) => {
-        this.zone.run(() => {
-          observer.next(JSON.parse(event.data));
-        });
-      };
-
-      eventSource.onerror = (error) => {
-        this.zone.run(() => {
-          observer.error(error);
-        });
-      };
-
-      return () => {
-        eventSource.close();
-      };
-    });
-  }
-  getsldcp(): Observable<any> {
-    return new Observable((observer) => {
-      const eventSource = new EventSource(baseURL + 'emd/ldcp');
-
-      eventSource.onmessage = (event) => {
-        this.zone.run(() => {
-          observer.next(JSON.parse(event.data));
-        });
-      };
-
-      eventSource.onerror = (error) => {
-        this.zone.run(() => {
-          observer.error(error);
-        });
-      };
-
-      return () => {
-        eventSource.close();
-      };
-    });
-  }
-  getcob11(): Observable<any> {
-    return new Observable((observer) => {
-      const eventSource = new EventSource(baseURL + 'emd/cob11');
-
-      eventSource.onmessage = (event) => {
-        this.zone.run(() => {
-          observer.next(JSON.parse(event.data));
-        });
-      };
-
-      eventSource.onerror = (error) => {
-        this.zone.run(() => {
-          observer.error(error);
-        });
-      };
-
-      return () => {
-        eventSource.close();
-      };
-    });
-  }
-  getcbm(): Observable<any> {
-    return new Observable((observer) => {
-      const eventSource = new EventSource(baseURL + 'emd/cbm');
-
-      eventSource.onmessage = (event) => {
-        this.zone.run(() => {
-          observer.next(JSON.parse(event.data));
-        });
-      };
-
-      eventSource.onerror = (error) => {
-        this.zone.run(() => {
-          observer.error(error);
-        });
-      };
-
-      return () => {
-        eventSource.close();
-      };
-    });
-  }
-  getbof(): Observable<any> {
-    return new Observable((observer) => {
-      const eventSource = new EventSource(baseURL + 'emd/bofholder');
+      const eventSource = new EventSource(baseURL + 'emd/overview');
 
       eventSource.onmessage = (event) => {
         this.zone.run(() => {

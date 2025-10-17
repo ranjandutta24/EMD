@@ -50,39 +50,39 @@
         </h2>
         <div class="tr">
           <div class="td">MAKE</div>
-          <div class="td">{{ cob11_res.MAKE }}</div>
+          <div class="td">{{ overview_res.MAKE }}</div>
         </div>
         <div class="tr">
           <div class="td">PRESSURE</div>
-          <div class="td">{{ cob11_res.PRESSURE }}</div>
+          <div class="td">{{ overview_res.PRESSURE }}</div>
         </div>
         <div class="tr">
           <div class="td">FLARE FLOW</div>
-          <div class="td">{{ cob11_res.FLARE_FLOW }}</div>
+          <div class="td">{{ overview_res.FLARE_FLOW }}</div>
         </div>
         <div class="tr">
           <div class="td">FLARE PRESSURE</div>
-          <div class="td">{{ cob11_res.FLARE_PRESSURE }}</div>
+          <div class="td">{{ overview_res.FLARE_PRESSURE }}</div>
         </div>
         <div class="tr">
           <div class="td">U/F N 1 BLOCK COG</div>
-          <div class="td">{{ cob11_res.U_F_N_1_BLOCK_COG }}</div>
+          <div class="td">{{ overview_res.U_F_N_1_BLOCK_COG }}</div>
         </div>
         <div class="tr">
           <div class="td">U/F N 1 BLOCK BFG</div>
-          <div class="td">{{ cob11_res.U_F_N_1_BLOCK_BFG }}</div>
+          <div class="td">{{ overview_res.U_F_N_1_BLOCK_BFG }}</div>
         </div>
         <div class="tr">
           <div class="td">U/F N 2 BLOCK COG</div>
-          <div class="td">{{ cob11_res.U_F_N_2_BLOCK_COG }}</div>
+          <div class="td">{{ overview_res.U_F_N_2_BLOCK_COG }}</div>
         </div>
         <div class="tr">
           <div class="td">U/F N 2 BLOCK BFG</div>
-          <div class="td">{{ cob11_res.U_F_N_2_BLOCK_BFG }}</div>
+          <div class="td">{{ overview_res.U_F_N_2_BLOCK_BFG }}</div>
         </div>
         <div class="tr">
           <div class="td">FLARE STACK SET POINT</div>
-          <div class="td">{{ cob11_res.FLARE_STACK_SET_POINT }}</div>
+          <div class="td">{{ overview_res.FLARE_STACK_SET_POINT }}</div>
         </div>
       </div>
     </div>
@@ -128,25 +128,27 @@
         </h2>
         <div class="tr">
           <div class="td">BLAST VOLUME</div>
-          <div class="td">{{ bf5_res.BLAST_VOLUME }}</div>
+          <div class="td">{{ overview_res.BLAST_VOLUME }}</div>
         </div>
         <div class="tr">
           <div class="td">BLAST PRESSURE</div>
-          <div class="td">{{ bf5_res.BLAST_PRESSURE.toFixed(2) }}</div>
+          <div class="td">{{ overview_res.BLAST_PRESSURE.toFixed(2) }}</div>
         </div>
         <div class="tr">
           <div class="td">GAS MAKE</div>
           <div class="td">
-            {{ (bf5_res.BLAST_VOLUME * 1.52 * (60 / 1000)).toFixed(2) }}
+            {{ (overview_res.BLAST_VOLUME * 1.52 * (60 / 1000)).toFixed(2) }}
           </div>
         </div>
         <div class="tr">
           <div class="td">FLARE STACK FLOW</div>
-          <div class="td">{{ bf5_res.FLARE_STACK_FLOW.toFixed(2) }}</div>
+          <div class="td">{{ overview_res.FLARE_STACK_FLOW.toFixed(2) }}</div>
         </div>
         <div class="tr">
           <div class="td">FLARE STACK PRESSURE</div>
-          <div class="td">{{ bf5_res.FLARE_STACK_PRESSURE.toFixed(2) }}</div>
+          <div class="td">
+            {{ overview_res.FLARE_STACK_PRESSURE.toFixed(2) }}
+          </div>
         </div>
         <div class="tr">
           <div class="td">FLARE STACK SET POINT</div>
@@ -154,7 +156,7 @@
         </div>
         <div class="tr">
           <div class="td">SNORT POSITION</div>
-          <div class="td">{{ bf5_res.SNORT_POSITION.toFixed(2) }}</div>
+          <div class="td">{{ overview_res.SNORT_POSITION.toFixed(2) }}</div>
         </div>
       </div>
       <div class="box">
@@ -168,23 +170,23 @@
         </h2>
         <div class="tr">
           <div class="td">STOVE 1 BF GAS</div>
-          <div class="td">{{ stove_res.STOVE_1_BF_GAS }}</div>
+          <div class="td">{{ overview_res.STOVE_1_BF_GAS }}</div>
         </div>
         <div class="tr">
           <div class="td">STOVE 2 BF GAS</div>
-          <div class="td">{{ stove_res.STOVE_2_BF_GAS }}</div>
+          <div class="td">{{ overview_res.STOVE_2_BF_GAS }}</div>
         </div>
         <div class="tr">
           <div class="td">STOVE 3 BF GAS</div>
-          <div class="td">{{ stove_res.STOVE_3_BF_GAS }}</div>
+          <div class="td">{{ overview_res.STOVE_3_BF_GAS }}</div>
         </div>
         <div class="tr">
           <div class="td">STOVE 4 BF GAS</div>
-          <div class="td">{{ stove_res.STOVE_4_BF_GAS }}</div>
+          <div class="td">{{ overview_res.STOVE_4_BF_GAS }}</div>
         </div>
         <div class="tr">
           <div class="td">CO GAS CONSUMPTION</div>
-          <div class="td">{{ stove_res.CO_GAS_CONSUMPTION }}</div>
+          <div class="td">{{ overview_res.CO_GAS_CONSUMPTION }}</div>
         </div>
         <div class="tr">
           <div class="td">CDI COG CONSUMPTION</div>
@@ -268,27 +270,27 @@
         </h2>
         <div class="tr">
           <div class="td">K 1 FLOW</div>
-          <div class="td">{{ ldcp_res.K_1_FLOW }}</div>
+          <div class="td">{{ overview_res.K_1_FLOW }}</div>
         </div>
         <div class="tr">
           <div class="td">K 2 FLOW</div>
-          <div class="td">{{ ldcp_res.K_2_FLOW }}</div>
+          <div class="td">{{ overview_res.K_2_FLOW }}</div>
         </div>
         <div class="tr">
           <div class="td">K 3 FLOW</div>
-          <div class="td">{{ ldcp_res.K_3_FLOW }}</div>
+          <div class="td">{{ overview_res.K_3_FLOW }}</div>
         </div>
         <div class="tr">
           <div class="td">K 4 FLOW</div>
-          <div class="td">{{ ldcp_res.K_4_FLOW }}</div>
+          <div class="td">{{ overview_res.K_4_FLOW }}</div>
         </div>
         <div class="tr">
           <div class="td">INLET PRESSURE</div>
-          <div class="td">{{ ldcp_res.INLET_PRESSURE }}</div>
+          <div class="td">{{ overview_res.INLET_PRESSURE }}</div>
         </div>
         <div class="tr">
           <div class="td">TOTAL CONSUMPTION</div>
-          <div class="td">{{ ldcp_res.TOTAL_CONSUMPTION }}</div>
+          <div class="td">{{ overview_res.TOTAL_CONSUMPTION }}</div>
         </div>
       </div>
     </div>
@@ -304,31 +306,31 @@
         </h2>
         <div class="tr">
           <div class="td">WRM (MIX GAS FLOW)</div>
-          <div class="td">{{ mills_res.MG_WRM_FLOW }}</div>
+          <div class="td">{{ overview_res.MG_WRM_FLOW }}</div>
         </div>
         <div class="tr">
           <div class="td">BRM (MIX GAS FLOW)</div>
-          <div class="td">{{ mills_res.MG_BRM_FLOW }}</div>
+          <div class="td">{{ overview_res.MG_BRM_FLOW }}</div>
         </div>
         <div class="tr">
           <div class="td">USM (MIX GAS FLOW)</div>
-          <div class="td">{{ mills_res.MG_USM_FLOW }}</div>
+          <div class="td">{{ overview_res.MG_USM_FLOW }}</div>
         </div>
         <div class="tr">
           <div class="td">TOTAL CONSUMPTION</div>
-          <div class="td">{{ mills_res.TOTAL_FLOW }}</div>
+          <div class="td">{{ overview_res.TOTAL_FLOW }}</div>
         </div>
         <div class="tr">
           <div class="td">WRM (MIX GAS PESSURE)</div>
-          <div class="td">{{ mills_res.MG_WRM_PRESSURE }}</div>
+          <div class="td">{{ overview_res.MG_WRM_PRESSURE }}</div>
         </div>
         <div class="tr">
           <div class="td">BRM (MIX GAS PESSURE)</div>
-          <div class="td">{{ mills_res.MG_BRM_PRESSURE }}</div>
+          <div class="td">{{ overview_res.MG_BRM_PRESSURE }}</div>
         </div>
         <div class="tr">
           <div class="td">URM (MIX GAS PESSURE)</div>
-          <div class="td">{{ mills_res.MG_USM_PRESSURE }}</div>
+          <div class="td">{{ overview_res.MG_USM_PRESSURE }}</div>
         </div>
         <div class="tr">
           <div class="td">MIX GAS PRESSURE</div>
@@ -336,7 +338,7 @@
         </div>
         <div class="tr">
           <div class="td">CV</div>
-          <div class="td">{{ mills_res.CV }}</div>
+          <div class="td">{{ overview_res.CV }}</div>
         </div>
         <div class="tr">
           <div class="td">CBM FLOW</div>
@@ -344,7 +346,7 @@
         </div>
         <div class="tr">
           <div class="td">BOF GAS</div>
-          <div class="td">{{ mills_res.BOF_FLOW }}</div>
+          <div class="td">{{ overview_res.BOF_FLOW }}</div>
         </div>
       </div>
       <div class="box">
@@ -409,7 +411,7 @@
         </div>
         <div class="tr">
           <div class="td">M 1 FLOW</div>
-          <div class="td">{{ cbm_res.M1FLOW }}</div>
+          <div class="td">{{ overview_res.M1FLOW }}</div>
         </div>
         <div class="tr">
           <div class="td">M 2 TOTALIZER</div>
@@ -417,15 +419,15 @@
         </div>
         <div class="tr">
           <div class="td">M 2 FLOW</div>
-          <div class="td">{{ cbm_res.M2FLOW }}</div>
+          <div class="td">{{ overview_res.M2FLOW }}</div>
         </div>
         <div class="tr">
           <div class="td">INLET PRESSURE</div>
-          <div class="td">{{ cbm_res.INLETPRESSURE }}</div>
+          <div class="td">{{ overview_res.INLETPRESSURE }}</div>
         </div>
         <div class="tr">
           <div class="td">OUTLET PRESSURE</div>
-          <div class="td">{{ cbm_res.OUTLETPRESSURE }}</div>
+          <div class="td">{{ overview_res.OUTLETPRESSURE }}</div>
         </div>
         <div class="tr">
           <div class="td">MILL FLOW</div>
@@ -473,19 +475,19 @@
         </h2>
         <div class="tr">
           <div class="td">COG (1,2,3)</div>
-          <div class="td">{{ pbs2_res.COG123 }}</div>
+          <div class="td">{{ overview_res.COG123 }}</div>
         </div>
         <div class="tr">
           <div class="td">BFG (1,2,3)</div>
-          <div class="td">{{ pbs2_res.BFG123 }}</div>
+          <div class="td">{{ overview_res.BFG123 }}</div>
         </div>
         <div class="tr">
           <div class="td">CBM GAS(1,2,3)</div>
-          <div class="td">{{ pbs2_res.CBM_GAS123 }}</div>
+          <div class="td">{{ overview_res.CBM_GAS123 }}</div>
         </div>
         <div class="tr">
           <div class="td">BOF GAS TOTAL</div>
-          <div class="td">{{ pbs2_res.BOF_GAS_TOTAL }}</div>
+          <div class="td">{{ overview_res.BOF_GAS_TOTAL }}</div>
         </div>
       </div>
       <!-- <div class="box">
