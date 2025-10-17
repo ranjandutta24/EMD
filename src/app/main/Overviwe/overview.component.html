@@ -3,16 +3,13 @@
     <div class="col">
       <div class="box">
         <h2 class="overview_header">
-          <span
-            *ngFor="let letter of splitLetters(cob10); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'"
-          >
+          <span *ngFor="let letter of splitLetters(cob10); let i = index" [style.animation-delay]="i * 0.2 + 's'">
             {{ letter }}
           </span>
         </h2>
         <div class="tr">
           <div class="td">GEN</div>
-          <div class="td">Value 1</div>
+          <div class="td">{{overview_res.COB10_GASMAKEF}}</div>
         </div>
         <div class="tr">
           <div class="td">PRESSURE</div>
@@ -41,10 +38,7 @@
       </div>
       <div class="box">
         <h2 class="overview_header">
-          <span
-            *ngFor="let letter of splitLetters(cob11); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'"
-          >
+          <span *ngFor="let letter of splitLetters(cob11); let i = index" [style.animation-delay]="i * 0.2 + 's'">
             {{ letter }}
           </span>
         </h2>
@@ -89,28 +83,25 @@
     <div class="col">
       <div class="box">
         <h2 class="overview_header">
-          <span
-            *ngFor="let letter of splitLetters(sinter); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'"
-          >
+          <span *ngFor="let letter of splitLetters(sinter); let i = index" [style.animation-delay]="i * 0.2 + 's'">
             {{ letter }}
           </span>
         </h2>
         <div class="tr">
           <div class="td">SP 1 (CO GAS) FLOW</div>
-          <div class="td">Value 1</div>
+          <div class="td">{{overview_res.SP1_MIXGASF}}</div>
         </div>
         <div class="tr">
           <div class="td">PRESSURE</div>
-          <div class="td">Value 2</div>
+          <div class="td">{{overview_res.SP1_MIXGASPRESS}}</div>
         </div>
         <div class="tr">
           <div class="td">SP 2 FLOW (CO GAS)</div>
-          <div class="td">Value 3</div>
+          <div class="td">{{overview_res.SP2_MIXGASF}}</div>
         </div>
         <div class="tr">
           <div class="td">PRESSURE</div>
-          <div class="td">Value 4</div>
+          <div class="td">{{overview_res.SP2_MIXGASPRESS}}</div>
         </div>
         <div class="tr">
           <div class="td">TOTAL FLOW</div>
@@ -119,10 +110,7 @@
       </div>
       <div class="box">
         <h2 class="overview_header">
-          <span
-            *ngFor="let letter of splitLetters(bf); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'"
-          >
+          <span *ngFor="let letter of splitLetters(bf); let i = index" [style.animation-delay]="i * 0.2 + 's'">
             {{ letter }}
           </span>
         </h2>
@@ -161,10 +149,7 @@
       </div>
       <div class="box">
         <h2 class="overview_header">
-          <span
-            *ngFor="let letter of splitLetters(stove); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'"
-          >
+          <span *ngFor="let letter of splitLetters(stove); let i = index" [style.animation-delay]="i * 0.2 + 's'">
             {{ letter }}
           </span>
         </h2>
@@ -186,7 +171,7 @@
         </div>
         <div class="tr">
           <div class="td">CO GAS CONSUMPTION</div>
-          <div class="td">{{ overview_res.CO_GAS_CONSUMPTION }}</div>
+          <div class="td">{{ overview_res.BF_COF }}</div>
         </div>
         <div class="tr">
           <div class="td">CDI COG CONSUMPTION</div>
@@ -197,10 +182,7 @@
     <div class="col">
       <div class="box">
         <h2 class="overview_header">
-          <span
-            *ngFor="let letter of splitLetters(bof_ccp); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'"
-          >
+          <span *ngFor="let letter of splitLetters(bof_ccp); let i = index" [style.animation-delay]="i * 0.2 + 's'">
             {{ letter }}
           </span>
         </h2>
@@ -227,10 +209,7 @@
       </div>
       <div class="box">
         <h2 class="overview_header">
-          <span
-            *ngFor="let letter of splitLetters(bof_holder); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'"
-          >
+          <span *ngFor="let letter of splitLetters(bof_holder); let i = index" [style.animation-delay]="i * 0.2 + 's'">
             {{ letter }}
           </span>
         </h2>
@@ -261,10 +240,7 @@
       </div>
       <div class="box">
         <h2 class="overview_header">
-          <span
-            *ngFor="let letter of splitLetters(ldcp); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'"
-          >
+          <span *ngFor="let letter of splitLetters(ldcp); let i = index" [style.animation-delay]="i * 0.2 + 's'">
             {{ letter }}
           </span>
         </h2>
@@ -297,10 +273,7 @@
     <div class="col">
       <div class="box">
         <h2 class="overview_header">
-          <span
-            *ngFor="let letter of splitLetters(mills); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'"
-          >
+          <span *ngFor="let letter of splitLetters(mills); let i = index" [style.animation-delay]="i * 0.2 + 's'">
             {{ letter }}
           </span>
         </h2>
@@ -351,10 +324,8 @@
       </div>
       <div class="box">
         <h2 class="overview_header">
-          <span
-            *ngFor="let letter of splitLetters(fale_stack_bfg); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'"
-          >
+          <span *ngFor="let letter of splitLetters(fale_stack_bfg); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'">
             {{ letter }}
           </span>
         </h2>
@@ -373,10 +344,8 @@
       </div>
       <div class="box">
         <h2 class="overview_header">
-          <span
-            *ngFor="let letter of splitLetters(fale_stack_cog); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'"
-          >
+          <span *ngFor="let letter of splitLetters(fale_stack_cog); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'">
             {{ letter }}
           </span>
         </h2>
@@ -398,10 +367,7 @@
     <div class="col">
       <div class="box">
         <h2 class="overview_header">
-          <span
-            *ngFor="let letter of splitLetters(cbm); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'"
-          >
+          <span *ngFor="let letter of splitLetters(cbm); let i = index" [style.animation-delay]="i * 0.2 + 's'">
             {{ letter }}
           </span>
         </h2>
@@ -440,10 +406,7 @@
       </div>
       <div class="box">
         <h2 class="overview_header">
-          <span
-            *ngFor="let letter of splitLetters(agbs_cgbs); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'"
-          >
+          <span *ngFor="let letter of splitLetters(agbs_cgbs); let i = index" [style.animation-delay]="i * 0.2 + 's'">
             {{ letter }}
           </span>
         </h2>
@@ -466,10 +429,7 @@
       </div>
       <div class="box">
         <h2 class="overview_header">
-          <span
-            *ngFor="let letter of splitLetters(pbs2); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'"
-          >
+          <span *ngFor="let letter of splitLetters(pbs2); let i = index" [style.animation-delay]="i * 0.2 + 's'">
             {{ letter }}
           </span>
         </h2>

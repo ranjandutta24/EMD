@@ -14,7 +14,7 @@ import {
   ApexStroke,
   ApexXAxis,
   ApexNonAxisChartSeries, //sourav code
-  ApexResponsive ,//sourav code
+  ApexResponsive,//sourav code
   ApexTooltip //sourav code
 } from 'ng-apexcharts';
 import { SseService } from 'src/app/service/sse.servece';
@@ -158,16 +158,16 @@ export class AreaComponent implements OnInit {
       show: true,
       position: 'top',
       horizontalAlign: 'center',
-      labels: { colors: 'DarkGoldenRod', useSeriesColors: false },
-    
-    } , tooltip: {
+      labels: { colors: 'var(--bar-text)', useSeriesColors: false },
+
+    }, tooltip: {
       theme: 'dark',                  // dark background theme
       style: {
         fontSize: '12px'              // ✅ only fontSize allowed
       },
       marker: { show: true }
     }
-    
+
   };
 
   //sourav code
@@ -296,23 +296,23 @@ export class AreaComponent implements OnInit {
       title: {
         text: 'Compressor Performance Trend',
         align: 'left',
-        style: { color: 'DarkGoldenRod', fontSize: '16px', fontWeight: 'bold' } // Title text yellow
+        style: { color: 'var(--bar-text)', fontSize: '16px', fontWeight: 'bold' } // Title text yellow
       },
       grid: { row: { colors: ['#f3f3f3', 'transparent'], opacity: 0.5 } },
       xaxis: {
         categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        labels: { style: { colors: 'DarkGoldenRod', fontSize: '12px' } } // X-axis labels yellow
+        labels: { style: { colors: 'var(--bar-text)', fontSize: '12px' } } // X-axis labels yellow
       },
       yaxis: {
         title: {
           text: 'Values',
-          style: { color: 'DarkGoldenRod', fontSize: '12px', fontWeight: 'bold' } // Y-axis title yellow
+          style: { color: 'var(--bar-text)', fontSize: '12px', fontWeight: 'bold' } // Y-axis title yellow
         },
-        labels: { style: { colors: 'DarkGoldenRod', fontSize: '12px' } } // Y-axis labels yellow
+        labels: { style: { colors: 'var(--bar-text)', fontSize: '12px' } } // Y-axis labels yellow
       },
       colors: ['#1E90FF', '#FF6347'], // Line colors
       legend: {
-        labels: { colors: 'DarkGoldenRod', useSeriesColors: false } // Legend text yellow
+        labels: { colors: 'var(--bar-text)', useSeriesColors: false } // Legend text yellow
       },
       tooltip: {
         theme: 'dark',                  // dark background theme
@@ -321,7 +321,7 @@ export class AreaComponent implements OnInit {
         },
         marker: { show: true }
       }
-      
+
     };
 
 

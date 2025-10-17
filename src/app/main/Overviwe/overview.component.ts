@@ -78,6 +78,13 @@ export class OverviewComponent implements OnInit, OnDestroy {
     GASHOLDERTEMP: 0,
     EXPORTEDGAS: 0,
     GAS_FLOW_mills: 0,
+
+    COB10_GASMAKEF: 0,
+    SP1_MIXGASPRESS: 0,
+    SP1_MIXGASF: 0,
+    SP2_MIXGASPRESS: 0,
+    SP2_MIXGASF: 0,
+    BF_COF: 0
   };
 
   previousValues: any = { ...this.overview_res };
@@ -122,6 +129,58 @@ export class OverviewComponent implements OnInit, OnDestroy {
       // console.log(this.bf5_res);
 
       // Animate each property
+      //sourav code
+      this.animateValue(
+        this.previousValues.COB10_GASMAKEF,
+        data.COB10_GASMAKEF,
+        800,
+        (val) => (this.overview_res.COB10_GASMAKEF = val),
+        2
+      );
+
+
+      this.animateValue(
+        this.previousValues.SP1_MIXGASF,
+        data.SP1_MIXGASF,
+        800, // ms
+        (val) => (this.overview_res.SP1_MIXGASF = val)
+      );
+
+      this.animateValue(
+        this.previousValues.SP1_MIXGASPRESS,
+        data.SP1_MIXGASPRESS,
+        800,
+        (val) => (this.overview_res.SP1_MIXGASPRESS = val),
+        2
+      );
+
+      // repeat for other props
+      this.animateValue(
+        this.previousValues.SP2_MIXGASF,
+        data.SP2_MIXGASF,
+        800,
+        (val) => (this.overview_res.SP2_MIXGASF = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues.SP2_MIXGASPRESS,
+        data.SP2_MIXGASPRESS,
+        800,
+        (val) => (this.overview_res.SP2_MIXGASPRESS = val),
+        2
+      );
+
+
+      this.animateValue(
+        this.previousValues.BF_COF,
+        data.BF_COF,
+        800,
+        (val) => (this.overview_res.BF_COF = val),
+        2
+      );
+      //sourav code
+
       this.animateValue(
         this.previousValues.BLAST_VOLUME,
         data.BLAST_VOLUME,
