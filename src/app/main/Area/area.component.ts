@@ -50,6 +50,7 @@ export type RadialChartOptions = {
   labels: string[];
   colors: string[];
   responsive: ApexResponsive[];
+  legend: ApexLegend;
   title: {}
 };
 
@@ -114,6 +115,7 @@ export class AreaComponent implements OnInit {
     labels: [],
     colors: [],
     responsive: [],
+    legend: {},
     title: {}
   };
 
@@ -123,6 +125,7 @@ export class AreaComponent implements OnInit {
     labels: [],
     colors: [],
     responsive: [],
+    legend: {},
     title: {}
   };
 
@@ -132,6 +135,7 @@ export class AreaComponent implements OnInit {
     labels: [],
     colors: [],
     responsive: [],
+    legend: {},
     title: {}
   };
 
@@ -141,6 +145,7 @@ export class AreaComponent implements OnInit {
     labels: [],
     colors: [],
     responsive: [],
+    legend: {},
     title: {}
   };
 
@@ -189,18 +194,35 @@ export class AreaComponent implements OnInit {
         type: 'radialBar',
         toolbar: { show: false }
       },
-      labels: ['Pressure (psi)'], // displayed inside the chart
-      colors: ['#008080'],
+      labels: ['Pressure (psi)'],
+      colors: ['var(--header-text)'],
       responsive: [{
         breakpoint: 480,
         options: { chart: { height: 200 } }
       }],
+      legend: {
+        show: true,
+        position: 'top',
+        horizontalAlign: 'center',
+        labels: {
+          colors: 'var(--bar-text)',
+          useSeriesColors: true
+        },
+        formatter: (seriesName, opts) => {
+          const value = opts.w.globals.series[opts.seriesIndex];
+          return `${seriesName}: ${value}%`; // Legend will show "Pressure (psi): 76%"
+        },
+        onItemClick: {
+          toggleDataSeries: true
+        }
+      },
       title: {
         text: 'Compressor 1 Pressure',
         align: 'center',
         style: { fontSize: '16px', color: '#333' }
       }
     };
+
 
     // Radial chart 2 (Compressor 2 Flow)
     this.radialChart2 = {
@@ -210,18 +232,35 @@ export class AreaComponent implements OnInit {
         type: 'radialBar',
         toolbar: { show: false }
       },
-      labels: ['Flow (m³/min)'], // displayed inside the chart
-      colors: ['#008080'],
+      labels: ['Flow (m³/min)'],
+      colors: ['var(--header-text)'],
       responsive: [{
         breakpoint: 480,
         options: { chart: { height: 200 } }
       }],
+      legend: {
+        show: true,
+        position: 'top',
+        horizontalAlign: 'center',
+        labels: {
+          colors: 'var(--bar-text)',
+          useSeriesColors: true
+        },
+        formatter: (seriesName, opts) => {
+          const value = opts.w.globals.series[opts.seriesIndex];
+          return `${seriesName}: ${value}%`; // Legend will show "Flow (m³/min): 45%"
+        },
+        onItemClick: {
+          toggleDataSeries: true
+        }
+      },
       title: {
         text: 'Compressor 2 Flow',
         align: 'center',
         style: { fontSize: '16px', color: '#333' }
       }
     };
+
 
 
     // Radial chart 3 (Compressor 3 Pressure)
@@ -233,17 +272,34 @@ export class AreaComponent implements OnInit {
         toolbar: { show: false }
       },
       labels: ['Pressure (psi)'],
-      colors: ['#20B2AA'],
+      colors: ['var(--header-text)'],
       responsive: [{
         breakpoint: 480,
         options: { chart: { height: 200 } }
       }],
+      legend: {
+        show: true,
+        position: 'top',
+        horizontalAlign: 'center',
+        labels: {
+          colors: 'var(--bar-text)',
+          useSeriesColors: true
+        },
+        formatter: (seriesName, opts) => {
+          const value = opts.w.globals.series[opts.seriesIndex];
+          return `${seriesName}: ${value}%`; // Legend will show "Pressure (psi): 60%"
+        },
+        onItemClick: {
+          toggleDataSeries: true
+        }
+      },
       title: {
         text: 'Compressor 3 Pressure',
         align: 'center',
         style: { fontSize: '16px', color: '#333' }
       }
     };
+
 
     // Radial chart 4 (Compressor 4 Flow)
     this.radialChart4 = {
@@ -254,17 +310,35 @@ export class AreaComponent implements OnInit {
         toolbar: { show: false }
       },
       labels: ['Flow (m³/min)'],
-      colors: ['#48D1CC'],
+      colors: ['var(--header-text)'],
       responsive: [{
         breakpoint: 480,
         options: { chart: { height: 200 } }
       }],
+      legend: {
+        show: true,
+        position: 'top',
+        horizontalAlign: 'center',
+        labels: {
+          colors: 'var(--bar-text)',
+          useSeriesColors: true
+        },
+        formatter: (seriesName, opts) => {
+          // opts.seriesIndex gives the index of the series
+          const value = opts.w.globals.series[opts.seriesIndex];
+          return `${seriesName}: ${value}%`; // legend will show "Flow (m³/min): 50"
+        },
+        onItemClick: {
+          toggleDataSeries: true
+        }
+      },
       title: {
         text: 'Compressor 4 Flow',
         align: 'center',
         style: { fontSize: '16px', color: '#333' }
       }
     };
+
 
 
     // Line chart
@@ -296,12 +370,12 @@ export class AreaComponent implements OnInit {
       title: {
         text: 'Compressor Performance Trend',
         align: 'left',
-        style: { color: 'var(--bar-text)', fontSize: '16px', fontWeight: 'bold' } // Title text yellow
+        style: { color: 'var(--header-text)', fontSize: '16px', fontWeight: 'bold' } // Title text yellow
       },
       grid: { row: { colors: ['#f3f3f3', 'transparent'], opacity: 0.5 } },
       xaxis: {
         categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        labels: { style: { colors: 'var(--bar-text)', fontSize: '12px' } } // X-axis labels yellow
+        labels: { style: { colors: 'var(--header-text)', fontSize: '12px' } } // X-axis labels yellow
       },
       yaxis: {
         title: {
@@ -312,7 +386,7 @@ export class AreaComponent implements OnInit {
       },
       colors: ['#1E90FF', '#FF6347'], // Line colors
       legend: {
-        labels: { colors: 'var(--bar-text)', useSeriesColors: false } // Legend text yellow
+        labels: { colors: 'var(--header-text)', useSeriesColors: false } // Legend text yellow
       },
       tooltip: {
         theme: 'dark',                  // dark background theme
