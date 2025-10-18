@@ -1,0 +1,15 @@
+.charts-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.chart-box {
+    flex: 1;
+    max-width: 480px;
+    background: linear-gradient(180deg, #e0f7fa, #ffffff);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+}

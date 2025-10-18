@@ -167,6 +167,74 @@
 
 
 
+/* Purple variant */
+:host ::ng-deep .ngx-org-body_violet {
+  padding: 10px;
+  color: var(--tree-text);
+  background: var(--bg-violet);
+  border: 2px solid var(--border-violet);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+:host ::ng-deep .ngx-org-body_violet:hover {
+  background: var(--bg-violet-hover);
+  border: 2px solid var(--border-violet-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(155, 89, 182, 0.3);
+}
+
+/* Teal variant */
+:host ::ng-deep .ngx-org-body_teal {
+  padding: 10px;
+  color: var(--tree-text);
+  background: var(--bg-teal);
+  border: 2px solid var(--border-teal);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+:host ::ng-deep .ngx-org-body_teal:hover {
+  background: var(--bg-teal-hover);
+  border: 2px solid var(--border-teal-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 188, 156, 0.3);
+}
+
+/* Yellow variant */
+:host ::ng-deep .ngx-org-body_yellow {
+  padding: 10px;
+  color: var(--tree-text);
+  background: var(--bg-yellow);
+  border: 2px solid var(--border-yellow);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+:host ::ng-deep .ngx-org-body_yellow:hover {
+  background: var(--bg-yellow-hover);
+  border: 2px solid var(--border-yellow-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(241, 196, 15, 0.3);
+}
+
+/* Pink variant */
+:host ::ng-deep .ngx-org-body_pink {
+  padding: 10px;
+  color: var(--tree-text);
+  background: var(--bg-pink);
+  border: 2px solid var(--border-pink);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+:host ::ng-deep .ngx-org-body_pink:hover {
+  background: var(--bg-pink-hover);
+  border: 2px solid var(--border-pink-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(236, 112, 99, 0.3);
+}
+
 
 
 /* Remove the debug border */

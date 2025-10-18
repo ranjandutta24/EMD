@@ -15,49 +15,49 @@ export class CbmComponent implements OnInit {
       childs: [
         {
           name: 'GEECL FLOW (SCM/hr)',
-          cssClass: 'ngx-org-body_uf',
+          cssClass: 'ngx-org-body_orange',
           childs: [
             {
               name: 'TOTALIZER',
-              cssClass: 'ngx-org-body_uf',
+              cssClass: 'ngx-org-body_orange',
               childs: [
-                { name: 'M1', cssClass: 'ngx-org-body_uf' },
-                { name: 'M2', cssClass: 'ngx-org-body_uf' }
+                { name: 'M1', cssClass: 'ngx-org-body_orange' },
+                { name: 'M2', cssClass: 'ngx-org-body_orange' }
               ]
             },
           ]
         },
         {
           name: 'MRS FLOW',
-          cssClass: 'ngx-org-body_orange',
+          cssClass: 'ngx-org-body_green',
           childs: [
-            { name: 'M1', cssClass: 'ngx-org-body_orange' },
-            { name: 'M2', cssClass: 'ngx-org-body_orange' }
+            { name: 'M1', cssClass: 'ngx-org-body_green' },
+            { name: 'M2', cssClass: 'ngx-org-body_green' }
           ]
         },
         {
           name: 'Pressure (Kg/cm²)',
-          cssClass: 'ngx-org-body_green',
+          cssClass: 'ngx-org-body',
           childs: [
-            { name: 'Inlet', cssClass: 'ngx-org-body_green' },
-            { name: 'Outlet', cssClass: 'ngx-org-body_green' }
+            { name: 'Inlet', cssClass: 'ngx-org-body' },
+            { name: 'Outlet', cssClass: 'ngx-org-body' }
           ]
         },
         {
           name: 'Mills',
-          cssClass: 'ngx-org-body'
-        },
-        {
-          name: 'PBS#2',
           cssClass: 'ngx-org-body_redorange'
         },
         {
-          name: 'BOF & CCP',
+          name: 'PBS#2',
           cssClass: 'ngx-org-body_violet'
         },
         {
-          name: 'CDI',
+          name: 'BOF & CCP',
           cssClass: 'ngx-org-body_yellow'
+        },
+        {
+          name: 'CDI',
+          cssClass: 'ngx-org-body_uf'
         },
         {
           name: 'LDCP',

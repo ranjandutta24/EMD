@@ -60,7 +60,7 @@ export class BfComponent implements OnInit {
                 },
                 {
                   name: 'FLARE',
-                  cssClass: 'ngx-org-body_teal'
+                  cssClass: 'ngx-org-body_violet'
                 },
                 {
                   name: "MILL'S",
