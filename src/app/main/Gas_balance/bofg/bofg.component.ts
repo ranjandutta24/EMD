@@ -49,11 +49,11 @@ export class BofgComponent implements OnInit {
           childs: [
             {
               name: 'PBS#2',
-              cssClass: 'ngx-org-body_green',
+              cssClass: 'ngx-org-body_orange',
             },
             {
               name: 'MILLS',
-              cssClass: 'ngx-org-body_green',
+              cssClass: 'ngx-org-body_orange',
             }
           ]
         },

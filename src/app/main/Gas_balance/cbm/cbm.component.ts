@@ -53,7 +53,7 @@ export class CbmComponent implements OnInit {
         },
         {
           name: 'BOF & CCP',
-          cssClass: 'ngx-org-body_purple'
+          cssClass: 'ngx-org-body_violet'
         },
         {
           name: 'CDI',

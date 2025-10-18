@@ -26,22 +26,22 @@ export class BfComponent implements OnInit {
             {
 
               name: 'MAKE',
-              cssClass: 'ngx-org-body_green',
+              cssClass: 'ngx-org-body_orange',
               title: '(TNm₃/hr)',
               childs: [
                 {
                   name: 'STOVE',
-                  cssClass: 'ngx-org-body_redorange',
+                  cssClass: 'ngx-org-body_green',
                   title: '(TOTAL)',
                   childs: [
-                    { name: 'STOVE1', cssClass: 'ngx-org-body' },
-                    { name: 'STOVE2', cssClass: 'ngx-org-body' },
-                    { name: 'STOVE3', cssClass: 'ngx-org-body' }
+                    { name: 'STOVE1', cssClass: 'ngx-org-body_green' },
+                    { name: 'STOVE2', cssClass: 'ngx-org-body_green' },
+                    { name: 'STOVE3', cssClass: 'ngx-org-body_green' }
                   ]
                 },
                 {
                   name: 'PBS#2',
-                  cssClass: 'ngx-org-body_redorange',
+                  cssClass: 'ngx-org-body',
                   title: '(TOTAL)',
                   childs: [
                     { name: 'BOILER1', cssClass: 'ngx-org-body' },
@@ -54,23 +54,23 @@ export class BfComponent implements OnInit {
                   cssClass: 'ngx-org-body_redorange',
                   title: '(TOTAL)',
                   childs: [
-                    { name: 'N1 BLOCK', cssClass: 'ngx-org-body' },
-                    { name: 'N2 BLOCK', cssClass: 'ngx-org-body' }
+                    { name: 'N1 BLOCK', cssClass: 'ngx-org-body_redorange' },
+                    { name: 'N2 BLOCK', cssClass: 'ngx-org-body_redorange' }
                   ]
                 },
                 {
                   name: 'FLARE',
-                  cssClass: 'ngx-org-body_redorange'
+                  cssClass: 'ngx-org-body_teal'
                 },
                 {
                   name: "MILL'S",
-                  cssClass: 'ngx-org-body_redorange'
+                  cssClass: 'ngx-org-body_yellow'
                 }
               ],
             },
             {
               name: 'PRESSURE',
-              cssClass: 'ngx-org-body_green',
+              cssClass: 'ngx-org-body_orange',
               title: '(MMWC)'
             }
           ]

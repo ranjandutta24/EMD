@@ -199,12 +199,6 @@
   --header-text: #004d00;
 
 
-  /* Purple variant - refined to match original quality */
-  --bg-purple: rgb(200, 106, 240);
-  --border-purple: rgb(141, 68, 173);
-  --bg-purple-hover: rgb(232, 192, 248);
-  --border-purple-hover: rgba(142, 68, 173, 0.9);
-
   /* Teal variant - refined to match original quality */
   --bg-teal: rgba(26, 243, 200, 0.986);
   --border-teal: rgba(22, 160, 133, 0.6);
@@ -218,13 +212,17 @@
   --border-yellow-hover: rgba(243, 156, 18, 0.9);
 
   /* Pink variant - refined to match original quality */
-  --bg-pink: rgb(255, 65, 246);
+  --bg-pink: rgb(248, 113, 241);
   --border-pink: rgba(231, 60, 160, 0.6);
   --bg-pink-hover: rgb(243, 179, 218);
   --border-pink-hover: rgba(231, 60, 160, 0.9);
 
 
-
+  /* Violet variant */
+  --bg-violet: rgb(186, 114, 253);
+  --border-violet: rgba(138, 43, 226, 0.6);
+  --bg-violet-hover: rgb(210, 172, 247);
+  --border-violet-hover: rgba(138, 43, 226, 0.9);
 }
 
 
@@ -376,12 +374,6 @@
   --bar-text: #ffffff;
   --header-text: #fff59d;
 
-  /* Purple variant - refined to match original quality */
-  --bg-purple: rgba(142, 68, 173, 0.3);
-  --border-purple: rgba(142, 68, 173, 0.6);
-  --bg-purple-hover: rgba(142, 68, 173, 0.6);
-  --border-purple-hover: rgba(142, 68, 173, 0.9);
-
   /* Teal variant - refined to match original quality */
   --bg-teal: rgba(22, 160, 133, 0.3);
   --border-teal: rgba(22, 160, 133, 0.6);
@@ -400,7 +392,11 @@
   --bg-pink-hover: rgba(231, 76, 60, 0.6);
   --border-pink-hover: rgba(231, 76, 60, 0.9);
 
-
+  /* Violet variant */
+  --bg-violet: rgba(148, 38, 250, 0.3);
+  --border-violet: rgba(138, 43, 226, 0.6);
+  --bg-violet-hover: rgba(229, 137, 241, 0.986);
+  --border-violet-hover: rgba(138, 43, 226, 0.9);
 }
 
 

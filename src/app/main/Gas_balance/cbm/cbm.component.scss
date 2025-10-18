@@ -141,18 +141,18 @@
 
 
 /* Purple variant */
-:host ::ng-deep .ngx-org-body_purple {
+:host ::ng-deep .ngx-org-body_violet {
     padding: 10px;
     color: var(--tree-text);
-    background: var(--bg-purple);
-    border: 2px solid var(--border-purple);
+    background: var(--bg-violet);
+    border: 2px solid var(--border-violet);
     border-radius: 4px;
     transition: all 0.3s ease;
 }
 
-:host ::ng-deep .ngx-org-body_purple:hover {
-    background: var(--bg-purple-hover);
-    border: 2px solid var(--border-purple-hover);
+:host ::ng-deep .ngx-org-body_violet:hover {
+    background: var(--bg-violet-hover);
+    border: 2px solid var(--border-violet-hover);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(155, 89, 182, 0.3);
 }
