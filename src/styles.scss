@@ -198,6 +198,33 @@
   --bar-text: #000704;
   --header-text: #004d00;
 
+
+  /* Purple variant - refined to match original quality */
+  --bg-purple: rgb(200, 106, 240);
+  --border-purple: rgb(141, 68, 173);
+  --bg-purple-hover: rgb(232, 192, 248);
+  --border-purple-hover: rgba(142, 68, 173, 0.9);
+
+  /* Teal variant - refined to match original quality */
+  --bg-teal: rgba(22, 160, 133, 0.3);
+  --border-teal: rgba(22, 160, 133, 0.6);
+  --bg-teal-hover: rgba(22, 160, 133, 0.6);
+  --border-teal-hover: rgba(22, 160, 133, 0.9);
+
+  /* Yellow variant - refined to match original quality */
+  --bg-yellow: rgb(233, 231, 98);
+  --border-yellow: rgba(243, 156, 18, 0.6);
+  --bg-yellow-hover: rgb(243, 227, 201);
+  --border-yellow-hover: rgba(243, 156, 18, 0.9);
+
+  /* Pink variant - refined to match original quality */
+  --bg-pink: rgba(231, 76, 60, 0.3);
+  --border-pink: rgba(231, 76, 60, 0.6);
+  --bg-pink-hover: rgba(231, 76, 60, 0.6);
+  --border-pink-hover: rgba(231, 76, 60, 0.9);
+
+
+
 }
 
 
@@ -348,6 +375,30 @@
   /* Bar */
   --bar-text: #ffffff;
   --header-text: #fff59d;
+
+  /* Purple variant - refined to match original quality */
+  --bg-purple: rgba(142, 68, 173, 0.3);
+  --border-purple: rgba(142, 68, 173, 0.6);
+  --bg-purple-hover: rgba(142, 68, 173, 0.6);
+  --border-purple-hover: rgba(142, 68, 173, 0.9);
+
+  /* Teal variant - refined to match original quality */
+  --bg-teal: rgba(22, 160, 133, 0.3);
+  --border-teal: rgba(22, 160, 133, 0.6);
+  --bg-teal-hover: rgba(22, 160, 133, 0.6);
+  --border-teal-hover: rgba(22, 160, 133, 0.9);
+
+  /* Yellow variant - refined to match original quality */
+  --bg-yellow: rgba(134, 88, 13, 0.3);
+  --border-yellow: rgba(243, 156, 18, 0.6);
+  --bg-yellow-hover: rgba(243, 156, 18, 0.6);
+  --border-yellow-hover: rgba(243, 156, 18, 0.9);
+
+  /* Pink variant - refined to match original quality */
+  --bg-pink: rgba(231, 76, 60, 0.3);
+  --border-pink: rgba(231, 76, 60, 0.6);
+  --bg-pink-hover: rgba(231, 76, 60, 0.6);
+  --border-pink-hover: rgba(231, 76, 60, 0.9);
 
 
 }

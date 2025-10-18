@@ -58,6 +58,22 @@
     width: 100px;
 }
 
+:host ::ng-deep .ngx-org-body_uf {
+    padding: 10px;
+    color: var(--tree-text);
+    background: var(--bg-uf);
+    border: 2px solid var(--border-uf);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+:host ::ng-deep .ngx-org-body_uf:hover {
+    background: var(--bg-uf-hover);
+    border: 2px solid var(--border-uf-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(219, 216, 52, 0.3);
+}
+
 
 :host ::ng-deep .ngx-org-body_green {
     padding: 10px;
@@ -91,6 +107,21 @@
     box-shadow: 0 4px 12px rgba(219, 133, 52, 0.3);
 }
 
+:host ::ng-deep .ngx-org-body {
+    padding: 10px;
+    color: var(--tree-text);
+    background: var(--bg-body);
+    border: 2px solid var(--border-body);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+:host ::ng-deep .ngx-org-body:hover {
+    background: var(--bg-body-hover);
+    border: 2px solid var(--border-body-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
 
 :host ::ng-deep .ngx-org-body_redorange {
     color: var(--tree-text);
@@ -105,6 +136,76 @@
     border: 2px solid var(--border-sp-hover);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(219, 77, 52, 0.3);
+}
+
+
+
+/* Purple variant */
+:host ::ng-deep .ngx-org-body_purple {
+    padding: 10px;
+    color: var(--tree-text);
+    background: var(--bg-purple);
+    border: 2px solid var(--border-purple);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+:host ::ng-deep .ngx-org-body_purple:hover {
+    background: var(--bg-purple-hover);
+    border: 2px solid var(--border-purple-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(155, 89, 182, 0.3);
+}
+
+/* Teal variant */
+:host ::ng-deep .ngx-org-body_teal {
+    padding: 10px;
+    color: var(--tree-text);
+    background: var(--bg-teal);
+    border: 2px solid var(--border-teal);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+:host ::ng-deep .ngx-org-body_teal:hover {
+    background: var(--bg-teal-hover);
+    border: 2px solid var(--border-teal-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 188, 156, 0.3);
+}
+
+/* Yellow variant */
+:host ::ng-deep .ngx-org-body_yellow {
+    padding: 10px;
+    color: var(--tree-text);
+    background: var(--bg-yellow);
+    border: 2px solid var(--border-yellow);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+:host ::ng-deep .ngx-org-body_yellow:hover {
+    background: var(--bg-yellow-hover);
+    border: 2px solid var(--border-yellow-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(241, 196, 15, 0.3);
+}
+
+/* Pink variant */
+:host ::ng-deep .ngx-org-body_pink {
+    padding: 10px;
+    color: var(--tree-text);
+    background: var(--bg-pink);
+    border: 2px solid var(--border-pink);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+:host ::ng-deep .ngx-org-body_pink:hover {
+    background: var(--bg-pink-hover);
+    border: 2px solid var(--border-pink-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(236, 112, 99, 0.3);
 }
 
 .detail-card {
