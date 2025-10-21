@@ -52,7 +52,7 @@ export class MillsComponent implements OnInit {
     //   chart: {
     //     type: "bar",
     //     height: 400,
-    //     foreColor: 'var(--bar-text)', // <-- Sets text color globally
+    //     foreColor: '#004d40', // <-- Sets text color globally
     //     stacked: false
     //   },
     //   title: {
@@ -60,14 +60,14 @@ export class MillsComponent implements OnInit {
     //     align: "center",
     //     style: {
     //       fontSize: '18px',
-    //       color: 'var(--bar-text)' // Title text color
+    //       color: '#004d40' // Title text color
     //     }
     //   },
     //   xaxis: {
     //     categories: ["CBM", "COG", "BOF", "BF", "N2", "MG"],
     //     labels: {
     //       style: {
-    //         colors: 'var(--bar-text)',
+    //         colors: '#004d40',
     //         fontSize: '14px'
     //       }
     //     }
@@ -76,13 +76,13 @@ export class MillsComponent implements OnInit {
     //     title: {
     //       text: "Nm³",
     //       style: {
-    //         color: 'var(--bar-text)',
+    //         color: '#004d40',
     //         fontSize: '14px'
     //       }
     //     },
     //     labels: {
     //       style: {
-    //         colors: 'var(--bar-text)',
+    //         colors: '#004d40',
     //         fontSize: '14px'
     //       }
     //     }
@@ -90,7 +90,7 @@ export class MillsComponent implements OnInit {
     //   dataLabels: {
     //     enabled: true,
     //     style: {
-    //       colors: ['var(--bar-text)'] // Data label color
+    //       colors: ['#004d40'] // Data label color
     //     }
     //   },
     //   colors: [
@@ -109,7 +109,7 @@ export class MillsComponent implements OnInit {
     //   },
     //   legend: {
     //     labels: {
-    //       colors: 'var(--bar-text)',
+    //       colors: '#004d40',
     //       useSeriesColors: false
     //     }
     //   }, tooltip: {
@@ -148,33 +148,33 @@ export class MillsComponent implements OnInit {
       },
       dataLabels: {
         enabled: true,
-        style: { colors: ['var(--bar-text)'] },
+        style: { colors: ['#004d40'] },
         formatter: (val: number) => val.toString()
       },
       xaxis: {
         categories: ['Gas Flow'], // single category for grouped bars
-        labels: { style: { colors: 'var(--bar-text)', fontSize: '13px', fontWeight: 600 } }
+        labels: { style: { colors: '#004d40', fontSize: '13px', fontWeight: 600 } }
       },
       yaxis: {
-        labels: { style: { colors: 'var(--bar-text)' } }
+        labels: { style: { colors: '#004d40' } }
       },
       title: {
         text: "MILL'S Gas Flow",
         align: 'center',
-        style: { fontSize: '20px', color: 'var(--header-text)', fontWeight: 'bold' }
+        style: { fontSize: '20px', color: '#004d40', fontWeight: 'bold' }
       },
       legend: {
         show: true,
         position: 'top',
         horizontalAlign: 'center',
-        labels: { colors: 'var(--bar-text)' },
+        labels: { colors: '#004d40' },
         onItemClick: {
           toggleDataSeries: true // makes legends clickable
         }
       },
       tooltip: {
         enabled: true,
-        y: { formatter: (val: number) => `${val} Nm³` }
+        y: { formatter: (val: number) => `${val} NM₃` }
       }
     };
 

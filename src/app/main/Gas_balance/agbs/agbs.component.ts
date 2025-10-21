@@ -47,8 +47,12 @@ export class AgbsComponent implements OnInit {
       chart: {
         type: 'bar',
         height: 400,
-        toolbar: { show: false }
+        toolbar: { show: false },
+        foreColor: '#000',
+        animations: { enabled: false },
+        parentHeightOffset: 30 // 👈 gives extra space at bottom
       },
+
       colors: ['#3498DB'],
       plotOptions: {
         bar: {
@@ -63,8 +67,13 @@ export class AgbsComponent implements OnInit {
         style: { colors: ['#000'], fontWeight: 'bold' }
       },
       xaxis: {
-        categories: ['TEMP °C', 'INLET Pr (MMWC)', 'VIBRATION (mm/sec)', 'OUTLET FLOW (ThNm³/Hr)'],
-        labels: { style: { colors: '#000', fontSize: '13px', fontWeight: 600 } }
+        categories: ['TEMP °C', 'INLET Pr (MMWC)', 'VIBRATION (mm/sec)', 'OUTLET FLOW (ThNM₃/Hr)'],
+        labels: {
+          style: { colors: '#000', fontSize: '13px', fontWeight: 600 },
+          rotate: -30,        // 👈 tilt labels for more space
+          offsetY: 5,         // 👈 move labels slightly down
+          trim: false,        // 👈 prevent truncation
+        }
       },
       yaxis: {
         labels: { style: { colors: '#000' } }
@@ -88,8 +97,12 @@ export class AgbsComponent implements OnInit {
       chart: {
         type: 'bar',
         height: 400,
-        toolbar: { show: false }
+        toolbar: { show: false },
+        foreColor: '#000',
+        animations: { enabled: false },
+        parentHeightOffset: 30 // 👈 gives extra space at bottom
       },
+
       colors: ['#3498DB'],
       plotOptions: {
         bar: {
@@ -104,8 +117,13 @@ export class AgbsComponent implements OnInit {
         style: { colors: ['#000'], fontWeight: 'bold' }
       },
       xaxis: {
-        categories: ['TEMP °C', 'INLET PRESSURE (MMWC)', 'VIBRATION (mm/sec)', 'OUTLET FLOW (ThNm³/Hr)'],
-        labels: { style: { colors: '#000', fontSize: '13px', fontWeight: 600 } }
+        categories: ['TEMP °C', 'INLET PRESSURE (MMWC)', 'VIBRATION (mm/sec)', 'OUTLET FLOW (ThNM₃/Hr)'],
+        labels: {
+          style: { colors: '#000', fontSize: '13px', fontWeight: 600 },
+          rotate: -30,        // 👈 tilt labels for more space
+          offsetY: 5,         // 👈 move labels slightly down
+          trim: false,        // 👈 prevent truncation
+        }
       },
       yaxis: {
         labels: { style: { colors: '#000' } }
