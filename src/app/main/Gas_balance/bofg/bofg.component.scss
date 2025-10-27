@@ -208,8 +208,10 @@
 
 
 ::ng-deep .line-long .ngx-org-node::before {
-    height: 80px !important;
+    height: 100px !important;
 }
+
+
 
 /* In your component's CSS file */
 :host ::ng-deep .ngx-org-head {

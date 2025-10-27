@@ -468,5 +468,12 @@ body {
 //   width: 100%;
 // }
 
+:host ::ng-deep .ngx-org-node::before {
+  height: 4em !important;
+}
+
+.ngx-org-connector-vertical {
+  height: 4em !important;
+}
 
 //sourav code
