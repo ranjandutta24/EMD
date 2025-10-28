@@ -1,228 +1,402 @@
-.container {
-  display: flex;
-  flex-direction: row;
-  height: calc(100vh - 84px);
-  padding: 10px;
-  box-sizing: border-box;
-  overflow: hidden;
-  /* prevents scroll */
-}
+// .container {
+//   display: flex;
+//   flex-direction: row;
+//   height: calc(100vh - 84px);
+//   padding: 10px;
+//   box-sizing: border-box;
+//   overflow: hidden;
+//   /* prevents scroll */
+// }
 
 
 
 
-/* Right tree area */
-.tree {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 20px;
-  overflow: hidden;
-  /* ensures no scrollbar */
-}
+// /* Right tree area */
+// .tree {
+//   flex: 1;
+//   display: flex;
+//   justify-content: center;
+//   align-items: flex-start;
+//   padding-top: 20px;
+//   overflow: hidden;
+//   /* ensures no scrollbar */
+// }
 
-/* Make the org chart responsive */
-::ng-deep ngx-org-chart {
-  transform: scale(0.9);
-  /* scale slightly to fit in viewport */
-  transform-origin: top center;
-  width: 100%;
-}
+// /* Make the org chart responsive */
+// ::ng-deep ngx-org-chart {
+//   transform: scale(0.9);
+//   /* scale slightly to fit in viewport */
+//   transform-origin: top center;
+//   width: 100%;
+// }
 
-@media (max-width: 1500px) {
-  ::ng-deep ngx-org-chart {
-    transform: scale(0.8);
-  }
-}
+// @media (max-width: 1500px) {
+//   ::ng-deep ngx-org-chart {
+//     transform: scale(0.8);
+//   }
+// }
 
-@media (max-width: 1200px) {
-  ::ng-deep ngx-org-chart {
-    transform: scale(0.7);
-  }
-}
-
-
-::ng-deep .line-long .ngx-org-node::before {
-  height: 80px !important;
-}
-
-/* In your component's CSS file */
-:host ::ng-deep .ngx-org-head {
-  background: var(--bg-head);
-  border: 2px solid var(--border-head);
-  display: flex;
-  justify-content: center;
-  color: var(--tree-text);
-  padding: 15px;
-  width: 100px;
-}
+// @media (max-width: 1200px) {
+//   ::ng-deep ngx-org-chart {
+//     transform: scale(0.7);
+//   }
+// }
 
 
-:host ::ng-deep .ngx-org-body_green {
-  padding: 10px;
-  color: var(--tree-text);
-  background: var(--bg-ldcp);
-  border: 2px solid var(--border-ldcp);
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
+// ::ng-deep .line-long .ngx-org-node::before {
+//   height: 80px !important;
+// }
 
-:host ::ng-deep .ngx-org-body_green:hover {
-  background: var(--bg-ldcp-hover);
-  border: 2px solid var(--border-ldcp-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(169, 219, 52, 0.3);
-}
-
-:host ::ng-deep .ngx-org-body_orange {
-  padding: 10px;
-  color: var(--tree-text);
-  background: var(--bg-pbs);
-  border: 2px solid var(--border-pbs);
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-:host ::ng-deep .ngx-org-body_orange:hover {
-  background: var(--bg-pbs-hover);
-  border: 2px solid var(--border-pbs-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(219, 133, 52, 0.3);
-}
+// /* In your component's CSS file */
+// :host ::ng-deep .ngx-org-head {
+//   background: var(--bg-head);
+//   border: 2px solid var(--border-head);
+//   display: flex;
+//   justify-content: center;
+//   color: var(--tree-text);
+//   padding: 15px;
+//   width: 100px;
+// }
 
 
-:host ::ng-deep .ngx-org-body_redorange {
-  color: var(--tree-text);
-  background: var(--bg-sp);
-  border: 2px solid var(--border-sp);
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
+// :host ::ng-deep .ngx-org-body_green {
+//   padding: 10px;
+//   color: var(--tree-text);
+//   background: var(--bg-ldcp);
+//   border: 2px solid var(--border-ldcp);
+//   border-radius: 4px;
+//   transition: all 0.3s ease;
+// }
 
-:host ::ng-deep .ngx-org-body_redorange:hover {
-  background: var(--bg-sp-hover);
-  border: 2px solid var(--border-sp-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(219, 77, 52, 0.3);
-}
+// :host ::ng-deep .ngx-org-body_green:hover {
+//   background: var(--bg-ldcp-hover);
+//   border: 2px solid var(--border-ldcp-hover);
+//   transform: translateY(-2px);
+//   box-shadow: 0 4px 12px rgba(169, 219, 52, 0.3);
+// }
 
-:host ::ng-deep .ngx-org-body {
-  padding: 10px;
-  color: var(--tree-text);
-  background: var(--bg-body);
-  border: 2px solid var(--border-body);
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
+// :host ::ng-deep .ngx-org-body_orange {
+//   padding: 10px;
+//   color: var(--tree-text);
+//   background: var(--bg-pbs);
+//   border: 2px solid var(--border-pbs);
+//   border-radius: 4px;
+//   transition: all 0.3s ease;
+// }
 
-:host ::ng-deep .ngx-org-body:hover {
-  background: var(--bg-body-hover);
-  border: 2px solid var(--border-body-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
-}
+// :host ::ng-deep .ngx-org-body_orange:hover {
+//   background: var(--bg-pbs-hover);
+//   border: 2px solid var(--border-pbs-hover);
+//   transform: translateY(-2px);
+//   box-shadow: 0 4px 12px rgba(219, 133, 52, 0.3);
+// }
 
-/* Purple variant */
-:host ::ng-deep .ngx-org-body_violet {
-  padding: 10px;
-  color: var(--tree-text);
-  background: var(--bg-violet);
-  border: 2px solid var(--border-violet);
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
 
-:host ::ng-deep .ngx-org-body_violet:hover {
-  background: var(--bg-violet-hover);
-  border: 2px solid var(--border-violet-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(155, 89, 182, 0.3);
-}
+// :host ::ng-deep .ngx-org-body_redorange {
+//   color: var(--tree-text);
+//   background: var(--bg-sp);
+//   border: 2px solid var(--border-sp);
+//   border-radius: 4px;
+//   transition: all 0.3s ease;
+// }
 
-/* Teal variant */
-:host ::ng-deep .ngx-org-body_teal {
-  padding: 10px;
-  color: var(--tree-text);
-  background: var(--bg-teal);
-  border: 2px solid var(--border-teal);
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
+// :host ::ng-deep .ngx-org-body_redorange:hover {
+//   background: var(--bg-sp-hover);
+//   border: 2px solid var(--border-sp-hover);
+//   transform: translateY(-2px);
+//   box-shadow: 0 4px 12px rgba(219, 77, 52, 0.3);
+// }
 
-:host ::ng-deep .ngx-org-body_teal:hover {
-  background: var(--bg-teal-hover);
-  border: 2px solid var(--border-teal-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(26, 188, 156, 0.3);
-}
+// :host ::ng-deep .ngx-org-body {
+//   padding: 10px;
+//   color: var(--tree-text);
+//   background: var(--bg-body);
+//   border: 2px solid var(--border-body);
+//   border-radius: 4px;
+//   transition: all 0.3s ease;
+// }
 
-/* Yellow variant */
-:host ::ng-deep .ngx-org-body_yellow {
-  padding: 10px;
-  color: var(--tree-text);
-  background: var(--bg-yellow);
-  border: 2px solid var(--border-yellow);
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
+// :host ::ng-deep .ngx-org-body:hover {
+//   background: var(--bg-body-hover);
+//   border: 2px solid var(--border-body-hover);
+//   transform: translateY(-2px);
+//   box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+// }
 
-:host ::ng-deep .ngx-org-body_yellow:hover {
-  background: var(--bg-yellow-hover);
-  border: 2px solid var(--border-yellow-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(241, 196, 15, 0.3);
-}
+// /* Purple variant */
+// :host ::ng-deep .ngx-org-body_violet {
+//   padding: 10px;
+//   color: var(--tree-text);
+//   background: var(--bg-violet);
+//   border: 2px solid var(--border-violet);
+//   border-radius: 4px;
+//   transition: all 0.3s ease;
+// }
 
-/* Pink variant */
-:host ::ng-deep .ngx-org-body_pink {
-  padding: 10px;
-  color: var(--tree-text);
-  background: var(--bg-pink);
-  border: 2px solid var(--border-pink);
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
+// :host ::ng-deep .ngx-org-body_violet:hover {
+//   background: var(--bg-violet-hover);
+//   border: 2px solid var(--border-violet-hover);
+//   transform: translateY(-2px);
+//   box-shadow: 0 4px 12px rgba(155, 89, 182, 0.3);
+// }
 
-:host ::ng-deep .ngx-org-body_pink:hover {
-  background: var(--bg-pink-hover);
-  border: 2px solid var(--border-pink-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(236, 112, 99, 0.3);
-}
+// /* Teal variant */
+// :host ::ng-deep .ngx-org-body_teal {
+//   padding: 10px;
+//   color: var(--tree-text);
+//   background: var(--bg-teal);
+//   border: 2px solid var(--border-teal);
+//   border-radius: 4px;
+//   transition: all 0.3s ease;
+// }
 
-.detail-card {
-  width: 80%;
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 12px;
-  padding: 20px 18px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(10px);
-  // color: #002b4d;
-  color: var(--text);
-  font-family: 'Open Sans', sans-serif;
-  transition: all 0.3s ease;
-}
+// :host ::ng-deep .ngx-org-body_teal:hover {
+//   background: var(--bg-teal-hover);
+//   border: 2px solid var(--border-teal-hover);
+//   transform: translateY(-2px);
+//   box-shadow: 0 4px 12px rgba(26, 188, 156, 0.3);
+// }
 
-.detail-card:hover {
-  background: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-  transform: translateY(-2px);
-}
+// /* Yellow variant */
+// :host ::ng-deep .ngx-org-body_yellow {
+//   padding: 10px;
+//   color: var(--tree-text);
+//   background: var(--bg-yellow);
+//   border: 2px solid var(--border-yellow);
+//   border-radius: 4px;
+//   transition: all 0.3s ease;
+// }
 
-.detail-card h3 {
+// :host ::ng-deep .ngx-org-body_yellow:hover {
+//   background: var(--bg-yellow-hover);
+//   border: 2px solid var(--border-yellow-hover);
+//   transform: translateY(-2px);
+//   box-shadow: 0 4px 12px rgba(241, 196, 15, 0.3);
+// }
+
+// /* Pink variant */
+// :host ::ng-deep .ngx-org-body_pink {
+//   padding: 10px;
+//   color: var(--tree-text);
+//   background: var(--bg-pink);
+//   border: 2px solid var(--border-pink);
+//   border-radius: 4px;
+//   transition: all 0.3s ease;
+// }
+
+// :host ::ng-deep .ngx-org-body_pink:hover {
+//   background: var(--bg-pink-hover);
+//   border: 2px solid var(--border-pink-hover);
+//   transform: translateY(-2px);
+//   box-shadow: 0 4px 12px rgba(236, 112, 99, 0.3);
+// }
+
+// .detail-card {
+//   width: 80%;
+//   background: rgba(255, 255, 255, 0.25);
+//   border-radius: 12px;
+//   padding: 20px 18px;
+//   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+//   border: 1px solid rgba(255, 255, 255, 0.4);
+//   backdrop-filter: blur(10px);
+//   // color: #002b4d;
+//   color: var(--text);
+//   font-family: 'Open Sans', sans-serif;
+//   transition: all 0.3s ease;
+// }
+
+// .detail-card:hover {
+//   background: rgba(255, 255, 255, 0.35);
+//   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+//   transform: translateY(-2px);
+// }
+
+// .detail-card h3 {
+//   text-align: center;
+//   font-weight: 700;
+//   // color: #002b4d;
+//   color: var(--text);
+//   margin-bottom: 12px;
+// }
+
+// .detail-card p {
+//   text-align: justify;
+//   font-size: 15px;
+//   line-height: 1.5;
+//   // color: #003366;
+//   color: var(--text);
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.gasflow-container {
   text-align: center;
-  font-weight: 700;
-  // color: #002b4d;
-  color: var(--text);
-  margin-bottom: 12px;
-}
+  min-height: 100vh;
+  padding: 20px;
 
-.detail-card p {
-  text-align: justify;
-  font-size: 15px;
-  line-height: 1.5;
-  // color: #003366;
-  color: var(--text);
+  .title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #8b0035;
+    margin-bottom: 25px;
+  }
+
+  .tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .connector-vertical.main {
+    width: 3px;
+    height: 60px;
+    background: gray;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .branch {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 20px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 8%;
+      right: 8%;
+      height: 3px;
+      background: gray;
+    }
+
+    /* small orange arrows between branches */
+    &::after {
+      content: '';
+      // color: orange;
+      font-weight: bold;
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .connector-vertical {
+    width: 3px;
+    height: 35px;
+    background: gray;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      // border: solid orange;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 4px;
+      transform: rotate(45deg);
+      top: 10px;
+      right: -6px;
+    }
+  }
+
+  .node {
+    width: 160px;
+    background: linear-gradient(180deg, #80deea, #e0f7fa);
+    border: 1px solid #888;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    padding: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .header {
+      background: url('/assets/blue-strip.jpg');
+      background-size: cover;
+      color: #002b5c;
+      font-weight: bold;
+      font-size: 15px;
+      padding: 3px 0;
+    }
+
+    .sub-title {
+      font-weight: bold;
+      margin: 3px 0;
+      font-size: 13px;
+
+      &.red {
+        color: red;
+      }
+
+      &.green {
+        color: green;
+      }
+    }
+
+    .labels {
+      display: flex;
+      justify-content: space-around;
+      font-size: 12px;
+      color: #b30000;
+      font-weight: 600;
+    }
+
+    .values {
+      display: flex;
+      justify-content: space-around;
+      gap: 10px;
+
+      >div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .value {
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 3px 6px;
+        font-weight: bold;
+        font-size: 13px;
+        min-width: 60px;
+        text-align: center;
+      }
+
+      .unit {
+        font-size: 11px;
+        color: #222;
+        margin-top: 2px;
+      }
+    }
+  }
 }
