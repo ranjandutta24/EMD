@@ -1,22 +1,5 @@
-<!-- <div>
-    <div class="detail-view">
-        <div class="detail-card">
-            <h3>Detail View</h3>
-            <p>
-                Select a node to view its details. You can expand/collapse nodes to explore
-                the BOFG hierarchy.
-            </p>
-        </div>
-    </div>
-
-    <div>
-        <ngx-org-chart class="tree" [nodes]="nodes" direction="vertical"></ngx-org-chart>
-    </div>
-</div> -->
-
-
 <!-- <p>cbm works!</p> -->
-<div class="container">
+<!-- <div class="container">
     <div class="detail-view">
         <div class="detail-card">
             <h3>Detail View</h3>
@@ -40,5 +23,37 @@
     <div class="chart-container">
         <ngx-org-chart class="tree" [nodes]="nodes" direction="vertical" (clicked)="onNodeClick($event)">
         </ngx-org-chart>
+    </div>
+</div> -->
+
+<div class="bofg-container">
+    <h2 class="title">BOF GAS</h2>
+
+    <div class="bofg-box">
+        <div class="header">
+            <span class="unit-name">BOF 3</span>
+
+        </div>
+        <div>
+            <span class="sub-title">Generation</span>
+        </div>
+        <br>
+        <div class="labels">
+            <div class="label">Flow</div>
+            <div class="label">Pressure</div>
+        </div>
+
+        <div class="values">
+            <div class="value-box">
+                <div class="value flow">431469.5</div>
+                <div class="unit-text">Nm³/hr</div>
+            </div>
+
+            <div class="value-box">
+                <div class="value pressure">--</div>
+                <div class="unit-text">Kg/cm²</div>
+            </div>
+        </div>
+
     </div>
 </div>

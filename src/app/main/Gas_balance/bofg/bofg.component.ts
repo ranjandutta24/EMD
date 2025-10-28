@@ -35,36 +35,36 @@ export class BofgComponent implements OnInit {
 
 
 
-  selectedNode: any = null;
-  nodes: any = [
-    {
-      name: 'BOFG',
-      cssClass: 'ngx-org-head',
+  // selectedNode: any = null;
+  // nodes: any = [
+  //   {
+  //     name: 'BOFG',
+  //     cssClass: 'ngx-org-head',
 
-      childs: [
-        {
-          name: 'EXPORT VOL',
-          cssClass: 'ngx-org-body_orange',
+  //     childs: [
+  //       {
+  //         name: 'EXPORT VOL',
+  //         cssClass: 'ngx-org-body_orange',
 
-          childs: [
-            {
-              name: 'PBS#2',
-              cssClass: 'ngx-org-body_orange',
-            },
-            {
-              name: 'MILLS',
-              cssClass: 'ngx-org-body_orange',
-            }
-          ]
-        },
-      ]
-    }
-  ];
+  //         childs: [
+  //           {
+  //             name: 'PBS#2',
+  //             cssClass: 'ngx-org-body_orange',
+  //           },
+  //           {
+  //             name: 'MILLS',
+  //             cssClass: 'ngx-org-body_orange',
+  //           }
+  //         ]
+  //       },
+  //     ]
+  //   }
+  // ];
 
-  onNodeClick(event: any) {
-    this.selectedNode = event;
-    console.log('Selected Node:', event);
-  }
+  // onNodeClick(event: any) {
+  //   this.selectedNode = event;
+  //   console.log('Selected Node:', event);
+  // }
   constructor() { }
 
   ngOnInit(): void {

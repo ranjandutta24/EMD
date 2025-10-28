@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-bf',
   templateUrl: './bf.component.html',
   styleUrls: ['./bf.component.scss']
 })
 export class BfComponent implements OnInit {
+
+
+
 
   constructor() { }
 
@@ -83,4 +87,8 @@ export class BfComponent implements OnInit {
     this.selectedNode = event;
     console.log('Selected Node:', event);
   }
+
+
+
+
 }
