@@ -242,7 +242,6 @@
 
 
 
-
 .gasflow-container {
   text-align: center;
   min-height: 100vh;
@@ -262,11 +261,12 @@
   }
 
   .connector-vertical.main {
-    width: 3px;
-    height: 60px;
+    width: 5px;
+    height: 100px;
     background: gray;
     position: relative;
     margin: 0 auto;
+    margin-bottom: -20px;
   }
 
   .branch {
@@ -286,11 +286,8 @@
       background: gray;
     }
 
-    /* small orange arrows between branches */
     &::after {
       content: '';
-      // color: orange;
-      font-weight: bold;
       position: absolute;
       top: -14px;
       left: 50%;
@@ -306,21 +303,20 @@
   }
 
   .connector-vertical {
-    width: 3px;
-    height: 35px;
+    width: 5px;
+    height: 100px;
     background: gray;
     position: relative;
 
     &::after {
       content: '';
-      position: absolute;
-      // border: solid orange;
       border-width: 0 2px 2px 0;
       display: inline-block;
       padding: 4px;
       transform: rotate(45deg);
       top: 10px;
       right: -6px;
+      position: absolute;
     }
   }
 
@@ -329,7 +325,7 @@
     background: linear-gradient(180deg, #80deea, #e0f7fa);
     border: 1px solid #888;
     border-radius: 6px;
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
     padding: 4px;
     transition: all 0.3s ease;
@@ -398,5 +394,16 @@
         margin-top: 2px;
       }
     }
+  }
+
+  /* ⬇️ Add this part at the end before the final brace */
+  .ngx-org-connector-vertical {
+    height: 4.5em !important;
+    margin-top: 1em !important;
+  }
+
+  .ngx-org-node {
+    position: relative;
+    top: -0.2em;
   }
 }
