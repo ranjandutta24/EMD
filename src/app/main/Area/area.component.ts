@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { debounceTime } from 'rxjs/operators';
+
+
 import {
   ApexChart,
   ChartComponent,
@@ -19,14 +20,30 @@ import {
 } from 'ng-apexcharts';
 import { SseService } from 'src/app/service/sse.servece';
 
+//sourav code comment
+// export type ChartOptions = {
+//   series: ApexAxisChartSeries;
+//   chart: ApexChart;
+//   dataLabels: ApexDataLabels;
+//   plotOptions: ApexPlotOptions;
+//   legend: ApexLegend;
+//   colors: string[];
+// };
+//sourav code comment
+
 export type ChartOptions = {
   series: ApexAxisChartSeries;
   chart: ApexChart;
-  dataLabels: ApexDataLabels;
-  plotOptions: ApexPlotOptions;
-  legend: ApexLegend;
+  xaxis: ApexXAxis;
+  yaxis: ApexYAxis;
+  stroke: ApexStroke;
   colors: string[];
+  dataLabels: ApexDataLabels;
+  legend: ApexLegend;
+  tooltip: ApexTooltip;
+  grid?: ApexGrid;
 };
+
 
 //sourav code comment
 // export type LineChartOptions = {
@@ -78,6 +95,24 @@ export type LineChartOptions = {
   styleUrls: ['./area.component.scss'],
 })
 export class AreaComponent implements OnInit {
+
+  trendData = [
+    { name: 'COB_BPP_GAS_G_F', min: 40123.49, max: 46199.06, avg: 43873.27, stdDev: 1211.64 },
+    { name: 'COB_BPP_GAS_P', min: 847.95, max: 909.18, avg: 891.21, stdDev: 21.61 },
+    { name: 'COB_C_BF_F', min: 0, max: 50951.41, avg: 39938.99, stdDev: 6203.45 },
+    { name: 'PBS_C_B1_COG_F', min: 4206.00, max: 7579.40, avg: 7406.91, stdDev: 74.00 },
+    { name: 'FS_C_BFG_F', min: 24435.10, max: 181416.89, avg: 91558.55, stdDev: 31145.27 },
+  ];
+
+
+  chartSeries: ApexAxisChartSeries = [
+    { name: 'COB_BPP_GAS_G_F', data: [41000, 42000, 43000, 43500, 44000, 43800, 43900] },
+    { name: 'COB_BPP_GAS_P', data: [850, 870, 890, 900, 880, 910, 905] },
+    { name: 'COB_C_BF_F', data: [20000, 25000, 27000, 30000, 29000, 31000, 30500] },
+    { name: 'PBS_C_B1_COG_F', data: [5000, 6000, 6500, 7000, 6800, 6900, 7100] },
+    { name: 'FS_C_BFG_F', data: [25000, 50000, 75000, 90000, 85000, 95000, 100000] },
+  ];
+
   igcaFlow: number = 0;
   igcaPresser: number = 0;
   pgcaFlow: number = 0;
@@ -103,7 +138,7 @@ export class AreaComponent implements OnInit {
   deactive_compath = './../../../assets/off.gif';
   // active_compath = './../../../assets/compressor_running_with_smoke.gif';
   // deactive_compath = './../../../assets/compressor (1).png';
-  trendData = [];
+  // trendData = []; //sourav code comment
 
   //sourav code
   @ViewChild('chart') chart!: ChartComponent;
@@ -176,6 +211,7 @@ export class AreaComponent implements OnInit {
   };
 
   //sourav code
+  chartOptions!: Partial<ChartOptions>;
 
   constructor(private sseService: SseService) { }
 
@@ -341,6 +377,9 @@ export class AreaComponent implements OnInit {
 
 
 
+
+
+
     // Line chart
     // this.lineChart = {
     //   series: [
@@ -350,54 +389,118 @@ export class AreaComponent implements OnInit {
     //   chart: { height: 300, type: 'line', zoom: { enabled: false } },
     //   dataLabels: { enabled: false },
     //   stroke: { curve: 'smooth' },
-    //   title: { text: 'Compressor Performance Trend', align: 'left' },
+    //   title: {
+    //     text: 'Compressor Performance Trend',
+    //     align: 'left',
+    //     style: { color: 'var(--header-text)', fontSize: '16px', fontWeight: 'bold' } // Title text yellow
+    //   },
     //   grid: { row: { colors: ['#f3f3f3', 'transparent'], opacity: 0.5 } },
-    //   xaxis: { categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] },
-    //   yaxis: { title: { text: 'Values' } },
-    //   colors: ['#1E90FF', '#FF6347']
+    //   xaxis: {
+    //     categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    //     labels: { style: { colors: 'var(--header-text)', fontSize: '12px' } } // X-axis labels yellow
+    //   },
+    //   yaxis: {
+    //     title: {
+    //       text: 'Values',
+    //       style: { color: 'var(--bar-text)', fontSize: '12px', fontWeight: 'bold' } // Y-axis title yellow
+    //     },
+    //     labels: { style: { colors: 'var(--bar-text)', fontSize: '12px' } } // Y-axis labels yellow
+    //   },
+    //   colors: ['#1E90FF', '#FF6347'], // Line colors
+    //   legend: {
+    //     labels: { colors: 'var(--header-text)', useSeriesColors: false } // Legend text yellow
+    //   },
+    //   tooltip: {
+    //     theme: 'dark',                  // dark background theme
+    //     style: {
+    //       fontSize: '12px'              // ✅ only fontSize allowed
+    //     },
+    //     marker: { show: true }
+    //   }
+
     // };
 
-
-    // Line chart
-    this.lineChart = {
-      series: [
-        { name: 'Pressure Trend', data: [10, 15, 25, 18, 30, 40, 35] },
-        { name: 'Flow Trend', data: [20, 25, 15, 30, 35, 25, 40] }
-      ],
-      chart: { height: 300, type: 'line', zoom: { enabled: false } },
-      dataLabels: { enabled: false },
-      stroke: { curve: 'smooth' },
-      title: {
-        text: 'Compressor Performance Trend',
-        align: 'left',
-        style: { color: 'var(--header-text)', fontSize: '16px', fontWeight: 'bold' } // Title text yellow
+    this.chartOptions = {
+      chart: {
+        type: 'line',
+        height: 500,
+        toolbar: {
+          show: true,
+          tools: {
+            download: false,
+            selection: true,
+            zoom: true,
+            zoomin: true,
+            zoomout: true,
+            pan: true,
+            reset: true
+          }
+        },
+        zoom: { enabled: true },
+        background: 'linear-gradient(180deg, #001a33 0%, #002855 100%)'
       },
-      grid: { row: { colors: ['#f3f3f3', 'transparent'], opacity: 0.5 } },
+      stroke: {
+        width: 2,
+        curve: 'smooth'
+      },
+      colors: [
+        '#00ff00', // COB_BPP_GAS_G_F
+        '#ff00ff', // COB_BPP_GAS_P
+        '#ff9900', // COB_C_BF_F
+        '#00ffff', // PBS_C_B1_COG_F
+        '#ff3333'  // FS_C_BFG_F
+      ],
       xaxis: {
-        categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        labels: { style: { colors: 'var(--header-text)', fontSize: '12px' } } // X-axis labels yellow
+        categories: ['10:00', '10:15', '10:30', '10:45', '11:00', '11:15', '11:30'],
+        labels: {
+          style: {
+            colors: '#99ccff',
+            fontSize: '12px'
+          }
+        },
+        axisBorder: { color: '#355b8c' },
+        axisTicks: { color: '#355b8c' },
+        tooltip: { enabled: false }
       },
       yaxis: {
-        title: {
-          text: 'Values',
-          style: { color: 'var(--bar-text)', fontSize: '12px', fontWeight: 'bold' } // Y-axis title yellow
+        labels: {
+          style: {
+            colors: '#99ccff',
+            fontSize: '12px'
+          }
         },
-        labels: { style: { colors: 'var(--bar-text)', fontSize: '12px' } } // Y-axis labels yellow
+        axisBorder: { color: '#355b8c' },
+        axisTicks: { color: '#355b8c' },
+        min: 0,
+        forceNiceScale: true
       },
-      colors: ['#1E90FF', '#FF6347'], // Line colors
+      grid: {
+        show: true,
+        borderColor: '#355b8c',
+        strokeDashArray: 2,
+        xaxis: { lines: { show: true } },
+        yaxis: { lines: { show: true } },
+      },
       legend: {
-        labels: { colors: 'var(--header-text)', useSeriesColors: false } // Legend text yellow
-      },
-      tooltip: {
-        theme: 'dark',                  // dark background theme
-        style: {
-          fontSize: '12px'              // ✅ only fontSize allowed
+        position: 'bottom',
+        horizontalAlign: 'center',
+        labels: { colors: '#ffffff' },
+        markers: {
+          width: 10, height: 10, radius: 2,
+          offsetX: -5 // move marker slightly left or right
         },
-        marker: { show: true }
+        itemMargin: {
+          horizontal: 15,
+          vertical: 50   // <-- adds vertical gap between legend and chart
+        }
+      },
+      dataLabels: { enabled: false },
+      tooltip: {
+        theme: 'dark',
+        x: { show: true },
+        y: { formatter: (val) => val.toFixed(2) }
       }
-
     };
-
 
     //sourav code
 

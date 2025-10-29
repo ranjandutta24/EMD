@@ -54,13 +54,58 @@
     </div>
 
     <!-- Line Chart -->
-    <div class="box line-chart fade-in delay-2">
+    <!-- <div class="box line-chart fade-in delay-2">
       <h3 class="overview_header"> <span [style.animation-delay]="'Compressor Performance Trend'">Compressor Performance
           Trend</span></h3>
       <apx-chart [series]="lineChart.series" [chart]="lineChart.chart" [dataLabels]="lineChart.dataLabels"
         [stroke]="lineChart.stroke" [title]="lineChart.title" [xaxis]="lineChart.xaxis" [yaxis]="lineChart.yaxis"
         [colors]="lineChart.colors" [legend]="lineChart.legend" [tooltip]="lineChart.tooltip">
       </apx-chart>
+    </div> -->
+
+
+
+    <div class="trend-container">
+      <!-- <div class="trend-header">
+        <h2>Trend</h2>
+      </div> -->
+      <h3 class="overview_header trend-header">
+        <span [style.animation-delay]="'Trend'">Trend</span>
+      </h3>
+
+      <!-- Table Section -->
+      <div class="trend-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Trend Tag Name</th>
+              <th>Min</th>
+              <th>Max</th>
+              <th>Avg</th>
+              <th>Std Dev</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of trendData">
+              <td>{{ item.name }}</td>
+              <td>{{ item.min }}</td>
+              <td>{{ item.max }}</td>
+              <td>{{ item.avg }}</td>
+              <td>{{ item.stdDev }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Chart Section -->
+      <div class="trend-chart">
+        <apx-chart [series]="chartSeries" [chart]="chartOptions.chart!" [xaxis]="chartOptions.xaxis!"
+          [yaxis]="chartOptions.yaxis!" [stroke]="chartOptions.stroke!" [colors]="chartOptions.colors!"
+          [dataLabels]="chartOptions.dataLabels!" [legend]="chartOptions.legend!" [tooltip]="chartOptions.tooltip!">
+        </apx-chart>
+
+      </div>
     </div>
+
   </div>
 </div>

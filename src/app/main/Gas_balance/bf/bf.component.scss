@@ -250,7 +250,8 @@
   .title {
     font-size: 28px;
     font-weight: bold;
-    color: #8b0035;
+    // color: #8b0035;
+    color: var(--header-text);
     margin-bottom: 25px;
   }
 

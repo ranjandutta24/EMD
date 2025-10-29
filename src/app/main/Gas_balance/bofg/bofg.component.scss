@@ -420,7 +420,8 @@
     .title {
         font-weight: 600;
         font-size: 30px;
-        color: #8b0035;
+        // color: #8b0035;
+        color: var(--header-text);
         margin-bottom: 15px;
     }
 
