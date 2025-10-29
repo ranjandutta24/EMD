@@ -425,4 +425,40 @@
     position: relative;
     top: -0.2em;
   }
+
+
+
+  /* Animation for BPP header */
+  .node.generation .header {
+    animation: pulse-blue 2s infinite;
+    background: url('/assets/blue-strip.jpg');
+    background-size: cover;
+  }
+
+  /* Animation for all consumption node headers */
+  .node.consumption .header {
+    animation: pulse-blue 2s infinite;
+    background: url('/assets/blue-strip.jpg');
+    background-size: cover;
+  }
+
+
+  /* Keyframes for pulsing blue effect */
+  @keyframes pulse-blue {
+    0% {
+      box-shadow: 0 0 5px rgba(0, 43, 92, 0.5);
+      transform: scale(1);
+    }
+
+    50% {
+      box-shadow: 0 0 20px rgba(0, 43, 92, 0.8), 0 0 30px rgba(0, 150, 255, 0.6);
+      transform: scale(1.02);
+    }
+
+    100% {
+      box-shadow: 0 0 5px rgba(0, 43, 92, 0.5);
+      transform: scale(1);
+    }
+  }
+
 }

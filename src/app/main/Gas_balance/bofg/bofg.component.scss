@@ -523,4 +523,32 @@
             }
         }
     }
+
+
+
+    /* Animation for BPP header */
+    .sub-title {
+        animation: pulse-blue 2s infinite;
+        // background: url('/assets/blue-strip.jpg');
+        // background-size: cover;
+    }
+
+
+    /* Keyframes for pulsing blue effect */
+    @keyframes pulse-blue {
+        0% {
+            box-shadow: 0 0 5px rgba(92, 6, 0, 0.5);
+            transform: scale(1);
+        }
+
+        50% {
+            box-shadow: 0 0 20px rgba(92, 0, 51, 0.8), 0 0 30px rgba(255, 0, 98, 0.6);
+            transform: scale(1.02);
+        }
+
+        100% {
+            box-shadow: 0 0 5px rgba(92, 0, 31, 0.5);
+            transform: scale(1);
+        }
+    }
 }
