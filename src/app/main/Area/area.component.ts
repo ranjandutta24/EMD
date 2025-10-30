@@ -16,7 +16,8 @@ import {
   ApexXAxis,
   ApexNonAxisChartSeries, //sourav code
   ApexResponsive,//sourav code
-  ApexTooltip //sourav code
+  ApexTooltip, //sourav code
+  ApexMarkers
 } from 'ng-apexcharts';
 import { SseService } from 'src/app/service/sse.servece';
 
@@ -42,6 +43,7 @@ export type ChartOptions = {
   legend: ApexLegend;
   tooltip: ApexTooltip;
   grid?: ApexGrid;
+  markers?: ApexMarkers;
 };
 
 
@@ -86,6 +88,7 @@ export type AreaChartOptions = {
   colors: string[];
   legend: ApexLegend;
   tooltip: ApexTooltip;
+  markers: ApexMarkers;
 };
 
 //sourav code
@@ -210,7 +213,15 @@ export class AreaComponent implements OnInit {
       style: {
         fontSize: '12px'              // ✅ only fontSize allowed
       },
-      marker: { show: true }
+      // marker: { show: true }
+    },
+
+    markers: {                     // ✅ outside tooltip
+      size: 4,
+      colors: ['#fff'],
+      strokeColors: '#000',
+      strokeWidth: 2,
+      hover: { size: 6 }
     }
 
   };
@@ -528,7 +539,7 @@ export class AreaComponent implements OnInit {
         //   },
         //   zoom: { enabled: true },
         //   background: 'linear-gradient(180deg, #001a33 0%, #002855 100%)'
-        type: "area",
+        type: "line",
         stacked: false,
         height: 350,
         zoom: {
@@ -615,10 +626,29 @@ export class AreaComponent implements OnInit {
       },
       dataLabels: { enabled: false },
       tooltip: {
+        enabled: true,
+        shared: false,      // ✅ show only the hovered series value
+        intersect: true,    // ✅ tooltip shows only when hovering a point
+        followCursor: true,
         theme: 'dark',
         x: { show: true },
-        y: { formatter: (val) => val.toFixed(2) }
+        y: {
+          formatter: (val) => val ? val.toFixed(2) : ''
+        }
+      },
+
+
+      markers: {
+        size: 4,
+        colors: undefined,
+        strokeColors: '#ffffff',
+        strokeWidth: 1.5,
+        hover: { size: 7 }
       }
+
+
+
+
     };
 
     //sourav code
