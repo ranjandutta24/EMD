@@ -113,7 +113,7 @@ export class AreaComponent implements OnInit, OnDestroy {
 
   chartSeries: ApexAxisChartSeries = [
     { name: 'COB_BPP_GAS_G_F', data: [41000, 42000, 43000, 43500, 44000, 43800, 43900] },
-    { name: 'COB_BPP_GAS_P', data: [850, 870, 890, 900, 880, 910, 905] },
+    { name: 'COB_BPP_GAS_P', data: [40000, 35000, 890, 5000, 880, 910, 905] },
     { name: 'COB_C_BF_F', data: [20000, 25000, 27000, 30000, 29000, 31000, 30500] },
     { name: 'PBS_C_B1_COG_F', data: [5000, 6000, 6500, 7000, 6800, 6900, 7100] },
     { name: 'FS_C_BFG_F', data: [25000, 50000, 75000, 90000, 85000, 95000, 100000] },
@@ -747,11 +747,11 @@ export class AreaComponent implements OnInit, OnDestroy {
 
       const chartData = categories.map((t, i) => ({
         time: t,
-        COB_BPP_GAS_G_F: 400 + i * 50,
-        COB_BPP_GAS_P: 300 + i * 60,
-        COB_C_BF_F: 250 + i * 40,
-        PBS_C_B1_COG_F: 200 + i * 30,
-        FS_C_BFG_F: 150 + i * 20
+        COB_BPP_GAS_G_F: 400 + Math.sin(i) * 100 + Math.random() * 50,  // fluctuates
+        COB_BPP_GAS_P: 300 + Math.cos(i) * 120 + Math.random() * 60,
+        COB_C_BF_F: 250 + Math.sin(i * 1.5) * 80 + Math.random() * 40,
+        PBS_C_B1_COG_F: 200 + Math.cos(i * 1.2) * 90 + Math.random() * 50,
+        FS_C_BFG_F: 150 + Math.sin(i * 1.8) * 110 + Math.random() * 30
       }));
 
       xAxis.data.setAll(chartData);
