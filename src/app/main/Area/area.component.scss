@@ -830,4 +830,10 @@
     background: linear-gradient(180deg, #001a33 0%, #002855 100%);
     padding: 10px;
   }
+
+  #chartdiv {
+    width: 100%;
+    height: 500px;
+    max-width: 100%;
+  }
 }

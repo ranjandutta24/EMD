@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, NgZone, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-
+import * as am5 from '@amcharts/amcharts5';
+import * as am5xy from '@amcharts/amcharts5/xy';
+import am5themes_Animated from '@amcharts/amcharts5/themes/Animated';
 
 import {
   ApexChart,
@@ -98,7 +100,7 @@ export type AreaChartOptions = {
   templateUrl: './area.component.html',
   styleUrls: ['./area.component.scss'],
 })
-export class AreaComponent implements OnInit {
+export class AreaComponent implements OnInit, OnDestroy {
 
   trendData = [
     { name: 'COB_BPP_GAS_G_F', min: 40123.49, max: 46199.06, avg: 43873.27, stdDev: 1211.64 },
@@ -228,8 +230,10 @@ export class AreaComponent implements OnInit {
 
   //sourav code
   chartOptions!: Partial<ChartOptions>;
-
-  constructor(private sseService: SseService) { }
+  private root!: am5.Root;
+  constructor(private sseService: SseService,
+    private zone: NgZone
+  ) { }
 
   splitLetters(text: string): string[] {
     return text.split('').map((c) => (c === ' ' ? '\u00A0' : c));
@@ -476,69 +480,8 @@ export class AreaComponent implements OnInit {
       }
     };
 
-
-
-
-
-
-    // Line chart
-    // this.lineChart = {
-    //   series: [
-    //     { name: 'Pressure Trend', data: [10, 15, 25, 18, 30, 40, 35] },
-    //     { name: 'Flow Trend', data: [20, 25, 15, 30, 35, 25, 40] }
-    //   ],
-    //   chart: { height: 300, type: 'line', zoom: { enabled: false } },
-    //   dataLabels: { enabled: false },
-    //   stroke: { curve: 'smooth' },
-    //   title: {
-    //     text: 'Compressor Performance Trend',
-    //     align: 'left',
-    //     style: { color: 'var(--header-text)', fontSize: '16px', fontWeight: 'bold' } // Title text yellow
-    //   },
-    //   grid: { row: { colors: ['#f3f3f3', 'transparent'], opacity: 0.5 } },
-    //   xaxis: {
-    //     categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-    //     labels: { style: { colors: 'var(--header-text)', fontSize: '12px' } } // X-axis labels yellow
-    //   },
-    //   yaxis: {
-    //     title: {
-    //       text: 'Values',
-    //       style: { color: 'var(--bar-text)', fontSize: '12px', fontWeight: 'bold' } // Y-axis title yellow
-    //     },
-    //     labels: { style: { colors: 'var(--bar-text)', fontSize: '12px' } } // Y-axis labels yellow
-    //   },
-    //   colors: ['#1E90FF', '#FF6347'], // Line colors
-    //   legend: {
-    //     labels: { colors: 'var(--header-text)', useSeriesColors: false } // Legend text yellow
-    //   },
-    //   tooltip: {
-    //     theme: 'dark',                  // dark background theme
-    //     style: {
-    //       fontSize: '12px'              // ✅ only fontSize allowed
-    //     },
-    //     marker: { show: true }
-    //   }
-
-    // };
-
     this.chartOptions = {
       chart: {
-        //   type: 'line',
-        //   height: 500,
-        //   toolbar: {
-        //     show: true,
-        //     tools: {
-        //       download: false,
-        //       selection: true,
-        //       zoom: true,
-        //       zoomin: true,
-        //       zoomout: true,
-        //       pan: true,
-        //       reset: true
-        //     }
-        //   },
-        //   zoom: { enabled: true },
-        //   background: 'linear-gradient(180deg, #001a33 0%, #002855 100%)'
         type: "line",
         stacked: false,
         height: 350,
@@ -577,18 +520,6 @@ export class AreaComponent implements OnInit {
         axisTicks: { color: '#355b8c' },
         tooltip: { enabled: false }
       },
-      // yaxis: {
-      //   labels: {
-      //     style: {
-      //       colors: '#99ccff',
-      //       fontSize: '12px'
-      //     }
-      //   },
-      //   axisBorder: { color: '#355b8c' },
-      //   axisTicks: { color: '#355b8c' },
-      //   min: 0,
-      //   forceNiceScale: true
-      // },
       yaxis: {
         min: 0,
         max: 2000,
@@ -645,18 +576,109 @@ export class AreaComponent implements OnInit {
         strokeWidth: 1.5,
         hover: { size: 7 }
       }
-
-
-
-
     };
 
     //sourav code
 
+    this.zone.runOutsideAngular(() => {
+      // Create root
+      const root = am5.Root.new('chartdiv');
+      this.root = root;
+
+      // Apply theme
+      root.setThemes([am5themes_Animated.new(root)]);
+
+      // Create chart
+      const chart = root.container.children.push(
+        am5xy.XYChart.new(root, {
+          panX: true,
+          panY: true,
+          wheelX: 'panX',
+          wheelY: 'zoomX',
+          pinchZoomX: true,
+          paddingLeft: 0
+        })
+      );
+
+      // Add cursor
+      const cursor = chart.set(
+        'cursor',
+        am5xy.XYCursor.new(root, { behavior: 'none' })
+      );
+      cursor.lineY.set('visible', false);
+
+      // Generate random data
+      let date = new Date();
+      date.setHours(0, 0, 0, 0);
+      let value = 100;
+
+      function generateData() {
+        value = Math.round(Math.random() * 10 - 5 + value);
+        am5.time.add(date, 'day', 1);
+        return { date: date.getTime(), value: value };
+      }
+
+      function generateDatas(count: number) {
+        const data: any[] = [];
+        for (let i = 0; i < count; ++i) {
+          data.push(generateData());
+        }
+        return data;
+      }
+
+      // Create axes
+      const xAxis = chart.xAxes.push(
+        am5xy.DateAxis.new(root, {
+          maxDeviation: 0.2,
+          baseInterval: { timeUnit: 'day', count: 1 },
+          renderer: am5xy.AxisRendererX.new(root, { minorGridEnabled: true }),
+          tooltip: am5.Tooltip.new(root, {})
+        })
+      );
+
+      const yAxis = chart.yAxes.push(
+        am5xy.ValueAxis.new(root, {
+          renderer: am5xy.AxisRendererY.new(root, { pan: 'zoom' })
+        })
+      );
+
+      // Create series
+      const series = chart.series.push(
+        am5xy.LineSeries.new(root, {
+          name: 'Series',
+          xAxis: xAxis,
+          yAxis: yAxis,
+          valueYField: 'value',
+          valueXField: 'date',
+          tooltip: am5.Tooltip.new(root, { labelText: '{valueY}' })
+        })
+      );
+
+      // Add scrollbar
+      chart.set(
+        'scrollbarX',
+        am5.Scrollbar.new(root, { orientation: 'horizontal' })
+      );
+
+      // Set data
+      const data = generateDatas(1200);
+      series.data.setAll(data);
+
+      // Animate on load
+      series.appear(1000);
+      chart.appear(1000, 100);
+    });
   }
 
 
   // Helper method to update chart data
 
-  ngOnDestroy(): void { }
+  ngOnDestroy(): void {
+
+    // Dispose the chart when component is destroyed
+    if (this.root) {
+      this.root.dispose();
+    }
+  }
+
 }
