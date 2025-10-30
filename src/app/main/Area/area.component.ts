@@ -580,6 +580,95 @@ export class AreaComponent implements OnInit, OnDestroy {
 
     //sourav code
 
+    // this.zone.runOutsideAngular(() => {
+    //   // Create root
+    //   const root = am5.Root.new('chartdiv');
+    //   this.root = root;
+
+    //   // Apply theme
+    //   root.setThemes([am5themes_Animated.new(root)]);
+
+    //   // Create chart
+    //   const chart = root.container.children.push(
+    //     am5xy.XYChart.new(root, {
+    //       panX: true,
+    //       panY: true,
+    //       wheelX: 'panX',
+    //       wheelY: 'zoomX',
+    //       pinchZoomX: true,
+    //       paddingLeft: 0
+    //     })
+    //   );
+
+    //   // Add cursor
+    //   const cursor = chart.set(
+    //     'cursor',
+    //     am5xy.XYCursor.new(root, { behavior: 'none' })
+    //   );
+    //   cursor.lineY.set('visible', false);
+
+    //   // Generate random data
+    //   let date = new Date();
+    //   date.setHours(0, 0, 0, 0);
+    //   let value = 100;
+
+    //   function generateData() {
+    //     value = Math.round(Math.random() * 10 - 5 + value);
+    //     am5.time.add(date, 'day', 1);
+    //     return { date: date.getTime(), value: value };
+    //   }
+
+    //   function generateDatas(count: number) {
+    //     const data: any[] = [];
+    //     for (let i = 0; i < count; ++i) {
+    //       data.push(generateData());
+    //     }
+    //     return data;
+    //   }
+
+    //   // Create axes
+    //   const xAxis = chart.xAxes.push(
+    //     am5xy.DateAxis.new(root, {
+    //       maxDeviation: 0.2,
+    //       baseInterval: { timeUnit: 'day', count: 1 },
+    //       renderer: am5xy.AxisRendererX.new(root, { minorGridEnabled: true }),
+    //       tooltip: am5.Tooltip.new(root, {})
+    //     })
+    //   );
+
+    //   const yAxis = chart.yAxes.push(
+    //     am5xy.ValueAxis.new(root, {
+    //       renderer: am5xy.AxisRendererY.new(root, { pan: 'zoom' })
+    //     })
+    //   );
+
+    //   // Create series
+    //   const series = chart.series.push(
+    //     am5xy.LineSeries.new(root, {
+    //       name: 'Series',
+    //       xAxis: xAxis,
+    //       yAxis: yAxis,
+    //       valueYField: 'value',
+    //       valueXField: 'date',
+    //       tooltip: am5.Tooltip.new(root, { labelText: '{valueY}' })
+    //     })
+    //   );
+
+    //   // Add scrollbar
+    //   chart.set(
+    //     'scrollbarX',
+    //     am5.Scrollbar.new(root, { orientation: 'horizontal' })
+    //   );
+
+    //   // Set data
+    //   const data = generateDatas(1200);
+    //   series.data.setAll(data);
+
+    //   // Animate on load
+    //   series.appear(1000);
+    //   chart.appear(1000, 100);
+    // });
+
     this.zone.runOutsideAngular(() => {
       // Create root
       const root = am5.Root.new('chartdiv');
@@ -596,78 +685,156 @@ export class AreaComponent implements OnInit, OnDestroy {
           wheelX: 'panX',
           wheelY: 'zoomX',
           pinchZoomX: true,
-          paddingLeft: 0
+          paddingLeft: 0,
+
         })
       );
 
-      // Add cursor
+      // Add cursor (for zoom and tooltip)
       const cursor = chart.set(
         'cursor',
-        am5xy.XYCursor.new(root, { behavior: 'none' })
+        am5xy.XYCursor.new(root, {
+          behavior: 'zoomX',
+        })
       );
       cursor.lineY.set('visible', false);
 
-      // Generate random data
-      let date = new Date();
-      date.setHours(0, 0, 0, 0);
-      let value = 100;
-
-      function generateData() {
-        value = Math.round(Math.random() * 10 - 5 + value);
-        am5.time.add(date, 'day', 1);
-        return { date: date.getTime(), value: value };
-      }
-
-      function generateDatas(count: number) {
-        const data: any[] = [];
-        for (let i = 0; i < count; ++i) {
-          data.push(generateData());
-        }
-        return data;
-      }
-
-      // Create axes
+      // Create X Axis (Time or Categories)
       const xAxis = chart.xAxes.push(
-        am5xy.DateAxis.new(root, {
-          maxDeviation: 0.2,
-          baseInterval: { timeUnit: 'day', count: 1 },
-          renderer: am5xy.AxisRendererX.new(root, { minorGridEnabled: true }),
+        am5xy.CategoryAxis.new(root, {
+          categoryField: 'time',
+          renderer: am5xy.AxisRendererX.new(root, {
+            minGridDistance: 40,
+            minorGridEnabled: true
+          }),
           tooltip: am5.Tooltip.new(root, {})
         })
       );
 
+      xAxis.get('renderer').labels.template.setAll({
+        fill: am5.color(0x99ccff),
+        fontSize: 12
+      });
+
+      xAxis.get('renderer').grid.template.setAll({
+        stroke: am5.color(0x355b8c),
+        strokeOpacity: 0.5
+      });
+
+      // Create Y Axis
       const yAxis = chart.yAxes.push(
         am5xy.ValueAxis.new(root, {
-          renderer: am5xy.AxisRendererY.new(root, { pan: 'zoom' })
+          min: 0,
+          max: 2000,
+          strictMinMax: true,
+          renderer: am5xy.AxisRendererY.new(root, {})
         })
       );
 
-      // Create series
-      const series = chart.series.push(
-        am5xy.LineSeries.new(root, {
-          name: 'Series',
-          xAxis: xAxis,
-          yAxis: yAxis,
-          valueYField: 'value',
-          valueXField: 'date',
-          tooltip: am5.Tooltip.new(root, { labelText: '{valueY}' })
+      yAxis.get('renderer').labels.template.setAll({
+        fill: am5.color(0x99ccff),
+        fontSize: 12,
+        text: '{value.formatNumber("#,###.00")}'
+      });
+
+      yAxis.get('renderer').grid.template.setAll({
+        stroke: am5.color(0x355b8c),
+        strokeOpacity: 0.5
+      });
+
+      // ✅ Data setup (similar to Apex categories)
+      const categories = ['10:00', '10:15', '10:30', '10:45', '11:00', '11:15', '11:30'];
+
+      const chartData = categories.map((t, i) => ({
+        time: t,
+        COB_BPP_GAS_G_F: 400 + i * 50,
+        COB_BPP_GAS_P: 300 + i * 60,
+        COB_C_BF_F: 250 + i * 40,
+        PBS_C_B1_COG_F: 200 + i * 30,
+        FS_C_BFG_F: 150 + i * 20
+      }));
+
+      xAxis.data.setAll(chartData);
+
+      // ✅ Colors same as ApexCharts
+      const colors = [
+        '#00ff00', // COB_BPP_GAS_G_F
+        '#ff00ff', // COB_BPP_GAS_P
+        '#ff9900', // COB_C_BF_F
+        '#00ffff', // PBS_C_B1_COG_F
+        '#ff3333'  // FS_C_BFG_F
+      ];
+
+      const seriesNames = [
+        'COB_BPP_GAS_G_F',
+        'COB_BPP_GAS_P',
+        'COB_C_BF_F',
+        'PBS_C_B1_COG_F',
+        'FS_C_BFG_F'
+      ];
+
+      // ✅ Create multiple line series
+      seriesNames.forEach((name, index) => {
+        const series = chart.series.push(
+          am5xy.LineSeries.new(root, {
+            name,
+            xAxis,
+            yAxis,
+            categoryXField: 'time',
+            valueYField: name,
+            stroke: am5.color(colors[index]),
+            fill: am5.color(colors[index]),
+            tooltip: am5.Tooltip.new(root, {
+              labelText: `{name}: {valueY.formatNumber("#.00")}`
+            })
+          })
+        );
+
+        // Smooth line and markers
+        series.strokes.template.setAll({
+          strokeWidth: 2,
+          templateField: 'stroke',
+          stroke: am5.color(colors[index])
+        });
+
+        series.bullets.push(() =>
+          am5.Bullet.new(root, {
+            sprite: am5.Circle.new(root, {
+              radius: 4,
+              fill: am5.color(colors[index]),
+              stroke: am5.color(0xffffff),
+              strokeWidth: 1.5
+            }
+            )
+          })
+        );
+
+        series.data.setAll(chartData);
+        series.appear(1000);
+      });
+
+      // ✅ Add Legend
+      const legend = chart.children.push(
+        am5.Legend.new(root, {
+          centerX: am5.p50,
+          x: am5.p50,
+          layout: root.horizontalLayout,
+          marginTop: 20
         })
       );
 
-      // Add scrollbar
+      legend.data.setAll(chart.series.values);
+
+      // ✅ Scrollbar for zoom
       chart.set(
         'scrollbarX',
         am5.Scrollbar.new(root, { orientation: 'horizontal' })
       );
 
-      // Set data
-      const data = generateDatas(1200);
-      series.data.setAll(data);
-
-      // Animate on load
-      series.appear(1000);
+      // ✅ Animate on load
       chart.appear(1000, 100);
     });
+
   }
 
 
