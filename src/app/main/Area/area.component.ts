@@ -66,6 +66,7 @@ export type RadialChartOptions = {
   chart: ApexChart;
   labels: string[];
   colors: string[];
+  plotOptions: ApexPlotOptions;
   responsive: ApexResponsive[];
   legend: ApexLegend;
   title: {}
@@ -73,7 +74,7 @@ export type RadialChartOptions = {
 
 
 
-export type LineChartOptions = {
+export type AreaChartOptions = {
   series: ApexAxisChartSeries;
   chart: ApexChart;
   dataLabels: ApexDataLabels;
@@ -150,6 +151,7 @@ export class AreaComponent implements OnInit {
     labels: [],
     colors: [],
     responsive: [],
+    plotOptions: {},
     legend: {},
     title: {}
   };
@@ -159,6 +161,7 @@ export class AreaComponent implements OnInit {
     chart: { type: 'radialBar' },
     labels: [],
     colors: [],
+    plotOptions: {},
     responsive: [],
     legend: {},
     title: {}
@@ -169,6 +172,7 @@ export class AreaComponent implements OnInit {
     chart: { type: 'radialBar' },
     labels: [],
     colors: [],
+    plotOptions: {},
     responsive: [],
     legend: {},
     title: {}
@@ -179,12 +183,13 @@ export class AreaComponent implements OnInit {
     chart: { type: 'radialBar' },
     labels: [],
     colors: [],
+    plotOptions: {},
     responsive: [],
     legend: {},
     title: {}
   };
 
-  public lineChart: LineChartOptions = {
+  public areaChart: AreaChartOptions = {
     series: [],
     chart: { type: 'line' },
     dataLabels: { enabled: false },
@@ -226,15 +231,37 @@ export class AreaComponent implements OnInit {
     this.radialChart1 = {
       series: [76],
       chart: {
-        height: 250,
+        height: 200,
         type: 'radialBar',
         toolbar: { show: false }
       },
       labels: ['Pressure (psi)'],
       colors: ['var(--header-text)'],
+      plotOptions: {
+        radialBar: {
+          dataLabels: {
+            show: true,
+            name: {
+              show: true,
+              fontSize: '10px',     // ✅ label text size ("Pressure (psi)")
+              fontWeight: 400,
+              color: 'var(--header-text)',
+              offsetY: 10
+            },
+            value: {
+              show: true,
+              fontSize: '12px',     // ✅ numeric value text size ("76")
+              fontWeight: 500,
+              color: 'var(--header-text)',
+              offsetY: -20
+            }
+          }
+        }
+      },
+
       responsive: [{
         breakpoint: 480,
-        options: { chart: { height: 200 } }
+        options: { chart: { height: 100 } }
       }],
       legend: {
         show: true,
@@ -264,12 +291,33 @@ export class AreaComponent implements OnInit {
     this.radialChart2 = {
       series: [45],
       chart: {
-        height: 250,
+        height: 200,
         type: 'radialBar',
         toolbar: { show: false }
       },
       labels: ['Flow (m³/min)'],
       colors: ['var(--header-text)'],
+      plotOptions: {
+        radialBar: {
+          dataLabels: {
+            show: true,
+            name: {
+              show: true,
+              fontSize: '10px',     // ✅ label text size ("Pressure (psi)")
+              fontWeight: 400,
+              color: 'var(--header-text)',
+              offsetY: 10
+            },
+            value: {
+              show: true,
+              fontSize: '12px',     // ✅ numeric value text size ("76")
+              fontWeight: 500,
+              color: 'var(--header-text)',
+              offsetY: -20
+            }
+          }
+        }
+      },
       responsive: [{
         breakpoint: 480,
         options: { chart: { height: 200 } }
@@ -303,12 +351,33 @@ export class AreaComponent implements OnInit {
     this.radialChart3 = {
       series: [60],
       chart: {
-        height: 250,
+        height: 200,
         type: 'radialBar',
         toolbar: { show: false }
       },
       labels: ['Pressure (psi)'],
       colors: ['var(--header-text)'],
+      plotOptions: {
+        radialBar: {
+          dataLabels: {
+            show: true,
+            name: {
+              show: true,
+              fontSize: '10px',     // ✅ label text size ("Pressure (psi)")
+              fontWeight: 400,
+              color: 'var(--header-text)',
+              offsetY: 10
+            },
+            value: {
+              show: true,
+              fontSize: '12px',     // ✅ numeric value text size ("76")
+              fontWeight: 500,
+              color: 'var(--header-text)',
+              offsetY: -20
+            }
+          }
+        }
+      },
       responsive: [{
         breakpoint: 480,
         options: { chart: { height: 200 } }
@@ -341,12 +410,33 @@ export class AreaComponent implements OnInit {
     this.radialChart4 = {
       series: [50],
       chart: {
-        height: 250,
+        height: 200,
         type: 'radialBar',
         toolbar: { show: false }
       },
       labels: ['Flow (m³/min)'],
       colors: ['var(--header-text)'],
+      plotOptions: {
+        radialBar: {
+          dataLabels: {
+            show: true,
+            name: {
+              show: true,
+              fontSize: '10px',     // ✅ label text size ("Pressure (psi)")
+              fontWeight: 400,
+              color: 'var(--header-text)',
+              offsetY: 10
+            },
+            value: {
+              show: true,
+              fontSize: '12px',     // ✅ numeric value text size ("76")
+              fontWeight: 500,
+              color: 'var(--header-text)',
+              offsetY: -20
+            }
+          }
+        }
+      },
       responsive: [{
         breakpoint: 480,
         options: { chart: { height: 200 } }
@@ -422,23 +512,37 @@ export class AreaComponent implements OnInit {
 
     this.chartOptions = {
       chart: {
-        type: 'line',
-        height: 500,
-        toolbar: {
-          show: true,
-          tools: {
-            download: false,
-            selection: true,
-            zoom: true,
-            zoomin: true,
-            zoomout: true,
-            pan: true,
-            reset: true
-          }
+        //   type: 'line',
+        //   height: 500,
+        //   toolbar: {
+        //     show: true,
+        //     tools: {
+        //       download: false,
+        //       selection: true,
+        //       zoom: true,
+        //       zoomin: true,
+        //       zoomout: true,
+        //       pan: true,
+        //       reset: true
+        //     }
+        //   },
+        //   zoom: { enabled: true },
+        //   background: 'linear-gradient(180deg, #001a33 0%, #002855 100%)'
+        type: "area",
+        stacked: false,
+        height: 350,
+        zoom: {
+          type: "x",
+          enabled: true,
+          autoScaleYaxis: true
         },
-        zoom: { enabled: true },
-        background: 'linear-gradient(180deg, #001a33 0%, #002855 100%)'
+        toolbar: {
+          autoSelected: "zoom"
+        }
       },
+
+
+
       stroke: {
         width: 2,
         curve: 'smooth'
@@ -462,18 +566,33 @@ export class AreaComponent implements OnInit {
         axisTicks: { color: '#355b8c' },
         tooltip: { enabled: false }
       },
+      // yaxis: {
+      //   labels: {
+      //     style: {
+      //       colors: '#99ccff',
+      //       fontSize: '12px'
+      //     }
+      //   },
+      //   axisBorder: { color: '#355b8c' },
+      //   axisTicks: { color: '#355b8c' },
+      //   min: 0,
+      //   forceNiceScale: true
+      // },
       yaxis: {
+        min: 0,
+        max: 2000,
+        tickAmount: 4, // (0, 500, 1000, 1500, 2000)
         labels: {
+          formatter: (val) => val.toFixed(2), // show 2 decimal places
           style: {
             colors: '#99ccff',
             fontSize: '12px'
           }
         },
         axisBorder: { color: '#355b8c' },
-        axisTicks: { color: '#355b8c' },
-        min: 0,
-        forceNiceScale: true
+        axisTicks: { color: '#355b8c' }
       },
+
       grid: {
         show: true,
         borderColor: '#355b8c',
@@ -491,7 +610,7 @@ export class AreaComponent implements OnInit {
         },
         itemMargin: {
           horizontal: 15,
-          vertical: 50   // <-- adds vertical gap between legend and chart
+          vertical: 10   // <-- adds vertical gap between legend and chart
         }
       },
       dataLabels: { enabled: false },
@@ -506,9 +625,7 @@ export class AreaComponent implements OnInit {
 
   }
 
-  showdata() {
-    console.log(this.trendData);
-  }
+
   // Helper method to update chart data
 
   ngOnDestroy(): void { }

@@ -274,7 +274,7 @@
     display: flex;
     justify-content: center;
     gap: 80px;
-    margin-top: 20px;
+    margin-top: -48px;
     position: relative;
 
     &::before {
@@ -428,24 +428,8 @@
   }
 
 
-
-  /* Animation for BPP header */
-  .node.generation .header {
-    animation: pulse-blue 2s infinite;
-    background: url('/assets/blue-strip.jpg');
-    background-size: cover;
-  }
-
-  /* Animation for all consumption node headers */
-  .node.consumption .header {
-    animation: pulse-blue 2s infinite;
-    background: url('/assets/blue-strip.jpg');
-    background-size: cover;
-  }
-
-
-  /* Keyframes for pulsing blue effect */
-  @keyframes pulse-blue {
+  /* Component B */
+  @keyframes pulse-blue-b {
     0% {
       box-shadow: 0 0 5px rgba(0, 43, 92, 0.5);
       transform: scale(1);
@@ -460,6 +444,11 @@
       box-shadow: 0 0 5px rgba(0, 43, 92, 0.5);
       transform: scale(1);
     }
+  }
+
+  .node.generation .header,
+  .node.consumption .header {
+    animation: pulse-blue-b 2s infinite;
   }
 
 }

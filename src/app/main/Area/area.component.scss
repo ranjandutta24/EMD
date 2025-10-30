@@ -140,9 +140,10 @@
 /* ========== CHART CARDS ========== */
 .chart-card,
 .line-chart {
+  height: 250px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 18px;
-  padding: 20px;
+  // padding: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(12px);
   text-align: center;
@@ -778,7 +779,7 @@
 
 // trend chart
 .trend-container {
-  padding: 15px;
+  // padding: 15px;
   // background-color: #001a33;
   min-height: 100vh;
   color: #b5d5ff;
