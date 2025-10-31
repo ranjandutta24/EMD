@@ -468,31 +468,38 @@
   }
 
   .tree {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  /* Main vertical connector from BPP */
-  .connector-vertical.main {
+  /* Continuous main vertical line through the center */
+  /* Continuous main vertical line through the center */
+  .main-line {
+    position: absolute;
+    top: 100px;
+    /* start below BPP */
+    left: 50%;
+    transform: translateX(-50%);
     width: 3px;
-    height: 80px;
+    height: calc(100% - 180px);
+    /* ⬅️ reduced to end at last branch line */
     background: gray;
-    position: relative;
-    margin: 0 auto;
+    z-index: 0;
   }
+
 
   /* Each branch (pair of boxes on one level) */
   .branch {
     display: flex;
     justify-content: space-between;
     width: 400px;
-    /* Adjust width for spacing */
     position: relative;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 80px;
+    z-index: 1;
 
-    /* Horizontal line connecting left + right boxes */
+    /* horizontal connector between left & right nodes */
     &::before {
       content: '';
       position: absolute;
@@ -504,32 +511,20 @@
       z-index: 0;
     }
 
-    /* Small downward connector from center to next vertical line */
+    /* small vertical connector from main spine to branch line */
     &::after {
       content: '';
       position: absolute;
-      bottom: -40px;
+      top: 50%;
       left: 50%;
       width: 3px;
       height: 40px;
       background: gray;
-      transform: translateX(-50%);
+      transform: translate(-50%, -100%);
+      z-index: 0;
     }
   }
 
-  /* Last branch should not have a downward line */
-  .branch:last-child::after {
-    display: none;
-  }
-
-  .col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-  }
-
-  /* Each box design (kept exactly as you made) */
   .node {
     width: 160px;
     background: linear-gradient(180deg, #80deea, #e0f7fa);
@@ -538,7 +533,7 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
     padding: 4px;
     transition: all 0.3s ease;
-    z-index: 1;
+    z-index: 2;
 
     &:hover {
       transform: scale(1.03);
@@ -618,7 +613,7 @@
     }
   }
 
-  /* Animation (unchanged) */
+  /* Animation */
   @keyframes pulse-blue-b {
     0% {
       box-shadow: 0 0 5px rgba(0, 43, 92, 0.5);
@@ -626,8 +621,7 @@
     }
 
     50% {
-      box-shadow: 0 0 20px rgba(0, 43, 92, 0.8),
-        0 0 30px rgba(0, 150, 255, 0.6);
+      box-shadow: 0 0 20px rgba(0, 43, 92, 0.8), 0 0 30px rgba(0, 150, 255, 0.6);
       transform: scale(1.02);
     }
 
