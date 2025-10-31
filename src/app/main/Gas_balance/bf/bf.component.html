@@ -1,37 +1,8 @@
-<!-- <div class="container">
-  <div class="detail-view">
-    <div class="detail-card">
-      <h3>Detail View</h3>
-      <div *ngIf="selectedNode; else noSelection">
-        <h4>{{ selectedNode.name }}</h4>
-        <p><strong>Type:</strong> {{ selectedNode.cssClass }}</p>
-        <p *ngIf="selectedNode.childs">
-          <strong>Children:</strong> {{ selectedNode.childs.length }}
-        </p>
-      </div>
-      <ng-template #noSelection>
-        <p>
-          Select a node to view its details. You can expand/collapse nodes to explore
-          the BF#5 hierarchy.
-        </p>
-      </ng-template>
-    </div>
-  </div>
-
-  <div class="chart-container">
-    <ngx-org-chart class="tree" [nodes]="nodes" direction="vertical" (nodeClick)="onNodeClick($event)">
-    </ngx-org-chart>
-  </div>
-</div> -->
-
-
-
-
-<div class="gasflow-container">
+<!-- <div class="gasflow-container">
   <h2 class="title">CO GAS FLOW</h2>
 
   <div class="tree">
-    <!-- Top Node (BPP) -->
+    Top Node (BPP)
     <div class="node generation">
       <div class="header">BPP</div>
       <div class="sub-title red">Generation</div>
@@ -50,13 +21,13 @@
       </div>
     </div>
 
-    <!-- Connector below BPP -->
+    Connector below BPP
     <div class="connector-vertical main"></div>
 
-    <!-- 3 Columns of Consumers -->
+    3 Columns of Consumers
     <div class="branch">
 
-      <!-- LEFT COLUMN -->
+      LEFT COLUMN
       <div class="col">
         <div class="node consumption">
           <div class="header">COB-B2</div>
@@ -109,7 +80,7 @@
         </div>
       </div>
 
-      <!-- MIDDLE COLUMN -->
+      MIDDLE COLUMN
       <div class="col">
         <div class="node consumption">
           <div class="header">COB-B1</div>
@@ -141,7 +112,7 @@
       </div>
 
 
-      <!-- RIGHT COLUMN -->
+      RIGHT COLUMN
       <div class="col">
         <div class="node consumption">
           <div class="header">CCP</div>
@@ -197,6 +168,124 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</div> -->
+
+
+
+
+<div class="gasflow-container">
+  <h2 class="title">CO GAS FLOW</h2>
+
+  <div class="tree">
+    <!-- Top Node -->
+    <div class="node generation">
+      <div class="header">BPP</div>
+      <div class="sub-title red">Generation</div>
+      <div class="labels">
+        <span>Flow</span><span>Pressure</span>
+      </div>
+      <div class="values">
+        <div>
+          <div class="value">42248.59</div>
+          <div class="unit">Nm³/hr</div>
+        </div>
+        <div>
+          <div class="value">893.91</div>
+          <div class="unit">mmwc</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main vertical connector -->
+    <div class="connector-vertical main"></div>
+
+    <!-- LEVEL 1: COB-B2 & COB-B1 -->
+    <div class="branch">
+      <div class="node consumption left">
+        <div class="header">COB-B2</div>
+        <div class="sub-title green">Consumption</div>
+        <div class="labels"><span>Flow</span></div>
+        <div class="values">
+          <div>
+            <div class="value">9016.58</div>
+            <div class="unit">Nm³/hr</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="node consumption right">
+        <div class="header">COB-B1</div>
+        <div class="sub-title green">Consumption</div>
+        <div class="labels"><span>Flow</span></div>
+        <div class="values">
+          <div>
+            <div class="value">0.00</div>
+            <div class="unit">Nm³/hr</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Connector continues down -->
+    <div class="connector-vertical main"></div>
+
+    <!-- LEVEL 2: CDCP & CCP -->
+    <div class="branch">
+      <div class="node consumption left">
+        <div class="header">CDCP</div>
+        <div class="sub-title green">Consumption</div>
+        <div class="labels"><span>Flow</span></div>
+        <div class="values">
+          <div>
+            <div class="value">49.15</div>
+            <div class="unit">Nm³/hr</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="node consumption right">
+        <div class="header">CCP</div>
+        <div class="sub-title green">Consumption</div>
+        <div class="labels"><span>Flow</span></div>
+        <div class="values">
+          <div>
+            <div class="value">#COM</div>
+            <div class="unit">Nm³/hr</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Connector continues down -->
+    <div class="connector-vertical main"></div>
+
+    <!-- LEVEL 3: BF-5 & PBS -->
+    <div class="branch">
+      <div class="node consumption left">
+        <div class="header">BF-5</div>
+        <div class="sub-title green">Consumption</div>
+        <div class="labels"><span>Flow</span></div>
+        <div class="values">
+          <div>
+            <div class="value">#COM</div>
+            <div class="unit">Nm³/hr</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="node consumption right">
+        <div class="header">PBS</div>
+        <div class="sub-title green">Consumption</div>
+        <div class="labels"><span>Flow</span></div>
+        <div class="values">
+          <div>
+            <div class="value">13600.19</div>
+            <div class="unit">Nm³/hr</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
