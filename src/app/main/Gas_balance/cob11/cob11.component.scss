@@ -473,6 +473,28 @@
     }
   }
 
+
+  .flow-box {
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 150, 255, 0.6), 0 0 30px rgba(0, 200, 255, 0.4);
+      border: 2px solid #00bcd4;
+    }
+
+    &:hover .header {
+      // color: #fff;
+      text-shadow: 0 0 6px #00bcd4;
+    }
+
+    &:hover .sub-title.green {
+      background: linear-gradient(90deg, #e8ffe8, #99ff99);
+      color: #006600;
+    }
+  }
+
   .gen {
     background: var(--box-bg-gen);
   }
@@ -487,6 +509,7 @@
     font-size: 20px;
     padding: 3px 0;
   }
+
 
   /* Animation */
   @keyframes pulse-blue-b {
@@ -507,9 +530,14 @@
   }
 
   .node.generation .header,
-  .node.consumption .header {
+  top_header,
+
+  .node.consumption .header,
+  top_header {
     animation: pulse-blue-b 2s infinite;
   }
+
+
 
   /* For the last single node branch */
   .branch.single {
