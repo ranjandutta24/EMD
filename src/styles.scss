@@ -231,6 +231,37 @@
   --box-bg-gen: linear-gradient(180deg, #aeea00, #e0f7fa);
   --cogheader-text: #d0dff0;
 
+
+  .animated-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .animated-underline::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -6px;
+    height: 3px;
+    background-color: #004d00;
+
+    /* start small */
+    width: 0;
+
+    /* apply animation */
+    animation: underlineExpand 1.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes underlineExpand {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 100%;
+    }
+  }
 }
 
 
@@ -413,6 +444,37 @@
   --box-bg: linear-gradient(180deg, #80deea, #e0f7fa);
   --box-bg-gen: linear-gradient(180deg, #aeea00, #e0f7fa);
   --cogheader-text: #035575;
+
+  .animated-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .animated-underline::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -6px;
+    height: 3px;
+    background-color: #fff59d;
+
+    /* start small */
+    width: 0;
+
+    /* apply animation */
+    animation: underlineExpand 1.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes underlineExpand {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 100%;
+    }
+  }
 }
 
 
@@ -491,5 +553,8 @@ body {
 .ngx-org-connector-vertical {
   height: 4em !important;
 }
+
+
+
 
 //sourav code

@@ -530,12 +530,13 @@
   }
 
   .node.generation .header,
-  top_header,
+  .top_header,
 
   .node.consumption .header,
-  top_header {
+  .top_header {
     animation: pulse-blue-b 2s infinite;
   }
+
 
 
 
