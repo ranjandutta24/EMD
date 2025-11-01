@@ -13,7 +13,7 @@
   --footer_text: #b0bec5;
   --accent-2: #4b6cb7;
   /* secondary gradient blue */
-  --gradient-header-background: linear-gradient(135deg, #051937 0%, #004d7a 50%, #008793 100%);
+  --gradient-header-background: linear-gradient(135deg, #051937 0%, #000428 50%, #004e92 100%);
   /* soft light background */
   --gradient-footer-background: linear-gradient(135deg, #002b4a 0%, #003d5c 50%, #004d66 100%);
   --background_transparent: #ffffffcc;
@@ -226,8 +226,9 @@
   --border-violet-hover: rgba(138, 43, 226, 0.9);
 
 
-  --backg-clr: #fff;
-  --box-bg: linear-gradient(180deg, #80deea, #e0f7fa);
+  --backg-clr: #eef7fd;
+  --box-bg: linear-gradient(180deg, #007b9c 0%, #b3ecff 100%);
+  --box-bg-gen: linear-gradient(180deg, #aeea00, #e0f7fa);
 
 }
 
@@ -409,6 +410,7 @@
   ;
 
   --box-bg: linear-gradient(180deg, #80deea, #e0f7fa);
+  --box-bg-gen: linear-gradient(180deg, #aeea00, #e0f7fa);
 
 }
 

@@ -70,8 +70,7 @@ export class Cob11Component implements OnInit {
         this.previousValues.FT0600F003_C,
         data.FT0600F003_C,
         800,
-        (val) => (this.cogasflow_res.FT0600F003_C = val),
-        2
+        (val) => (this.cogasflow_res.FT0600F003_C = val)
       );
 
 
@@ -86,8 +85,7 @@ export class Cob11Component implements OnInit {
         this.previousValues.COB10_GASMAKEF,
         data.COB10_GASMAKEF,
         800,
-        (val) => (this.cogasflow_res.COB10_GASMAKEF = val),
-        2
+        (val) => (this.cogasflow_res.COB10_GASMAKEF = val)
       );
 
       // repeat for other props
@@ -95,16 +93,14 @@ export class Cob11Component implements OnInit {
         this.previousValues.COB10_COGSUPPLY,
         data.COB10_COGSUPPLY,
         800,
-        (val) => (this.cogasflow_res.COB10_COGSUPPLY = val),
-        2
+        (val) => (this.cogasflow_res.COB10_COGSUPPLY = val)
       );
 
       this.animateValue(
         this.previousValues.COFLARESTACKFLOW,
         data.COFLARESTACKFLOW,
         800,
-        (val) => (this.cogasflow_res.COFLARESTACKFLOW = val),
-        2
+        (val) => (this.cogasflow_res.COFLARESTACKFLOW = val)
       );
 
 
@@ -112,8 +108,7 @@ export class Cob11Component implements OnInit {
         this.previousValues.COFLARESTACKPRESSURE,
         data.COFLARESTACKPRESSURE,
         800,
-        (val) => (this.cogasflow_res.COFLARESTACKPRESSURE = val),
-        2
+        (val) => (this.cogasflow_res.COFLARESTACKPRESSURE = val)
       );
       //sourav code
 
@@ -128,8 +123,7 @@ export class Cob11Component implements OnInit {
         this.previousValues.CO_GAS2_F,
         data.CO_GAS2_F,
         800,
-        (val) => (this.cogasflow_res.CO_GAS2_F = val),
-        2
+        (val) => (this.cogasflow_res.CO_GAS2_F = val)
       );
 
       // repeat for other props
@@ -137,32 +131,28 @@ export class Cob11Component implements OnInit {
         this.previousValues.PBS_BCOGF,
         data.PBS_BCOGF,
         800,
-        (val) => (this.cogasflow_res.PBS_BCOGF = val),
-        2
+        (val) => (this.cogasflow_res.PBS_BCOGF = val)
       );
 
       this.animateValue(
         this.previousValues.BF_COF,
         data.BF_COF,
         800,
-        (val) => (this.cogasflow_res.BF_COF = val),
-        2
+        (val) => (this.cogasflow_res.BF_COF = val)
       );
 
       this.animateValue(
         this.previousValues.SP_CO_GAS,
         data.SP_CO_GAS,
         800,
-        (val) => (this.cogasflow_res.SP_CO_GAS = val),
-        2
+        (val) => (this.cogasflow_res.SP_CO_GAS = val)
       );
 
       this.animateValue(
         this.previousValues.COG_FLOW_GMS,
         data.COG_FLOW_GMS,
         800, // ms
-        (val) => (this.cogasflow_res.COG_FLOW_GMS = val),
-        2
+        (val) => (this.cogasflow_res.COG_FLOW_GMS = val)
       );
 
       // Update previous values for next round
