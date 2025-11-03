@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SseService } from 'src/app/service/sse.servece';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-gas_balance',
@@ -9,20 +9,39 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./gas_balance.component.scss'],
 })
 export class GasBalanceComponent implements OnInit {
+  selectedComponent: string = 'cob11'; // default
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      if (params['view']) {
-        this.selectedComponent = params['view'];
+    this.route.queryParams.subscribe((params) => {
+      const viewParam = params['view'];
+
+      if (viewParam) {
+        // If the URL already has a ?view= param, use it
+        this.selectedComponent = viewParam;
+      } else {
+        // If the user just opened /main/gas_balance with no params
+        this.selectedComponent = 'cob11';
+        // Add ?view=cob11 to the URL (without reloading)
+        this.router.navigate([], {
+          relativeTo: this.route,
+          queryParams: { view: 'cob11' },
+          queryParamsHandling: 'merge',
+          replaceUrl: true, // prevents extra history entries
+        });
       }
     });
+
+    console.log('✅ Loaded Component:', this.selectedComponent);
   }
-  selectedComponent: string = 'cob11'; // default
+
 
   switchComponent(component: string) {
     this.selectedComponent = component;
-    console.log(component);
-
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { view: component },
+      queryParamsHandling: 'merge',
+    });
   }
 }

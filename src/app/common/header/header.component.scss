@@ -89,6 +89,8 @@ li {
 .dropdown {
   position: relative;
   display: inline-block;
+  z-index: 5000 !important;
+  /* ensure it's above other elements */
 }
 
 .nav-link {
@@ -111,7 +113,8 @@ li {
   visibility: hidden;
   transform: translateY(10px);
   transition: all 0.25s ease;
-  z-index: 99;
+  z-index: 9000 !important;
+  /* 👈 this ensures it stays on top */
 }
 
 .dropdown-content a {

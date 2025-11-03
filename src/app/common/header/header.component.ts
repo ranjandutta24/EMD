@@ -31,19 +31,11 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  // Navigate to sub components (e.g., BOFG, CBM, etc.)
-  navigateToSubComponent(component: string) {
-    this.router.navigate(['/main/gas_balance'], { queryParams: { view: component } });
-    this.dropdownOpen = false; // ✅ Close dropdown after navigation
-  }
-
-  // Toggle dropdown visibility on click
   toggleDropdown(event: MouseEvent) {
     this.dropdownOpen = !this.dropdownOpen;
-    event.stopPropagation(); // prevent document click from closing immediately
+    event.stopPropagation();
   }
 
-  // Close dropdown when clicking outside
   @HostListener('document:click')
   closeDropdown() {
     this.dropdownOpen = false;

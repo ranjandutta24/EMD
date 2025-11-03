@@ -18,12 +18,24 @@
         <span class="nav-link">Gas Balance</span>
 
         <div class="dropdown-content" [class.show]="dropdownOpen" (click)="$event.stopPropagation()">
-          <a routerLink="/main/gas_balance?view=cog">COG</a>
-          <a routerLink="/main/gas_balance?view=cbm">CBM</a>
-          <a routerLink="/main/gas_balance?view=bf5">BF#5</a>
-          <a routerLink="/main/gas_balance?view=bofg">BOFG</a>
-          <a routerLink="/main/gas_balance?view=agbs">AGBS & CDQ</a>
-          <a routerLink="/main/gas_balance?view=mills">MILL’S gas</a>
+          <a [routerLink]="['/main/gas_balance']" [queryParams]="{ view: 'cob11' }" (click)="dropdownOpen = false">
+            COG
+          </a>
+          <a [routerLink]="['/main/gas_balance']" [queryParams]="{ view: 'cbm' }" (click)="dropdownOpen = false">
+            CBM
+          </a>
+          <a [routerLink]="['/main/gas_balance']" [queryParams]="{ view: 'bf' }" (click)="dropdownOpen = false">
+            BF#5
+          </a>
+          <a [routerLink]="['/main/gas_balance']" [queryParams]="{ view: 'bofg' }" (click)="dropdownOpen = false">
+            BOFG
+          </a>
+          <a [routerLink]="['/main/gas_balance']" [queryParams]="{ view: 'agbs' }" (click)="dropdownOpen = false">
+            AGBS & CDQ
+          </a>
+          <a [routerLink]="['/main/gas_balance']" [queryParams]="{ view: 'mills' }" (click)="dropdownOpen = false">
+            MILL’S gas
+          </a>
         </div>
       </div>
     </li>
