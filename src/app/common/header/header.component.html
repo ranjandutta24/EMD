@@ -2,8 +2,11 @@
   <!-- <li><a routerLink="/ccas-live"> CCAS Live</a></li> -->
   <!-- <li (click)="goToRoute('/main/dashboard')">CCAS Live</li> -->
 
-  <div style="display: flex; flex-direction: row; gap: 10px; margin-left: 10px;">
-    <li [class.active]="isActive('/main/overview')" (click)="goToRoute('/main/overview')">
+  <div style="display: flex; flex-direction: row; gap: 10px; margin-left: 10px">
+    <li
+      [class.active]="isActive('/main/overview')"
+      (click)="goToRoute('/main/overview')"
+    >
       Overview
     </li>
     <!-- <li [class.active]="isActive('/main/area')" (click)="goToRoute('/main/area')">
@@ -17,30 +20,56 @@
       <div (click)="toggleDropdown($event)">
         <span class="nav-link">Gas Balance</span>
 
-        <div class="dropdown-content" [class.show]="dropdownOpen" (click)="$event.stopPropagation()">
-          <a [routerLink]="['/main/gas_balance']" [queryParams]="{ view: 'cob11' }" (click)="dropdownOpen = false">
+        <div
+          class="dropdown-content"
+          [class.show]="dropdownOpen"
+          (click)="$event.stopPropagation()"
+        >
+          <a
+            [routerLink]="['/main/gas_balance']"
+            [queryParams]="{ view: 'cob11' }"
+            (click)="dropdownOpen = false"
+          >
             COG
           </a>
-          <a [routerLink]="['/main/gas_balance']" [queryParams]="{ view: 'cbm' }" (click)="dropdownOpen = false">
+          <a
+            [routerLink]="['/main/gas_balance']"
+            [queryParams]="{ view: 'cbm' }"
+            (click)="dropdownOpen = false"
+          >
             CBM
           </a>
-          <a [routerLink]="['/main/gas_balance']" [queryParams]="{ view: 'bf' }" (click)="dropdownOpen = false">
+          <a
+            [routerLink]="['/main/gas_balance']"
+            [queryParams]="{ view: 'bf' }"
+            (click)="dropdownOpen = false"
+          >
             BF#5
           </a>
-          <a [routerLink]="['/main/gas_balance']" [queryParams]="{ view: 'bofg' }" (click)="dropdownOpen = false">
+          <a
+            [routerLink]="['/main/gas_balance']"
+            [queryParams]="{ view: 'bofg' }"
+            (click)="dropdownOpen = false"
+          >
             BOFG
           </a>
-          <a [routerLink]="['/main/gas_balance']" [queryParams]="{ view: 'agbs' }" (click)="dropdownOpen = false">
+          <a
+            [routerLink]="['/main/gas_balance']"
+            [queryParams]="{ view: 'agbs' }"
+            (click)="dropdownOpen = false"
+          >
             AGBS & CDQ
           </a>
-          <a [routerLink]="['/main/gas_balance']" [queryParams]="{ view: 'mills' }" (click)="dropdownOpen = false">
+          <a
+            [routerLink]="['/main/gas_balance']"
+            [queryParams]="{ view: 'mills' }"
+            (click)="dropdownOpen = false"
+          >
             MILL’S gas
           </a>
         </div>
       </div>
     </li>
-
-
 
     <!-- <li [class.active]="isActive('/main/report')" (click)="goToRoute('/main/report')">
       Report
@@ -48,7 +77,10 @@
     <li [class.active]="isActive('/main/trends')" (click)="goToRoute('/main/trends')">
       Trends
     </li> -->
-    <li [class.active]="isActive('/main/settings')" (click)="goToRoute('/main/settings')">
+    <li
+      [class.active]="isActive('/main/settings')"
+      (click)="goToRoute('/main/settings')"
+    >
       Settings
     </li>
   </div>

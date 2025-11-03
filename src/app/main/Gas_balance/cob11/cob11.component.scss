@@ -16,7 +16,7 @@
   /* aligns both at top */
   gap: 100px;
   /* spacing between the two */
-  padding: 10px 20px;
+  // padding: 10px 20px;
   /* control top gap globally */
 }
 
@@ -266,8 +266,10 @@
 
 .gasflow-container {
   text-align: center;
-  min-height: 100vh;
-  padding: 20px;
+  min-height: 160vh;
+  // padding: 20px;
+  overflow-y: auto !important;
+
 
   .title {
     font-size: 28px;

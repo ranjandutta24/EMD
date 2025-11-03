@@ -16,9 +16,8 @@
   </div>
 </div> -->
 
-
 <div class="layout-container">
-  <!-- <div class="detail-view">
+  <div class="detail-view">
     <h3 class="animated-underline">CO FAS FLOW</h3>
     <div class="detail-content">
       <p>
@@ -28,7 +27,7 @@
         ullam enim deleniti amet.
       </p>
     </div>
-  </div> -->
+  </div>
 
   <div class="gasflow-container">
     <h2 class="title animated-underline">COB11</h2>
@@ -41,43 +40,41 @@
       <div class="node generation gen">
         <div class="top_header">BPP</div>
         <div class="sub-title red">Generation</div>
-        <div class="labels unique">
-          <span>Flow</span><span>Pressure</span>
-        </div>
+        <div class="labels unique"><span>Flow</span><span>Pressure</span></div>
         <div class="values unique">
           <div>
-            <div class="value">{{cogasflow_res.FT0600F003_C}}</div>
+            <div class="value">{{ cogasflow_res.FT0600F003_C }}</div>
             <div class="unit">Nm³/hr</div>
           </div>
           <div>
-            <div class="value">{{cogasflow_res.COGASMAKEPRESSURE}}</div>
+            <div class="value">{{ cogasflow_res.COGASMAKEPRESSURE }}</div>
             <div class="unit">mmwc</div>
           </div>
         </div>
       </div>
 
       <!-- LEVEL 1 -->
-      <div class="branch single-left" style="margin-top: 2%;">
+      <div class="branch single-left" style="margin-top: 2%">
         <div class="node consumption left flow-box">
           <div class="header">U/F Total Flow</div>
           <div class="sub-title green">Consumption</div>
           <div class="labels"><span>Total Flow</span></div>
           <div class="values">
             <div>
-              <div class="value">{{(cogasflow_res.CO_GAS1_F) + (cogasflow_res.CO_GAS2_F)}}</div>
+              <div class="value">
+                {{ cogasflow_res.CO_GAS1_F + cogasflow_res.CO_GAS2_F }}
+              </div>
               <div class="unit">Nm³/hr</div>
             </div>
           </div>
-          <div class="labels">
-            <span>N1</span><span>N2</span>
-          </div>
+          <div class="labels"><span>N1</span><span>N2</span></div>
           <div class="values">
             <div>
-              <div class="value">{{cogasflow_res.CO_GAS1_F}}</div>
+              <div class="value">{{ cogasflow_res.CO_GAS1_F }}</div>
               <div class="unit">Nm³/hr</div>
             </div>
             <div>
-              <div class="value">{{cogasflow_res.CO_GAS2_F}}</div>
+              <div class="value">{{ cogasflow_res.CO_GAS2_F }}</div>
               <div class="unit">mmwc</div>
             </div>
           </div>
@@ -94,7 +91,7 @@
           </div>
           <div class="values">
             <div>
-              <div class="value">{{cogasflow_res.PBS_BCOGF}}</div>
+              <div class="value">{{ cogasflow_res.PBS_BCOGF }}</div>
               <div class="unit">Nm³/hr</div>
             </div>
             <div>
@@ -104,10 +101,6 @@
           </div>
         </div>
       </div>
-
-
-
-
 
       <!-- LEVEL 1 -->
       <div class="branch single-left">
@@ -119,7 +112,7 @@
           </div>
           <div class="values">
             <div>
-              <div class="value">{{cogasflow_res.BF_COF}}</div>
+              <div class="value">{{ cogasflow_res.BF_COF }}</div>
               <div class="unit">Nm³/hr</div>
             </div>
             <div>
@@ -151,9 +144,6 @@
         </div>
       </div>
 
-
-
-
       <!-- LEVEL 1 -->
       <div class="branch single-left">
         <div class="node consumption left flow-box">
@@ -164,7 +154,7 @@
           </div>
           <div class="values">
             <div>
-              <div class="value">{{cogasflow_res.SP_CO_GAS}}</div>
+              <div class="value">{{ cogasflow_res.SP_CO_GAS }}</div>
               <div class="unit">Nm³/hr</div>
             </div>
             <div>
@@ -174,7 +164,6 @@
           </div>
         </div>
       </div>
-
 
       <!-- Example: Single right-side node -->
       <div class="branch single-right">
@@ -196,9 +185,6 @@
           </div>
         </div>
       </div>
-
-
-
 
       <!-- LEVEL 1 -->
       <div class="branch single-left">
@@ -231,7 +217,7 @@
           </div>
           <div class="values">
             <div>
-              <div class="value">{{cogasflow_res.COG_FLOW_GMS}}</div>
+              <div class="value">{{ cogasflow_res.COG_FLOW_GMS }}</div>
               <div class="unit">Nm³/hr</div>
             </div>
             <div>
@@ -241,9 +227,6 @@
           </div>
         </div>
       </div>
-
-
-
 
       <!-- LEVEL 1 -->
       <div class="branch single-left">
@@ -255,11 +238,11 @@
           </div>
           <div class="values">
             <div>
-              <div class="value">{{cogasflow_res.COFLARESTACKFLOW}}</div>
+              <div class="value">{{ cogasflow_res.COFLARESTACKFLOW }}</div>
               <div class="unit">Nm³/hr</div>
             </div>
             <div>
-              <div class="value">{{cogasflow_res.COFLARESTACKPRESSURE}}</div>
+              <div class="value">{{ cogasflow_res.COFLARESTACKPRESSURE }}</div>
               <div class="unit">mmwc</div>
             </div>
           </div>
@@ -302,23 +285,21 @@
       <div class="node generation gen">
         <div class="top_header">BPP</div>
         <div class="sub-title red">Generation</div>
-        <div class="labels unique">
-          <span>Flow</span><span>Pressure</span>
-        </div>
+        <div class="labels unique"><span>Flow</span><span>Pressure</span></div>
         <div class="values unique">
           <div>
-            <div class="value">{{cogasflow_res.COB10_GASMAKEF}}</div>
+            <div class="value">{{ cogasflow_res.COB10_GASMAKEF }}</div>
             <div class="unit">Nm³/hr</div>
           </div>
           <div>
-            <div class="value">{{cogasflow_res.COB10_COGSUPPLY}}</div>
+            <div class="value">{{ cogasflow_res.COB10_COGSUPPLY }}</div>
             <div class="unit">mmwc</div>
           </div>
         </div>
       </div>
 
       <!-- LEVEL 1 -->
-      <div class="branch single-left" style="margin-top: 2%;">
+      <div class="branch single-left" style="margin-top: 2%">
         <div class="node consumption left flow-box">
           <div class="header">U/F Total Flow</div>
           <div class="sub-title green">Consumption</div>
@@ -329,9 +310,7 @@
               <div class="unit">Nm³/hr</div>
             </div>
           </div>
-          <div class="labels">
-            <span>N1</span><span>N2</span>
-          </div>
+          <div class="labels"><span>N1</span><span>N2</span></div>
           <div class="values">
             <div>
               <div class="value">xxxx</div>
@@ -365,10 +344,6 @@
           </div>
         </div>
       </div>
-
-
-
-
 
       <!-- LEVEL 1 -->
       <!-- <div class="branch single-left">
