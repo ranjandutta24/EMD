@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 // import {MatIconModule} from '@angular/material/icon';
 
@@ -8,9 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
   isDark = false;
-  ngOnInit(): void {}
+  dropdownOpen = false;
+  ngOnInit(): void { }
 
   goToRoute(path: string) {
     console.log(path);
@@ -29,4 +30,23 @@ export class HeaderComponent implements OnInit {
       document.documentElement.classList.remove('dark-theme');
     }
   }
+
+  // Navigate to sub components (e.g., BOFG, CBM, etc.)
+  navigateToSubComponent(component: string) {
+    this.router.navigate(['/main/gas_balance'], { queryParams: { view: component } });
+    this.dropdownOpen = false; // ✅ Close dropdown after navigation
+  }
+
+  // Toggle dropdown visibility on click
+  toggleDropdown(event: MouseEvent) {
+    this.dropdownOpen = !this.dropdownOpen;
+    event.stopPropagation(); // prevent document click from closing immediately
+  }
+
+  // Close dropdown when clicking outside
+  @HostListener('document:click')
+  closeDropdown() {
+    this.dropdownOpen = false;
+  }
+
 }

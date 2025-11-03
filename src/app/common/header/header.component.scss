@@ -84,3 +84,49 @@ li {
 li {
   transition: background-color 1s ease, color 1s ease;
 }
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link {
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-weight: 500;
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: rgba(60, 100, 180, 0.95);
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  padding: 8px 0;
+  top: calc(100% + 2px);
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  z-index: 99;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-content.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}

@@ -9,17 +9,17 @@ import { SseService } from 'src/app/service/sse.servece';
   styleUrls: ['./test2.scss'],
 })
 export class OverviewComponent implements OnInit, OnDestroy {
-  bf = 'BF#5';
+  bf = 'BF#5 KALYANI';
   cob11 = 'COB#11';
   cob10 = 'COB#10';
   bof_holder = 'BOF HOLDER';
   cbm = 'CBM';
   pbs2 = 'PBS#2 BOILER (1,2,3)';
-  sinter = 'SINTER';
+  sinter = 'SINTER PLANTS';
   ldcp = 'LDCP';
   bof_ccp = 'BOF/CCP';
   agbs_cgbs = 'AGBS/CGBS';
-  stove = 'STOVE';
+  stove = 'BF#5 STOVES';
   mills = "MILL'S";
   fale_stack_cog = 'FLARE STACK (COG)';
   fale_stack_bfg = 'FLARE STACK (BFG)';

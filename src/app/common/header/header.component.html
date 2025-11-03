@@ -9,9 +9,27 @@
     <!-- <li [class.active]="isActive('/main/area')" (click)="goToRoute('/main/area')">
       Dashboard
     </li> -->
-    <li [class.active]="isActive('/main/gas_balance')" (click)="goToRoute('/main/gas_balance')">
+    <!-- <li [class.active]="isActive('/main/gas_balance')" (click)="goToRoute('/main/gas_balance')">
       Gas Balance
+    </li> -->
+
+    <li class="dropdown">
+      <div (click)="toggleDropdown($event)">
+        <span class="nav-link">Gas Balance</span>
+
+        <div class="dropdown-content" [class.show]="dropdownOpen" (click)="$event.stopPropagation()">
+          <a routerLink="/main/gas_balance?view=cog">COG</a>
+          <a routerLink="/main/gas_balance?view=cbm">CBM</a>
+          <a routerLink="/main/gas_balance?view=bf5">BF#5</a>
+          <a routerLink="/main/gas_balance?view=bofg">BOFG</a>
+          <a routerLink="/main/gas_balance?view=agbs">AGBS & CDQ</a>
+          <a routerLink="/main/gas_balance?view=mills">MILL’S gas</a>
+        </div>
+      </div>
     </li>
+
+
+
     <!-- <li [class.active]="isActive('/main/report')" (click)="goToRoute('/main/report')">
       Report
     </li>
