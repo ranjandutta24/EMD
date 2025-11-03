@@ -4,7 +4,7 @@
 .container {
   /* width: min(100%); */
   height: calc(100vh - 78px);
-  background: var(--gradient-primary);
+  background: var(--backg-clr);
   padding: 10px;
   overflow-y: auto;
 }
@@ -34,7 +34,7 @@
     var(--shadow-secondary),
     var(--shadow-inset-light),
     var(--shadow-inset-dark);
-  border: 1px solid var(--color-border-primary);
+  border: 1.5px solid var(--color-border-primary);
   text-align: center;
   font-weight: 600;
   letter-spacing: 0.2px;
@@ -281,7 +281,7 @@
   text-align: right;
   flex: 0 0 110px;
   font-family: 'Courier New', monospace;
-  font-weight: 600;
+  font-weight: bold;
   color: var(--color-text-accent);
   background: var(--valuebox);
   padding: 4px 8px;

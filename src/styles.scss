@@ -21,7 +21,7 @@
   /* dark readable text */
   --muted: #5f6c7b;
   /* for secondary text or labels */
-  --valuebox: rgba(179, 247, 205, 0.1);
+  --valuebox: #eef7fd;
 
   /* Cards and containers */
   --box-bg: #ffffff;
@@ -113,15 +113,15 @@
   --color-text-primary: #1e293b;
   --color-text-secondary: #555033;
   --color-text-tertiary: #475569;
-  // --color-text-accent: #02a4ed;
-  --color-text-accent: #012ffc;
+  --color-text-accent: #01618e;
+  // --color-text-accent: #012ffc;
   --color-text-muted: #64748b;
 
   /* Border & Shadow Colors */
-  --color-border-primary: rgba(14, 165, 233, 0.2);
+  --color-border-primary: rgb(3, 128, 186, 0.6);
   --color-border-hover: rgba(14, 165, 233, 0.4);
-  --color-border-accent: rgb(15 152 213 / 30%);
-  --color-border-light: rgba(14, 165, 233, 0.1);
+  --color-border-accent: rgb(15 152 213 / 20%);
+  --color-border-light: rgba(14, 130, 233, 0.5);
   --color-border-medium: rgba(14, 165, 233, 0.3);
 
   /* Gradient Colors */
