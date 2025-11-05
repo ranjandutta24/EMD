@@ -1,128 +1,136 @@
-<div class="container">
+<div class="container" style="overflow-y: auto">
   <div class="flex">
     <div class="col">
       <div class="box">
         <h2 class="overview_header">
-          <span *ngFor="let letter of splitLetters(cob10); let i = index" [style.animation-delay]="i * 0.2 + 's'">
+          <span
+            *ngFor="let letter of splitLetters(cob10); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
             {{ letter }}
           </span>
         </h2>
         <div class="tr">
           <!-- <div class="td">GEN</div> -->
-          <div class="td">C.O. GAS MAKE (Th. Nm³/hr)</div>
-          <div class="td">{{overview_res.COB10_GASMAKEF}}</div>
+          <div class="td">C.O. GAS MAKE [Th. Nm³/hr]</div>
+          <div class="td">{{ overview_res.COB10_GASMAKEF }}</div>
         </div>
         <div class="tr">
           <!-- <div class="td">PRESSURE</div> -->
-          <div class="td">C.O. GAS PRESSURE (mmwc)</div>
+          <div class="td">C.O. GAS PRESSURE [mmwc]</div>
           <div class="td">Value 2</div>
         </div>
         <div class="tr">
           <!-- <div class="td">U/F N1 BLOCK</div> -->
-          <div class="td">U/F A-BLOCK (Nm³/hr)</div>
+          <div class="td">U/F A-BLOCK [Nm³/hr]</div>
           <div class="td">Value 4</div>
         </div>
         <div class="tr">
           <!-- <div class="td">U/F N2 BLOCK</div> -->
-          <div class="td">U/F B-BLOCK (Nm³/hr)</div>
+          <div class="td">U/F B-BLOCK [Nm³/hr]</div>
           <div class="td">Value 4</div>
         </div>
         <div class="tr">
           <!-- <div class="td">FLARE FLOW</div> -->
-          <div class="td">FLARE STACK FLOW (Nm³/hr)</div>
+          <div class="td">FLARE STACK FLOW [Nm³/hr]</div>
           <div class="td">Value 3</div>
         </div>
         <div class="tr">
-          <div class="td">FLARE STACK PRESSURE (mmwc)</div>
+          <div class="td">FLARE STACK PRESSURE [mmwc]</div>
           <div class="td">Value 4</div>
         </div>
 
         <div class="tr">
-          <div class="td">FLARE STACK SET POINT (mmwc)</div>
+          <div class="td">FLARE STACK SET POINT [mmwc]</div>
           <div class="td">Value 4</div>
         </div>
       </div>
       <div class="box">
         <h2 class="overview_header">
-          <span *ngFor="let letter of splitLetters(cob11); let i = index" [style.animation-delay]="i * 0.2 + 's'">
+          <span
+            *ngFor="let letter of splitLetters(cob11); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
             {{ letter }}
           </span>
         </h2>
         <div class="tr">
           <!-- <div class="td">MAKE</div> -->
-          <div class="td">C.O. GAS MAKE (Nm³/hr)</div>
+          <div class="td">C.O. GAS MAKE [Nm³/hr]</div>
           <div class="td">{{ overview_res.MAKE }}</div>
         </div>
         <div class="tr">
-          <div class="td">C.O. GAS PRESSURE (mmwc)</div>
+          <div class="td">C.O. GAS PRESSURE [mmwc]</div>
           <div class="td">{{ overview_res.PRESSURE }}</div>
         </div>
         <div class="tr">
-          <div class="td">U/F N 1 BLOCK COG CONS (Nm³/hr)</div>
+          <div class="td">U/F N 1 BLOCK COG CONS [Nm³/hr]</div>
           <div class="td">{{ overview_res.U_F_N_1_BLOCK_COG }}</div>
         </div>
         <div class="tr">
-          <div class="td">U/F N 2 BLOCK COG CONS (Nm³/hr)</div>
+          <div class="td">U/F N 2 BLOCK COG CONS [Nm³/hr]</div>
           <div class="td">{{ overview_res.U_F_N_2_BLOCK_COG }}</div>
         </div>
         <div class="tr">
-          <div class="td">U/F N 1 BLOCK BFG CONS (Nm³/hr)</div>
+          <div class="td">U/F N 1 BLOCK BFG CONS [Nm³/hr]</div>
           <div class="td">{{ overview_res.U_F_N_1_BLOCK_BFG }}</div>
         </div>
 
         <div class="tr">
-          <div class="td">U/F N 2 BLOCK BFG CONS (Nm³/hr)</div>
+          <div class="td">U/F N 2 BLOCK BFG CONS [Nm³/hr]</div>
           <div class="td">{{ overview_res.U_F_N_2_BLOCK_BFG }}</div>
         </div>
         <div class="tr">
-          <div class="td">FLARE STACK FLOW (Nm³/hr)</div>
+          <div class="td">FLARE STACK FLOW [Nm³/hr]</div>
           <div class="td">{{ overview_res.FLARE_FLOW }}</div>
         </div>
         <div class="tr">
-          <div class="td">FLARE STACK PRESSURE (mmwc)</div>
+          <div class="td">FLARE STACK PRESSURE [mmwc]</div>
           <div class="td">{{ overview_res.FLARE_PRESSURE }}</div>
         </div>
 
         <div class="tr">
-          <div class="td">FLARE STACK SET POINT (mmwc)</div>
+          <div class="td">FLARE STACK SET POINT [mmwc]</div>
           <div class="td">{{ overview_res.FLARE_STACK_SET_POINT }}</div>
         </div>
       </div>
     </div>
     <div class="col">
-
       <div class="box">
         <h2 class="overview_header">
-          <span *ngFor="let letter of splitLetters(bf); let i = index" [style.animation-delay]="i * 0.2 + 's'">
+          <span
+            *ngFor="let letter of splitLetters(bf); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
             {{ letter }}
           </span>
         </h2>
         <div class="tr">
-          <div class="td">BLAST VOLUME (Nm³/min)</div>
+          <div class="td">BLAST VOLUME [Nm³/min]</div>
           <div class="td">{{ overview_res.BLAST_VOLUME }}</div>
         </div>
         <div class="tr">
-          <div class="td">BLAST PRESSURE (Kg/cm²)</div>
+          <div class="td">BLAST PRESSURE [Kg/cm²]</div>
           <div class="td">{{ overview_res.BLAST_PRESSURE.toFixed(2) }}</div>
         </div>
         <div class="tr">
-          <div class="td">BF GAS MAKE (Th. Nm³/hr)</div>
+          <div class="td">BF GAS MAKE [Th. Nm³/hr]</div>
           <div class="td">
             {{ (overview_res.BLAST_VOLUME * 1.52 * (60 / 1000)).toFixed(2) }}
           </div>
         </div>
         <div class="tr">
-          <div class="td">FLARE STACK FLOW (Nm³/hr)</div>
+          <div class="td">FLARE STACK FLOW [Nm³/hr]</div>
           <div class="td">{{ overview_res.FLARE_STACK_FLOW.toFixed(2) }}</div>
         </div>
         <div class="tr">
-          <div class="td">FLARE STACK PRESSURE (mmwc)</div>
+          <div class="td">FLARE STACK PRESSURE [mmwc]</div>
           <div class="td">
             {{ overview_res.FLARE_STACK_PRESSURE.toFixed(2) }}
           </div>
         </div>
         <div class="tr">
-          <div class="td">FLARE STACK SET POINT (mmwc)</div>
+          <div class="td">FLARE STACK SET POINT [mmwc]</div>
           <div class="td">ADD TAG</div>
         </div>
         <div class="tr">
@@ -132,28 +140,31 @@
       </div>
       <div class="box">
         <h2 class="overview_header">
-          <span *ngFor="let letter of splitLetters(stove); let i = index" [style.animation-delay]="i * 0.2 + 's'">
+          <span
+            *ngFor="let letter of splitLetters(stove); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
             {{ letter }}
           </span>
         </h2>
         <div class="tr">
-          <div class="td">STOVE 1 BF GAS CONS (Nm³/hr)</div>
+          <div class="td">STOVE 1 BF GAS CONS [Nm³/hr]</div>
           <div class="td">{{ overview_res.STOVE_1_BF_GAS }}</div>
         </div>
         <div class="tr">
-          <div class="td">STOVE 2 BF GAS CONS (Nm³/hr)</div>
+          <div class="td">STOVE 2 BF GAS CONS [Nm³/hr]</div>
           <div class="td">{{ overview_res.STOVE_2_BF_GAS }}</div>
         </div>
         <div class="tr">
-          <div class="td">STOVE 3 BF GAS CONS (Nm³/hr)</div>
+          <div class="td">STOVE 3 BF GAS CONS [Nm³/hr]</div>
           <div class="td">{{ overview_res.STOVE_3_BF_GAS }}</div>
         </div>
         <div class="tr">
-          <div class="td">STOVE 4 BF GAS CONS (Nm³/hr)</div>
+          <div class="td">STOVE 4 BF GAS CONS [Nm³/hr]</div>
           <div class="td">{{ overview_res.STOVE_4_BF_GAS }}</div>
         </div>
         <div class="tr">
-          <div class="td">C.O. GAS CONSUMPTION (Nm³/hr)</div>
+          <div class="td">C.O. GAS CONSUMPTION [Nm³/hr]</div>
           <div class="td">{{ overview_res.BF_COF }}</div>
         </div>
         <div class="tr">
@@ -163,25 +174,28 @@
       </div>
       <div class="box">
         <h2 class="overview_header">
-          <span *ngFor="let letter of splitLetters(sinter); let i = index" [style.animation-delay]="i * 0.2 + 's'">
+          <span
+            *ngFor="let letter of splitLetters(sinter); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
             {{ letter }}
           </span>
         </h2>
         <div class="tr">
-          <div class="td">SP 1 C.O. GAS FLOW (Nm³/hr)</div>
-          <div class="td">{{overview_res.SP1_MIXGASF}}</div>
+          <div class="td">SP 1 C.O. GAS FLOW [Nm³/hr]</div>
+          <div class="td">{{ overview_res.SP1_MIXGASF }}</div>
         </div>
         <div class="tr">
-          <div class="td">SP1 COG PRESSURE (mbar)</div>
-          <div class="td">{{overview_res.SP1_MIXGASPRESS}}</div>
+          <div class="td">SP1 COG PRESSURE [mbar]</div>
+          <div class="td">{{ overview_res.SP1_MIXGASPRESS }}</div>
         </div>
         <div class="tr">
           <div class="td">SP 2 FLOW (CO GAS)</div>
-          <div class="td">{{overview_res.SP2_MIXGASF}}</div>
+          <div class="td">{{ overview_res.SP2_MIXGASF }}</div>
         </div>
         <div class="tr">
           <div class="td">PRESSURE</div>
-          <div class="td">{{overview_res.SP2_MIXGASPRESS}}</div>
+          <div class="td">{{ overview_res.SP2_MIXGASPRESS }}</div>
         </div>
         <div class="tr">
           <div class="td">TOTAL FLOW</div>
@@ -192,7 +206,10 @@
     <div class="col">
       <div class="box">
         <h2 class="overview_header">
-          <span *ngFor="let letter of splitLetters(bof_ccp); let i = index" [style.animation-delay]="i * 0.2 + 's'">
+          <span
+            *ngFor="let letter of splitLetters(bof_ccp); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
             {{ letter }}
           </span>
         </h2>
@@ -219,38 +236,46 @@
       </div>
       <div class="box">
         <h2 class="overview_header">
-          <span *ngFor="let letter of splitLetters(bof_holder); let i = index" [style.animation-delay]="i * 0.2 + 's'">
+          <span
+            *ngFor="let letter of splitLetters(bof_holder); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
             {{ letter }}
           </span>
         </h2>
         <div class="tr">
-          <div class="td">HOLDER HEIGHT</div>
-          <div class="td">Value 1</div>
+          <div class="td">HOLDER HEIGHT [metre]</div>
+          <div class="td">{{ overview_res.GASHOLDERLVL }}</div>
         </div>
         <div class="tr">
-          <div class="td">GAS HLD PRESSURE</div>
-          <div class="td">Value 2</div>
+          <div class="td">GAS HLD PRESSURE [mmWC]</div>
+          <div class="td">{{ overview_res.GASHOLDERPRES }}</div>
         </div>
         <div class="tr">
-          <div class="td">EXPORTED PBS#2</div>
-          <div class="td">Value 3</div>
+          <div class="td">EXPORTED PBS#2 [Nm3/hr]</div>
+          <div class="td">{{ overview_res.EXPORTEDGAS }}</div>
         </div>
         <div class="tr">
-          <div class="td">EXPORTED MILL'S</div>
-          <div class="td">Value 4</div>
+          <div class="td">EXPORTED MILL'S [Nm3/hr]</div>
+          <div class="td">{{ overview_res.GAS_FLOW_mills }}</div>
         </div>
         <div class="tr">
           <div class="td">TOTAL EXPORTED</div>
-          <div class="td">Value 4</div>
+          <div class="td">
+            {{ (overview_res.EXPORTEDGAS + overview_res.GAS_FLOW_mills) | number:'1.2-2' }}
+          </div>
         </div>
         <div class="tr">
           <div class="td">LAST HEAT RECOVERY VOL</div>
-          <div class="td">Value 4</div>
+          <div class="td">{{ overview_res.BOF_GASRECTOT }}</div>
         </div>
       </div>
       <div class="box">
         <h2 class="overview_header">
-          <span *ngFor="let letter of splitLetters(ldcp); let i = index" [style.animation-delay]="i * 0.2 + 's'">
+          <span
+            *ngFor="let letter of splitLetters(ldcp); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
             {{ letter }}
           </span>
         </h2>
@@ -283,7 +308,10 @@
     <div class="col">
       <div class="box">
         <h2 class="overview_header">
-          <span *ngFor="let letter of splitLetters(mills); let i = index" [style.animation-delay]="i * 0.2 + 's'">
+          <span
+            *ngFor="let letter of splitLetters(mills); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
             {{ letter }}
           </span>
         </h2>
@@ -334,8 +362,10 @@
       </div>
       <div class="box">
         <h2 class="overview_header">
-          <span *ngFor="let letter of splitLetters(fale_stack_bfg); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'">
+          <span
+            *ngFor="let letter of splitLetters(fale_stack_bfg); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
             {{ letter }}
           </span>
         </h2>
@@ -354,8 +384,10 @@
       </div>
       <div class="box">
         <h2 class="overview_header">
-          <span *ngFor="let letter of splitLetters(fale_stack_cog); let i = index"
-            [style.animation-delay]="i * 0.2 + 's'">
+          <span
+            *ngFor="let letter of splitLetters(fale_stack_cog); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
             {{ letter }}
           </span>
         </h2>
@@ -377,24 +409,27 @@
     <div class="col">
       <div class="box">
         <h2 class="overview_header">
-          <span *ngFor="let letter of splitLetters(cbm); let i = index" [style.animation-delay]="i * 0.2 + 's'">
+          <span
+            *ngFor="let letter of splitLetters(cbm); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
             {{ letter }}
           </span>
         </h2>
         <div class="tr">
-          <div class="td">M 1 TOTALIZER</div>
-          <div class="td">Value 1</div>
+          <div class="td">M 1 TOTALIZER [SCM]</div>
+          <div class="td">{{overview_res.M1VOLUME}}</div>
         </div>
         <div class="tr">
-          <div class="td">M 1 FLOW</div>
+          <div class="td">M 1 FLOW [SCM/hr]</div>
           <div class="td">{{ overview_res.M1FLOW }}</div>
         </div>
         <div class="tr">
-          <div class="td">M 2 TOTALIZER</div>
-          <div class="td">Value 3</div>
+          <div class="td">M 2 TOTALIZER [SCM]</div>
+          <div class="td">{{ overview_res.M2VOLUME }}</div>
         </div>
         <div class="tr">
-          <div class="td">M 2 FLOW</div>
+          <div class="td">M 2 FLOW [SCM/hr]</div>
           <div class="td">{{ overview_res.M2FLOW }}</div>
         </div>
         <div class="tr">
@@ -410,13 +445,16 @@
           <div class="td">Value 4</div>
         </div>
         <div class="tr">
-          <div class="td">PBS FLOW</div>
-          <div class="td">Value 4</div>
+          <div class="td">PBS FLOW [Nm3/hr]</div>
+          <div class="td">{{ overview_res.CBM_GAS123 }}</div>
         </div>
       </div>
       <div class="box">
         <h2 class="overview_header">
-          <span *ngFor="let letter of splitLetters(agbs_cgbs); let i = index" [style.animation-delay]="i * 0.2 + 's'">
+          <span
+            *ngFor="let letter of splitLetters(agbs_cgbs); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
             {{ letter }}
           </span>
         </h2>
@@ -439,17 +477,20 @@
       </div>
       <div class="box">
         <h2 class="overview_header">
-          <span *ngFor="let letter of splitLetters(pbs2); let i = index" [style.animation-delay]="i * 0.2 + 's'">
+          <span
+            *ngFor="let letter of splitLetters(pbs2); let i = index"
+            [style.animation-delay]="i * 0.2 + 's'"
+          >
             {{ letter }}
           </span>
         </h2>
         <div class="tr">
           <div class="td">COG (1,2,3)</div>
-          <div class="td">{{ overview_res.COG123 }}</div>
+          <div class="td">{{ overview_res.BFG123 }}</div>
         </div>
         <div class="tr">
           <div class="td">BFG (1,2,3)</div>
-          <div class="td">{{ overview_res.BFG123 }}</div>
+          <div class="td">{{ overview_res.COG123 }}</div>
         </div>
         <div class="tr">
           <div class="td">CBM GAS(1,2,3)</div>

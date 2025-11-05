@@ -25,7 +25,6 @@ export class OverviewComponent implements OnInit, OnDestroy {
   fale_stack_bfg = 'FLARE STACK (BFG)';
   micellanous = 'MICELLANEOUS';
 
-
   overview_res = {
     BLAST_VOLUME: 0,
     BLAST_PRESSURE: 0,
@@ -84,15 +83,17 @@ export class OverviewComponent implements OnInit, OnDestroy {
     SP1_MIXGASF: 0,
     SP2_MIXGASPRESS: 0,
     SP2_MIXGASF: 0,
-    BF_COF: 0
+    BF_COF: 0,
+
+    GASHOLDERLVL: 0,
+    BOF_GASRECTOT: 0,
   };
 
   previousValues: any = { ...this.overview_res };
 
   private sseoverview?: Subscription;
 
-
-  constructor(private sseService: SseService) { }
+  constructor(private sseService: SseService) {}
 
   splitLetters(text: string): string[] {
     return text.split('').map((c) => (c === ' ' ? '\u00A0' : c));
@@ -125,7 +126,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.sseoverview = this.sseService.getOverview().subscribe((data: any) => {
-      // console.log('es', data);
+      console.log('Result', data);
       // console.log(this.bf5_res);
 
       // Animate each property
@@ -137,7 +138,6 @@ export class OverviewComponent implements OnInit, OnDestroy {
         (val) => (this.overview_res.COB10_GASMAKEF = val),
         2
       );
-
 
       this.animateValue(
         this.previousValues.SP1_MIXGASF,
@@ -170,7 +170,6 @@ export class OverviewComponent implements OnInit, OnDestroy {
         (val) => (this.overview_res.SP2_MIXGASPRESS = val),
         2
       );
-
 
       this.animateValue(
         this.previousValues.BF_COF,
@@ -380,8 +379,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
         this.previousValues.CBM_GAS123,
         data.CBM_GAS123,
         800,
-        (val) => (this.overview_res.CBM_GAS123 = val),
-        2
+        (val) => (this.overview_res.CBM_GAS123 = val)
       );
       this.animateValue(
         this.previousValues.BOF_GAS_TOTAL,
@@ -551,7 +549,8 @@ export class OverviewComponent implements OnInit, OnDestroy {
         this.previousValues.GASHOLDERPRES,
         data.GASHOLDERPRES,
         800, // ms
-        (val) => (this.overview_res.GASHOLDERPRES = val)
+        (val) => (this.overview_res.GASHOLDERPRES = val),
+        2
       );
       this.animateValue(
         this.previousValues.GASHOLDERTEMP,
@@ -563,7 +562,8 @@ export class OverviewComponent implements OnInit, OnDestroy {
         this.previousValues.EXPORTEDGAS,
         data.EXPORTEDGAS,
         800, // ms
-        (val) => (this.overview_res.EXPORTEDGAS = val)
+        (val) => (this.overview_res.EXPORTEDGAS = val),
+        2
       );
 
       this.animateValue(
@@ -574,10 +574,35 @@ export class OverviewComponent implements OnInit, OnDestroy {
         2
       );
 
+      //sourav code
+      this.animateValue(
+        this.previousValues.GASHOLDERLVL,
+        data.GASHOLDERLVL,
+        800, // ms
+        (val) => (this.overview_res.GASHOLDERLVL = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousValues.BOF_GASRECTOT,
+        data.BOF_GASRECTOT,
+        800, // ms
+        (val) => (this.overview_res.BOF_GASRECTOT = val)
+      );
+
+      this.animateValue(
+        this.previousValues.GASHOLDERLVL,
+        data.GASHOLDERLVL,
+        800, // ms
+        (val) => (this.overview_res.GASHOLDERLVL = val),
+        2
+      );
+
+      //sourav code
+
       // Update previous values for next round
       this.previousValues = { ...data };
     });
-
   }
 
   ngOnDestroy(): void {
