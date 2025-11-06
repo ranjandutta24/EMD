@@ -18,7 +18,7 @@
 
 <div class="layout-container">
   <div class="detail-view">
-    <h3 class="animated-underline">CO FAS FLOW</h3>
+    <h3 class="animated-underline">CO GAS FLOW</h3>
     <div class="detail-content">
       <p>
         Select a node to view its details. Lorem ipsum dolor sit amet
@@ -334,11 +334,15 @@
           </div>
           <div class="values">
             <div>
-              <div class="value">xxxx</div>
+              <div class="value">{{ boosterValue.AGBS_outletF }}</div>
               <div class="unit">Nm³/hr</div>
             </div>
             <div>
-              <div class="value">xxxx</div>
+              <div class="value">
+                {{
+                  boosterValue.AGBS_outletP_b1 + boosterValue.AGBS_outletP_b2
+                }}
+              </div>
               <div class="unit">mmwc</div>
             </div>
           </div>

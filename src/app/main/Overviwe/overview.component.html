@@ -13,23 +13,22 @@
         <div class="tr">
           <!-- <div class="td">GEN</div> -->
           <div class="td">C.O. GAS MAKE [Th. Nm³/hr]</div>
-          <div class="td">{{ overview_res.COB10_GASMAKEF }}</div>
+          <div class="td">{{ cob10_res.benzol_scrubber_gasmake }}</div>
         </div>
         <div class="tr">
           <!-- <div class="td">PRESSURE</div> -->
           <div class="td">C.O. GAS PRESSURE [mmwc]</div>
-          <div class="td">Value 2</div>
+          <div class="td">{{ cob10_res.cogas_supply_pressure }}</div>
         </div>
         <div class="tr">
           <!-- <div class="td">U/F N1 BLOCK</div> -->
-          <div class="td">U/F A-BLOCK [Nm³/hr]</div>
-          <div class="td">Value 4</div>
+          <div class="td">U/F TOTAL [Nm³/hr]</div>
+          <div class="td">{{ cob10_res.cog_gasflow }}</div>
         </div>
-        <div class="tr">
-          <!-- <div class="td">U/F N2 BLOCK</div> -->
+        <!-- <div class="tr">
           <div class="td">U/F B-BLOCK [Nm³/hr]</div>
           <div class="td">Value 4</div>
-        </div>
+        </div> -->
         <div class="tr">
           <!-- <div class="td">FLARE FLOW</div> -->
           <div class="td">FLARE STACK FLOW [Nm³/hr]</div>
@@ -262,7 +261,10 @@
         <div class="tr">
           <div class="td">TOTAL EXPORTED</div>
           <div class="td">
-            {{ (overview_res.EXPORTEDGAS + overview_res.GAS_FLOW_mills) | number:'1.2-2' }}
+            {{
+              overview_res.EXPORTEDGAS + overview_res.GAS_FLOW_mills
+                | number : "1.2-2"
+            }}
           </div>
         </div>
         <div class="tr">
@@ -418,7 +420,7 @@
         </h2>
         <div class="tr">
           <div class="td">M 1 TOTALIZER [SCM]</div>
-          <div class="td">{{overview_res.M1VOLUME}}</div>
+          <div class="td">{{ overview_res.M1VOLUME }}</div>
         </div>
         <div class="tr">
           <div class="td">M 1 FLOW [SCM/hr]</div>

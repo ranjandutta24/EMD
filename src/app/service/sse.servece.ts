@@ -80,6 +80,50 @@ export class SseService {
     });
   }
 
+  getcob10(): Observable<any> {
+    return new Observable((observer) => {
+      const eventSource = new EventSource(baseURL + 'emd/cob10');
+
+      eventSource.onmessage = (event) => {
+        this.zone.run(() => {
+          observer.next(JSON.parse(event.data));
+        });
+      };
+
+      eventSource.onerror = (error) => {
+        this.zone.run(() => {
+          observer.error(error);
+        });
+      };
+
+      return () => {
+        eventSource.close();
+      };
+    });
+  }
+
+  getBooster(): Observable<any> {
+    return new Observable((observer) => {
+      const eventSource = new EventSource(baseURL + "iron/booster");
+
+      eventSource.onmessage = (event) => {
+        this.zone.run(() => {
+          observer.next(JSON.parse(event.data));
+        });
+      };
+
+      eventSource.onerror = (error) => {
+        this.zone.run(() => {
+          observer.error(error);
+        });
+      };
+
+      return () => {
+        eventSource.close();
+      };
+    });
+  }
+
   // getSSETrend(): Observable<any> {
   //   return new Observable((observer) => {
   //     const eventSource = new EventSource(baseURL + 'utility/ccas_trend');

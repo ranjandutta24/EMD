@@ -89,11 +89,19 @@ export class OverviewComponent implements OnInit, OnDestroy {
     BOF_GASRECTOT: 0,
   };
 
+  cob10_res = {
+    benzol_scrubber_gasmake: 0,
+    cogas_supply_pressure: 0,
+    cog_gasflow: 0,
+  }
+
   previousValues: any = { ...this.overview_res };
+  previouscob10Values: any = { ...this.cob10_res };
 
   private sseoverview?: Subscription;
+  private cob10overview?: Subscription;
 
-  constructor(private sseService: SseService) {}
+  constructor(private sseService: SseService) { }
 
   splitLetters(text: string): string[] {
     return text.split('').map((c) => (c === ' ' ? '\u00A0' : c));
@@ -126,7 +134,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.sseoverview = this.sseService.getOverview().subscribe((data: any) => {
-      console.log('Result', data);
+      // console.log('Result', data);
       // console.log(this.bf5_res);
 
       // Animate each property
@@ -603,12 +611,44 @@ export class OverviewComponent implements OnInit, OnDestroy {
       // Update previous values for next round
       this.previousValues = { ...data };
     });
+
+    this.cob10overview = this.sseService.getcob10().subscribe((data: any) => {
+      console.log('Result', data);
+
+      this.animateValue(
+        this.previouscob10Values.benzol_scrubber_gasmake,
+        data.benzol_scrubber_gasmake,
+        800, // ms
+        (val) => (this.cob10_res.benzol_scrubber_gasmake = val)
+      );
+
+      this.animateValue(
+        this.previouscob10Values.cogas_supply_pressure,
+        data.cogas_supply_pressure,
+        800,
+        (val) => (this.cob10_res.cogas_supply_pressure = val),
+        2
+      );
+
+      this.animateValue(
+        this.previouscob10Values.cog_gasflow,
+        data.cog_gasflow,
+        800,
+        (val) => (this.cob10_res.cog_gasflow = val),
+        2
+      );
+
+      this.previouscob10Values = { ...data };
+    });
   }
 
   ngOnDestroy(): void {
     // Clean up subscription to prevent memory leaks
     if (this.sseoverview) {
       this.sseoverview.unsubscribe();
+    }
+    if (this.cob10overview) {
+      this.cob10overview.unsubscribe();
     }
   }
 }

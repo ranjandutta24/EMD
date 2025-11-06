@@ -22,11 +22,25 @@ export class Cob11Component implements OnInit {
     SP_CO_GAS: 0,
     COG_FLOW_GMS: 0,
   };
-
+  boosterValue = {
+    AGBS_inletP_b1: 0,
+    AGBS_inletP_b2: 0,
+    AGBS_outletF: 0,
+    AGBS_outletP_b1: 0,
+    AGBS_outletP_b2: 0,
+    CGBS_inletP_b1: 0,
+    CGBS_inletP_b2: 0,
+    CGBS_outletF_b1: 0,
+    CGBS_outletF_b2: 0,
+    CGBS_outletP_b1: 0,
+    CGBS_outletP_b2: 0,
+  };
   previousValues: any = { ...this.cogasflow_res };
+  previousboosterValues: any = { ...this.boosterValue };
+
 
   private sseoverview?: Subscription;
-
+  private ssebooster?: Subscription;
 
   constructor(private sseService: SseService) { }
 
@@ -159,12 +173,113 @@ export class Cob11Component implements OnInit {
       this.previousValues = { ...data };
     });
 
+    this.ssebooster = this.sseService.getBooster().subscribe((data: any) => {
+      console.log('es', data);
+      // console.log(this.bf5_res);
+
+      // Animate each property
+      //sourav code
+      this.animateValue(
+        this.previousboosterValues.AGBS_inletP_b1,
+        data.AGBS_inletP_b1,
+        800,
+        (val) => (this.boosterValue.AGBS_inletP_b1 = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousboosterValues.AGBS_inletP_b2,
+        data.AGBS_inletP_b2,
+        800, // ms
+        (val) => (this.boosterValue.AGBS_inletP_b2 = val)
+      );
+
+      this.animateValue(
+        this.previousboosterValues.AGBS_outletF,
+        data.AGBS_outletF,
+        800,
+        (val) => (this.boosterValue.AGBS_outletF = val),
+        2
+      );
+
+      // repeat for other props
+      this.animateValue(
+        this.previousboosterValues.AGBS_outletP_b1,
+        data.AGBS_outletP_b1,
+        800,
+        (val) => (this.boosterValue.AGBS_outletP_b1 = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousboosterValues.AGBS_outletP_b2,
+        data.AGBS_outletP_b2,
+        800,
+        (val) => (this.boosterValue.AGBS_outletP_b2 = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousboosterValues.CGBS_inletP_b1,
+        data.CGBS_inletP_b1,
+        800,
+        (val) => (this.boosterValue.CGBS_inletP_b1 = val),
+        2
+      );
+      //sourav code
+
+      this.animateValue(
+        this.previousboosterValues.CGBS_inletP_b2,
+        data.CGBS_inletP_b2,
+        800, // ms
+        (val) => (this.boosterValue.CGBS_inletP_b2 = val)
+      );
+
+      this.animateValue(
+        this.previousboosterValues.CGBS_outletF_b1,
+        data.CGBS_outletF_b1,
+        800,
+        (val) => (this.boosterValue.CGBS_outletF_b1 = val),
+        2
+      );
+
+      // repeat for other props
+      this.animateValue(
+        this.previousboosterValues.CGBS_outletF_b2,
+        data.CGBS_outletF_b2,
+        800,
+        (val) => (this.boosterValue.CGBS_outletF_b2 = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousboosterValues.CGBS_outletP_b1,
+        data.CGBS_outletP_b1,
+        800,
+        (val) => (this.boosterValue.CGBS_outletP_b1 = val),
+        2
+      );
+
+      this.animateValue(
+        this.previousboosterValues.CGBS_outletP_b2,
+        data.CGBS_outletP_b2,
+        800,
+        (val) => (this.boosterValue.CGBS_outletP_b2 = val),
+        2
+      );
+
+      // Update previous values for next round
+      this.previousboosterValues = { ...data };
+    });
   }
 
   ngOnDestroy(): void {
     // Clean up subscription to prevent memory leaks
     if (this.sseoverview) {
       this.sseoverview.unsubscribe();
+    }
+    if (this.ssebooster) {
+      this.ssebooster.unsubscribe();
     }
   }
 
