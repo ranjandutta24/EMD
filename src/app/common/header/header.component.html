@@ -9,16 +9,17 @@
     >
       Overview
     </li>
-    <!-- <li [class.active]="isActive('/main/area')" (click)="goToRoute('/main/area')">
+    <li [class.active]="isActive('/main/area')" (click)="goToRoute('/main/area')">
       Dashboard
-    </li> -->
+    </li>
     <!-- <li [class.active]="isActive('/main/gas_balance')" (click)="goToRoute('/main/gas_balance')">
       Gas Balance
     </li> -->
 
-    <li class="dropdown">
+    <li class="dropdown"   routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: false }">
       <div (click)="toggleDropdown($event)">
-        <span class="nav-link">Gas Balance</span>
+        <span [routerLink]="['/main/gas_balance']" [class.active]="isActive('/main/gas_balance')" class="nav-link">Gas Balance</span>
 
         <div
           class="dropdown-content"
@@ -89,6 +90,24 @@
       {{ isDark ? "🌙" : "☀️" }}
     </span>
   </div>
+
+    <p id="time" class="footer">
+      {{ currentDateTime | date : "fullDate" }} -
+      {{ currentDateTime | date : "mediumTime" }}
+    </p>
 </div>
 <!-- [class.active]="isActive('/main/ccslive')"
 (click)="goToRoute('/main/ccslive')" -->
+
+<div class="header-second">
+  <!-- <h1 class="animated-title" style="text-align: center;">Digital Energy Vision</h1> -->
+  <div class="center-container">
+    <h1 class="animated-title">
+      <span>D</span><span>i</span><span>g</span><span>i</span><span>t</span><span>a</span><span>l</span>
+      <span>&nbsp;</span><span>E</span><span>n</span><span>e</span><span>r</span><span>g</span><span>y</span>
+      <span>&nbsp;</span><span>V</span><span>i</span><span>s</span><span>i</span><span>o</span><span>n</span>
+    </h1>
+  </div>
+  
+  
+</div>

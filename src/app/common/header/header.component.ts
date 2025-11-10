@@ -8,19 +8,62 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+    // for Time & Date
+    hourTransform = '';
+    minuteTransform = '';
+    secondTransform = '';
+
   constructor(private router: Router) { }
   isDark = false;
   dropdownOpen = false;
-  ngOnInit(): void { }
 
+
+    // for Time & Date
+  currentDateTime: Date = new Date();
+  private intervalId: any;
+
+
+  ngOnInit(): void { 
+    this.updateClock();
+    this.intervalId = setInterval(() => {
+      this.currentDateTime = new Date();
+      this.updateClock();
+    }, 1000); // update every second
+  }
+
+  today: Date = new Date();
+
+  ngOnDestroy() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
+
+  updateClock() {
+    const now = new Date();
+    const seconds = now.getSeconds();
+    const minutes = now.getMinutes();
+    const hours = now.getHours();
+
+    const secondDeg = seconds * 6; // 360/60
+    const minuteDeg = minutes * 6 + seconds * 0.1; // smooth minute
+    const hourDeg = hours * 30 + minutes * 0.5; // smooth hour
+
+    this.secondTransform = `rotate(${secondDeg}deg)`;
+    this.minuteTransform = `rotate(${minuteDeg}deg)`;
+    this.hourTransform = `rotate(${hourDeg}deg)`;
+  }
+  
   goToRoute(path: string) {
     console.log(path);
 
     this.router.navigate([path]);
   }
+  
   isActive(path: string): boolean {
     return this.router.url === path;
   }
+
   toggleTheme() {
     this.isDark = !this.isDark;
 

@@ -16,8 +16,24 @@
   // background-image: url('/assets/bg.jpg');
   //   background: #000000;
   // background: linear-gradient(18090deg,rgba(0, 0, 0, 1) 25%, rgba(120, 117, 117, 1) 91%);
-
+  position: relative;
+  z-index: 1001; /* above second header */
+  overflow: visible; /* ✅ don't clip dropdown */
 }
+
+.header-second {
+  height: 60px;
+  margin-top: 10px; /* the gap */
+  background: var(--gradient-header-background);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(5px);
+  border-top: 2px solid white;
+  opacity: 0.8;
+  position: relative;
+  z-index: 1; /* 👈 below dropdown and main header */
+}
+
+
 
 .header::before {
   content: "";
@@ -98,7 +114,7 @@ li {
 
 /* The tab (Gas Balance) */
 .nav-link {
-  color: #ffffff;
+  // color: #ffffff;
   cursor: pointer;
   padding: 10px 20px;
   transition: all 0.3s ease;
@@ -114,15 +130,18 @@ li {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #1b1b1b;
+  // background-color: #1b1b1b;
+  background: var(--box-bg);
   min-width: 200px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   overflow: hidden;
-  z-index: 9999;
+  // z-index: 9999;
   top: 100%;
   left: 0;
   animation: fadeIn 0.3s ease;
+  position: absolute;
+  z-index: 2000; /* 👈 always above both headers */
 }
 
 /* Dropdown visible on hover */
@@ -159,3 +178,60 @@ li {
     transform: translateY(0);
   }
 }
+
+
+// For Time & Date
+p {
+  max-width: 800px;
+  margin: 20px auto;
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
+
+.footer {
+  display: flex;
+  bottom: 0px;
+  background-color: green;
+  color:  var(--footer_text);  
+  font-size: 20px;
+  width: auto;  
+  justify-content: center;
+  overflow: hidden;
+}
+
+#time {
+position: absolute;
+right: 60px;
+bottom: 22%;              /* raised a bit for better balance */
+margin: 0;
+font-size: 12px;          /* slightly smaller but crisp */
+font-weight: 500;
+font-family: monospace;
+letter-spacing: 0.5px;    /* adds readability */
+
+color: #f1f1f1;           /* soft white text */
+// background: rgba(0, 0, 0, 0.4); /* subtle translucent bg */
+background: #8b0035;
+
+
+padding: 4px 10px;
+border-radius: 6px;       /* rounded pill effect */
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+
+transition: all 0.3s ease-in-out;
+}
+
+#time:hover {
+background:  linear-gradient(135deg, rgba(0, 128, 128, 0.6), rgba(0, 255, 255, 0.3)); /* slightly darker on hover */
+transform: scale(1);         /* subtle zoom */
+}
+
+
+
+
+
+
+
+
+
+
